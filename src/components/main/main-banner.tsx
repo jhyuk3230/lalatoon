@@ -1,8 +1,6 @@
 "use client"
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import "swiper/css";
-import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
 import Link from "next/link";
 
@@ -19,6 +17,7 @@ export default function MainBanner() {
             loop={true}
             breakpoints={{
               768: {
+								slidesPerView: 2,
                 centeredSlides: false,
               },
             }}
@@ -26,7 +25,7 @@ export default function MainBanner() {
             className="mySwiper"
           >
             {slideArray.map((e, i) => (
-              <SwiperSlide className="!w-[360px] !h-[387px] overflow-hidden md:!w-[400px] md:!h-[430px] xxs:rounded-[10px]" key={i}>
+              <SwiperSlide className="w-[360px] !h-[387px] overflow-hidden md:w-[400px] md:!h-[430px] xxs:rounded-[10px]" key={i}>
                 <Link href={`#`} className="h-full block bg-black">
                   {e}
                 </Link>
