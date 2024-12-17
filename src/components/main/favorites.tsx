@@ -3,17 +3,20 @@ import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
+import { Navigation, Pagination } from "swiper/modules";
 import { tagStyleType } from "@/types/common.type";
-import { recentlyReadItem } from "@/types/recently.type";
+import { FavoritesItem } from "@/types/favorites.type ";
 
-export default function RecentlyRead(){
-	const recentlyReadList: recentlyReadItem[] = [
+export default function Favorites(){
+	const recentlyReadList: FavoritesItem[] = [
     {
 			link: "1",
       img: "https://thumb-g2.lalatoon.com/upload/thumbnail/20180720111425/2020_08_18_15977285189297.jpg",
       tag: ["new", "up"],
       title: "title",
+			discription: "aaaa",
+			event1: true,
+			event2: true
     },
     {
 			link: "2",
@@ -21,6 +24,9 @@ export default function RecentlyRead(){
       tag: ["new", "up", "end"],
       title: "title title",
       adult: true,
+			discription: "aaaa",
+			event1: true,
+			event2: true
     },
     {
 			link: "3",
@@ -28,6 +34,9 @@ export default function RecentlyRead(){
       tag: ["new", "up"],
       title: "title title title title title",
       adult: true,
+			discription: "aaaa",
+			event1: true,
+			event2: true
     },
     // {
     //   img: "https://thumb-g2.lalatoon.com/upload/thumbnail/20180720111425/2020_08_18_15977285189297.jpg",
@@ -74,14 +83,14 @@ export default function RecentlyRead(){
       <section className="mt-[30px] px-[20px] xs:mt-[45px]">
         <article className="max-w-[768px] mx-auto">
 					<div className="mb-5 flex justify-between items-center">
-						<h3 className="text-[20px] font-bold text-black leading-[29px]">Recently read</h3>
+						<h3 className="text-[20px] font-bold text-black leading-[29px]">Favorites</h3>
 						<Link href={`#`} className="text-[12px] font-bold text-gray-400">More</Link>
 					</div>
 					{slide ? (
 						<Swiper
           	  slidesPerView="auto"
           	  spaceBetween={12}
-          	  modules={[Pagination]}
+          	  modules={[Pagination, Navigation]}
           	  className="mySwiper"
           	>
           	  {recentlyReadList.map((e, i) => (

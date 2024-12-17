@@ -25,8 +25,8 @@ export default function QuickMenu(){
   ];
 	return (
     <>
-      <section className="max-w-[768px] mx-auto mt-5 px-[20px]">
-        <article>
+      <section className="mt-5 px-[20px]">
+        <article className="max-w-[768px] mx-auto">
           <ul className="whitespace-nowrap overflow-x-auto">
 						{quickMenuArray.map((e, i)=>(
 							<li className="w-[88px] mr-2 inline-block break-keep last:mr-0 xs:w-auto xs:mr-3 xxs:w-[calc((100% - 24px) / 4)]" key={i}>
