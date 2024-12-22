@@ -1,13 +1,14 @@
 "use client"
+import { AppBannerProps } from "@/types/app-banner.type";
 import { hasCookie, setCookie } from "cookies-next";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-export default function AppBanner(){
+export default function AppBanner(props: AppBannerProps){
 	const [refusal, setRefusal] = useState(false);
 	const [bannerHide, setBannerHide] = useState(false);
-	// const [exists, setExists] = useState(hasCookie("appRefusal")); ※하이드레이션 에러
-	// const [exists, setExists] = useState(false); ※깜빡임 현상 (서버쪽에서 쿠키를 확인할때는 false이지만 클라이언트에서 확인할때는 true로 출력됨)
+	// const [exists, setExists] = useState(hasCookie("appRefusal")); //※하이드레이션 에러
+	// const [exists, setExists] = useState(false); //※깜빡임 현상 (서버쪽에서 쿠키를 확인할때는 false이지만 클라이언트에서 확인할때는 true로 출력됨)
 
 	const onRefusal = () => {
 		setRefusal(true);
@@ -25,10 +26,10 @@ export default function AppBanner(){
 	// if (exists) return null
 	
 	return (
-    <>
-			{bannerHide ? (``) : (
-				<section className="mt-[30px] px-[20px] xs:mt-[45px] bg-gradient-to-r from-[#f56] to-[#ff919c]">
-    	   	<article className="max-w-[768px] mx-auto px-[25px] py-[15px] break-keep">
+		<>
+			{props.hasCookie || bannerHide ? null : (
+				<section className="mt-[30px] px-[20px] xs:mt-[45px]">
+					 <article className="max-w-[768px] mx-auto px-[25px] py-[15px] break-keep bg-gradient-to-r from-[#f56] to-[#ff919c]">
 						{refusal ? (
 							<div className="flex flex-col gap-[5px] relative">
 								<h4 className="text-[15px] font-bold text-white leading-[18px]">We&apos;re sorry to hear that</h4>
@@ -58,7 +59,7 @@ export default function AppBanner(){
 										<p className="text-[12px] font-normal text-white/80 leading-[18px]">Leave a rating to recommend the app to other people~!</p>
 									</div>
 								</div>
-
+						
 								<div className="flex justify-center items-center gap-[10px] text-center">
 									<button className="w-[150px] h-10 px-3 border border-white rounded-[50px] flex justify-center items-center text-[13px] font-bold text-white leading-[1]" onClick={onRefusal}>Not really</button>
 									<Link href={`#`} className="w-[150px] h-10 px-3 rounded-[50px] flex justify-center items-center bg-black text-[13px] font-bold text-white leading-[15px] tracking-[0.013px]">YES! I&apos;ll leave a rating.</Link>
@@ -66,7 +67,7 @@ export default function AppBanner(){
 							</div>
 						)}
 					</article>
-    		</section>
+				</section>
 			)}
     </>
   );

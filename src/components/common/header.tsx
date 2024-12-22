@@ -5,7 +5,7 @@ import NavBtn from "../navigation/nav-button";
 export default function Header() {
 	return (
 		<>
-			<header className="w-full fixed left-0 top-0">
+			<header className="w-full bg-white fixed left-0 top-0 z-[5]">
 				<section className="max-w-[768px] h-[70px] mx-auto px-[20px] flex justify-between items-center">
 					<article className="flex gap-10 items-center">
 						<div className="logo">

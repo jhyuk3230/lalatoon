@@ -12,7 +12,7 @@ export default function GlobalNav() {
 	
 	return (
 		<>
-			<aside className={`w-full max-w-[768px] h-lvh bg-black/50 fixed left-[50%] top-0 -translate-x-[50%] overflow-hidden z-[2] ${isNavActive ? "visible" : "invisible"}`} onClick={bgOnClick}>
+			<aside className={`w-full max-w-[768px] h-lvh bg-black/50 fixed left-[50%] top-0 -translate-x-[50%] overflow-hidden z-[5] ${isNavActive ? "visible" : "invisible"}`} onClick={bgOnClick}>
 				<GlobalNavList />
 			</aside>
 		</>

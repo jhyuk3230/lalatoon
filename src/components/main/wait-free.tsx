@@ -1,14 +1,14 @@
 "use client"
 
-import { newComicsItem } from "@/types/new-comics.type ";
 import Link from "next/link";
 import Image from "next/image";
 import { tagStyleType } from "@/types/common.type";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
+import { waitFreeItem } from "@/types/wait-free.type";
 
-export default function NewComics(){
-	const newcomicsList: newComicsItem[] = [
+export default function WaitFree(){
+	const waitFreeList: waitFreeItem[] = [
     {
 			link: "#1",
       img: "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
@@ -89,10 +89,10 @@ export default function NewComics(){
           	  modules={[Pagination, Navigation]}
           	  className="mySwiper"
 						>
-							{newcomicsList.map((e, i)=>(
+							{waitFreeList.map((e, i)=>(
 								<SwiperSlide key={i} className="w-[210px]">
 									<Link href={e.link} className="block">
-										<div className="pb-[100%] rounded-[10px] relative overflow-hidden">
+										<div className="h-[300px] rounded-[10px] relative overflow-hidden">
 											<Image src={e.img} alt={`#`} width={500} height={100} className="w-full absolute top-0 left-0" />
 
 											<div className="flex justify-start items-center gap-[2px] absolute top-1 left-1">
@@ -129,9 +129,8 @@ export default function NewComics(){
 											 </div>
 										</div>
 
-										<div className="mt-[10px] flex flex-col gap-[10px]">
-											<h4 className="text-[17px] font-bold text-black leading-[25px] line-clamp-1 xs:line-clamp-2">{e.title}</h4>
-											<p className="text-[13px] font-normal text-gray-500 leading-[19px] line-clamp-3">{e.discription}</p>
+										<div className="mt-2 flex flex-col gap-[10px]">
+											<h4 className="text-[14px] font-medium text-black leading-[19px] xs:line-clamp-2">{e.title}</h4>
 										</div>
 									</Link>
 								</SwiperSlide>

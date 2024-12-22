@@ -10,3 +10,7 @@
 	opacity: 0!important;
 	overflow: hidden!important;
 }
+
+.slide__prev.swiper-button-disabled, .slide__next.swiper-button-disabled{
+	display: none;
+}
