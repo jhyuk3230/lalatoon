@@ -137,10 +137,10 @@ export default function Favorites(){
           		  slidesPerView="auto"
           		  spaceBetween={12}
           		  modules={[Pagination, Navigation]}
-								navigation={{
-              	  prevEl: `.favorites .slide__prev`,
-              	  nextEl: `.favorites .slide__next`,
-              	}}
+								// navigation={{
+              	//   prevEl: `.favorites .slide__prev`,
+              	//   nextEl: `.favorites .slide__next`,
+              	// }}
 								breakpoints={{
         				  500: {
         				    slidesPerGroup: 3,
@@ -193,7 +193,7 @@ export default function Favorites(){
           		    </SwiperSlide>
           		  ))}
           		</Swiper>
-							<button className="slide__prev w-10 h-10 rounded-[40px] hidden justify-center items-center bg-white/80 absolute top-[50%] -left-5 -translate-y-[50%] z-[1] shadow-[0_3px_6px_0px_rgba(0,0,0,.16)] hover:bg-white focus:bg-white lg:flex">
+							{/* <button className="slide__prev w-10 h-10 rounded-[40px] hidden justify-center items-center bg-white/80 absolute top-[50%] -left-5 -translate-y-[50%] z-[1] shadow-[0_3px_6px_0px_rgba(0,0,0,.16)] hover:bg-white focus:bg-white lg:flex">
 								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
 									<path d="M11.3333 14L4.66663 8L11.3333 2" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
 								</svg>
@@ -202,7 +202,7 @@ export default function Favorites(){
 								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
 									<path d="M4.66659 2L11.3333 8L4.66659 14" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
 								</svg>
-							</button>
+							</button> */}
 						</div>
 					) : (
 						<div className={`${moreLink ? "flex justify-between items-center gap-3" : ""}`} ref={favoritesWrap}>

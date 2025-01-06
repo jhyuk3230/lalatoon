@@ -75,17 +75,17 @@ export default function WaitFree(){
       <section className="mt-[30px] px-[20px] xs:mt-[45px]">
         <article className="max-w-[768px] mx-auto">
 					<div className="mb-5 flex justify-between items-center">
-						<h3 className="text-[20px] font-bold text-black leading-[29px]">New Comics</h3>
+						<h3 className="text-[20px] font-bold text-black leading-[29px]">Wait Till It&apos;s Free</h3>
 						<Link href={`#`} className="text-[12px] font-bold text-gray-400">More</Link>
 					</div>
 					<div className="new-comics relative">
 						<Swiper
 							slidesPerView="auto"
-          	  spaceBetween={8}
-							navigation={{
-                prevEl: `.new-comics .slide__prev`,
-                nextEl: `.new-comics .slide__next`,
-              }}
+          	  spaceBetween={12}
+							// navigation={{
+              //   prevEl: `.new-comics .slide__prev`,
+              //   nextEl: `.new-comics .slide__next`,
+              // }}
           	  modules={[Pagination, Navigation]}
           	  className="mySwiper"
 						>
@@ -136,7 +136,7 @@ export default function WaitFree(){
 								</SwiperSlide>
 							))}
 						</Swiper>
-						<button className="slide__prev w-10 h-10 rounded-[40px] hidden justify-center items-center bg-white/80 absolute top-[50%] -left-5 -translate-y-[50%] z-[1] shadow-[0_3px_6px_0px_rgba(0,0,0,.16)] hover:bg-white focus:bg-white lg:flex">
+						{/* <button className="slide__prev w-10 h-10 rounded-[40px] hidden justify-center items-center bg-white/80 absolute top-[50%] -left-5 -translate-y-[50%] z-[1] shadow-[0_3px_6px_0px_rgba(0,0,0,.16)] hover:bg-white focus:bg-white lg:flex">
 							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
 								<path d="M11.3333 14L4.66663 8L11.3333 2" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
 							</svg>
@@ -145,7 +145,7 @@ export default function WaitFree(){
 							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
 								<path d="M4.66659 2L11.3333 8L4.66659 14" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
 							</svg>
-						</button>
+						</button> */}
 					</div>
 				</article>
       </section>

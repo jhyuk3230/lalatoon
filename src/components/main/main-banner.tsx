@@ -22,10 +22,10 @@ export default function MainBanner() {
           	      centeredSlides: false,
           	    },
           	  }}
-							navigation={{
-                prevEl: `.main-banner .slide__prev`,
-                nextEl: `.main-banner .slide__next`,
-              }}
+							// navigation={{
+              //   prevEl: `.main-banner .slide__prev`,
+              //   nextEl: `.main-banner .slide__next`,
+              // }}
           	  modules={[Pagination, Navigation]}
           	  className="mySwiper"
           	>
@@ -37,7 +37,7 @@ export default function MainBanner() {
           	    </SwiperSlide>
           	  ))}
           	</Swiper>
-						<button className="slide__prev w-[52px] h-[52px] rounded-[52px] hidden justify-center items-center bg-white/80 absolute top-[50%] -left-[26px] -translate-y-[50%] z-[1] shadow-[0_3px_6px_0px_rgba(0,0,0,.16)] hover:bg-white focus:bg-white lg:flex">
+						{/* <button className="slide__prev w-[52px] h-[52px] rounded-[52px] hidden justify-center items-center bg-white/80 absolute top-[50%] -left-[26px] -translate-y-[50%] z-[1] shadow-[0_3px_6px_0px_rgba(0,0,0,.16)] hover:bg-white focus:bg-white lg:flex">
 							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
 								<path d="M11.3333 14L4.66663 8L11.3333 2" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
 							</svg>
@@ -46,7 +46,7 @@ export default function MainBanner() {
 							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
 								<path d="M4.66659 2L11.3333 8L4.66659 14" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
 							</svg>
-						</button>
+						</button> */}
 					</div>
         </article>
       </section>

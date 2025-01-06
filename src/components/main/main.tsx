@@ -71,6 +71,22 @@ export default async function Main(){
 				discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
 				event2: true,
 			},
+			{
+				link: "#7",
+				img: "https://thumb-g2.lalatoon.com/upload/thumbnail/20180720111425/2020_08_18_15977285189297.jpg",
+				tag: ["new", "up", "end"],
+				title: "title title title title title",
+				discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+				event2: true,
+			},
+			{
+				link: "#8",
+				img: "https://thumb-g2.lalatoon.com/upload/thumbnail/20180720111425/2020_08_18_15977285189297.jpg",
+				tag: ["new", "up", "end"],
+				title: "title title title title title",
+				discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+				event2: true,
+			},
 		];
 
   return (
@@ -84,7 +100,8 @@ export default async function Main(){
       <FreeCoupon />
       <PopularComics />
       <WaitFree />
-      <WorkSlide items={newcomicsList} />
+      <WorkSlide items={newcomicsList} name="work1" title="Recommended Comics" more="#" arrow={false} />
+      <WorkSlide items={newcomicsList} name="work2" title="Today's Comics" more="#" arrow={false} />
     </>
   );
 }
