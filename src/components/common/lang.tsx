@@ -18,7 +18,7 @@ export default function FooterLang() {
             <path d="M3 4.5L0 0.5L6 0.5L3 4.5Z" fill="black"></path>
           </svg>
 				</button>
-				<div className="w-[180px] rounded-[20px] border border-black bg-white inline-block absolute right-0 bottom-[calc(100%+10px)] shadow-[0_10px_10px_0px_rgba(0,0,0,.2)] overflow-hidden duration-300 scale-0 origin-bottom group-[.visible]:scale-100">
+				<div className="w-[180px] rounded-[20px] p-[10px] border border-black bg-white inline-block absolute right-0 bottom-[calc(100%+10px)] overflow-hidden duration-300 scale-0 origin-bottom group-[.visible]:scale-100">
 					<ul className="px-[10px] flex flex-col">
 						<FooterLangItem />
 					</ul>

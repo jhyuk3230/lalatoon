@@ -1,7 +1,17 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+	reactStrictMode: false,
   images: {
-    domains: ["thumb-g2.lalatoon.com", "thumb-g1.lalatoon.com"],
+		remotePatterns: [
+			{
+        protocol: "https",
+        hostname: "thumb-g1.lalatoon.com",
+      },
+			{
+        protocol: "https",
+        hostname: "thumb-g2.lalatoon.com",
+      },
+		]
   },
 };
 

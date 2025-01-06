@@ -1,5 +1,6 @@
 import HeaderNav from "@/components/navigation/header-nav";
 import NavBtn from "../navigation/nav-button";
+import AdultBtn from "./adult-btn";
 
 
 export default function Header() {
@@ -26,10 +27,7 @@ export default function Header() {
 					</article>
 
 					<article className="flex items-center gap-5">
-  					<label htmlFor="adult-chk" className="w-12 h-6 rounded-[24px] inline-block bg-gray-100 relative cursor-pointer">
-							<input type="checkbox" id="adult-chk" className="sound-only peer" />
-  					  <span className="w-6 h-6 rounded-[50px] border-2 border-red-500 flex justify-center items-center bg-white text-[10px] font-bold text-black absolute left-0 top-0 leading-[1] duration-500 peer-checked:left-6">19</span>
-  					</label>
+  					<AdultBtn />
 						<NavBtn />
 					</article>
 				</section>
