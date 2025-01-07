@@ -72,9 +72,9 @@ export default function WaitFree(){
 
 	return (
     <>
-      <section className="mt-[30px] px-[20px] xs:mt-[45px]">
-        <article className="max-w-[768px] mx-auto px-[20px]">
-					<div className="mb-5 flex justify-between items-center">
+      <section className="mt-[30px] xs:mt-[45px]">
+        <article className="max-w-[768px] mx-auto pl-[20px]">
+					<div className="mb-5 pr-[20px] flex justify-between items-center">
 						<h3 className="text-[20px] font-bold text-black leading-[29px]">Wait Till It&apos;s Free</h3>
 						<Link href={`#`} className="text-[12px] font-bold text-gray-400">More</Link>
 					</div>
@@ -87,7 +87,7 @@ export default function WaitFree(){
               //   nextEl: `.new-comics .slide__next`,
               // }}
           	  modules={[Pagination, Navigation]}
-          	  className="mySwiper"
+          	  className="mySwiper pr-[20px]"
 						>
 							{waitFreeList.map((e, i)=>(
 								<SwiperSlide key={i} className="w-[210px]">

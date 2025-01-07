@@ -125,9 +125,9 @@ export default function Favorites(){
 
 	return (
     <>
-      <section className="mt-[30px] px-[20px] xs:mt-[45px]">
-        <article className="max-w-[768px] mx-auto px-[20px]">
-					<div className="mb-5 flex justify-between items-center">
+      <section className="mt-[30px] xs:mt-[45px]">
+        <article className="max-w-[768px] mx-auto pl-[20px]">
+					<div className="mb-5 pr-[20px] flex justify-between items-center">
 						<h3 className="text-[20px] font-bold text-black leading-[29px]">Favorites</h3>
 						<Link href={`#`} className="text-[12px] font-bold text-gray-400">More</Link>
 					</div>
@@ -146,7 +146,7 @@ export default function Favorites(){
         				    slidesPerGroup: 3,
         				  },
         				}}
-          		  className="mySwiper"
+          		  className="mySwiper pr-[20px]"
           		>
           		  {favoritesList.map((e, i) => (
           		    <SwiperSlide className="w-[120px]" key={i}>
@@ -205,7 +205,7 @@ export default function Favorites(){
 							</button> */}
 						</div>
 					) : (
-						<div className={`${moreLink ? "flex justify-between items-center gap-3" : ""}`} ref={favoritesWrap}>
+						<div className={`${moreLink ? "pr-[20px] flex justify-between items-center gap-3" : ""}`} ref={favoritesWrap}>
 							<ul className="inline-flex justify-start items-start gap-3" ref={favoritesUl}>
 								{favoritesList.map((e, i)=>(
 									<li className="w-[120px]" key={i}>

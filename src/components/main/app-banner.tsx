@@ -28,7 +28,7 @@ export default function AppBanner(props: AppBannerProps){
 	return (
 		<>
 			{props.hasCookie || bannerHide ? null : (
-				<section className="mt-[30px] px-[20px] xs:mt-[45px]">
+				<section className="mt-[30px] xs:mt-[45px]">
 					 <article className="max-w-[768px] mx-auto px-[25px] py-[15px] break-keep bg-gradient-to-r from-[#f56] to-[#ff919c]">
 						{refusal ? (
 							<div className="flex flex-col gap-[5px] relative">

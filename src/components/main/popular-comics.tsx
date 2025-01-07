@@ -92,13 +92,13 @@ export default function PopularComics(){
 
 	return (
     <>
-      <section className="mt-[30px] px-[20px] xs:mt-[45px]">
-        <article className="max-w-[768px] mx-auto px-[20px]">
-					<div className="mb-5 flex justify-between items-center">
+      <section className="mt-[30px] xs:mt-[45px]">
+        <article className="max-w-[768px] mx-auto pl-[20px]">
+					<div className="mb-5 pr-[20px] flex justify-between items-center">
 						<h3 className="text-[20px] font-bold text-black leading-[29px]">Popular Comics</h3>
 						<Link href={`#`} className="text-[12px] font-bold text-gray-400">More</Link>
 					</div>
-					<div className="flex justify-start items-start gap-3 relative overflow-x-auto">
+					<div className="pr-[20px] flex justify-start items-start gap-3 relative overflow-x-auto">
 						<ul className="w-[316px] xxs:w-[358px] flex flex-col gap-3 flex-shrink-0">
 							{resultArray[0].map((e, i)=>(
 								<li key={i}>
@@ -108,21 +108,28 @@ export default function PopularComics(){
 
 											<div className="flex justify-start items-center gap-[2px] absolute top-1 left-1">
 												{e.event1 ? (
-													<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-														<rect width="20" height="20" rx="5" fill="#FF5566"></rect>
-														<path d="M10 16C13.3137 16 16 13.3137 16 10C16 6.68629 13.3137 4 10 4C6.68629 4 4 6.68629 4 10C4 13.3137 6.68629 16 10 16Z" stroke="white" strokeMiterlimit="10" strokeLinecap="round"></path>
-														<path d="M10 8.2002V10.6002H12.4" stroke="white" strokeLinecap="round" strokeLinejoin="round"></path>
-													</svg>
+													<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                				    <rect width="16" height="16" rx="5" fill="#FF5566"></rect>
+                				    <g clipPath="url(#clip0_1903_7632)">
+                				      <path d="M8 11.75C10.0711 11.75 11.75 10.0711 11.75 8C11.75 5.92893 10.0711 4.25 8 4.25C5.92893 4.25 4.25 5.92893 4.25 8C4.25 10.0711 5.92893 11.75 8 11.75Z" stroke="white" strokeMiterlimit="10" strokeLinecap="round"></path>
+                				      <path d="M8 6.875V8.375H9.5" stroke="white" strokeLinecap="round" strokeLinejoin="round"></path>
+                				    </g>
+                				    <defs>
+                				      <clipPath id="clip0_1903_7632">
+                				        <rect width="10" height="10" fill="white" transform="translate(3 3)"></rect>
+                				      </clipPath>
+                				    </defs>
+                					</svg>
 												) : null}
 												{e.event2 ? (
-													<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-														<rect x="0.5" y="0.5" width="19" height="19" rx="4.5" fill="white"></rect>
-														<rect x="0.5" y="0.5" width="19" height="19" rx="4.5" stroke="#FFBBC2"></rect>
-														<path d="M15.3332 6.66699H4.6665V9.33366H15.3332V6.66699Z" stroke="#FF5566" strokeLinecap="round"></path>
-														<path d="M14 9.33301V15.333H6V9.33301" stroke="#FF5566" strokeLinecap="round"></path>
-														<path d="M10 15.3337V6.66699" stroke="#FF5566" strokeLinecap="round"></path>
-														<path d="M10.6909 6.60585C10.5659 6.30015 10.9276 5.69431 11.6288 5.09958C11.7092 5.03288 11.7896 4.97174 11.87 4.90504C11.9013 4.87725 12.2496 4.57711 12.6516 4.69383C12.9687 4.78832 13.0982 5.07179 13.1205 5.13293L13.2992 5.69431C13.4466 6.15564 13.0937 6.6392 12.6427 6.66699" stroke="#FF5566" strokeLinecap="round"></path>
-														<path d="M9.30876 6.60585C9.43381 6.30015 9.07205 5.69431 8.37085 5.09958C8.29046 5.03288 8.21007 4.97174 8.12968 4.90504C8.09841 4.87725 7.75005 4.57711 7.34809 4.69383C7.03099 4.78832 6.90147 5.07179 6.87914 5.13293L6.70049 5.69431C6.5531 6.15564 6.90593 6.6392 7.35702 6.66699" stroke="#FF5566" strokeLinecap="round"></path>
+													<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+														<rect x="0.5" y="0.5" width="15" height="15" rx="4.5" fill="white"/>
+														<rect x="0.5" y="0.5" width="15" height="15" rx="4.5" stroke="#FFBBC2"/>
+														<path d="M11.3332 5.91699H4.6665V7.58366H11.3332V5.91699Z" stroke="#FF5566" strokeLinejoin="round"/>
+														<path d="M10.5 7.58301V11.333H5.5V7.58301" stroke="#FF5566" strokeLinejoin="round"/>
+														<path d="M8 11.3337V5.91699" stroke="#FF5566" strokeLinejoin="round"/>
+														<path d="M8.43176 5.87878C8.3536 5.68772 8.57971 5.30906 9.01795 4.93736C9.0682 4.89567 9.11844 4.85746 9.16869 4.81577C9.18823 4.7984 9.40596 4.61081 9.65718 4.68377C9.85537 4.74282 9.93632 4.91999 9.95028 4.9582L10.0619 5.30906C10.154 5.5974 9.93353 5.89962 9.6516 5.91699" stroke="#FF5566" strokeLinejoin="round"/>
+														<path d="M7.56791 5.87878C7.64607 5.68772 7.41997 5.30906 6.98172 4.93736C6.93148 4.89567 6.88123 4.85746 6.83099 4.81577C6.81145 4.7984 6.59372 4.61081 6.34249 4.68377C6.14431 4.74282 6.06336 4.91999 6.0494 4.9582L5.93774 5.30906C5.84563 5.5974 6.06615 5.89962 6.34808 5.91699" stroke="#FF5566" strokeLinejoin="round"/>
 													</svg>
 												) : null}
 											</div>
@@ -137,7 +144,7 @@ export default function PopularComics(){
 										<p className="w-[20px] flex-shrink-0 text-[16px] font-bold text-black text-center">{e.rank}</p>
 
 										<div className="mt-[10px] flex flex-col gap-[4px]">
-											<div className="rounded-tr-[5px] flex justify-start items-center">
+											<div className="rounded-tr-[5px] flex justify-start items-center gap-1">
 												{e.tag.map((tag)=>(
 													<span key={tag} className={tagStyle[tag]}>{tag.toUpperCase()}</span>
 												))}
@@ -157,21 +164,28 @@ export default function PopularComics(){
 
 											<div className="flex justify-start items-center gap-[2px] absolute top-1 left-1">
 												{e.event1 ? (
-													<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-														<rect width="20" height="20" rx="5" fill="#FF5566"></rect>
-														<path d="M10 16C13.3137 16 16 13.3137 16 10C16 6.68629 13.3137 4 10 4C6.68629 4 4 6.68629 4 10C4 13.3137 6.68629 16 10 16Z" stroke="white" strokeMiterlimit="10" strokeLinecap="round"></path>
-														<path d="M10 8.2002V10.6002H12.4" stroke="white" strokeLinecap="round" strokeLinejoin="round"></path>
-													</svg>
+													<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                				    <rect width="16" height="16" rx="5" fill="#FF5566"></rect>
+                				    <g clipPath="url(#clip0_1903_7632)">
+                				      <path d="M8 11.75C10.0711 11.75 11.75 10.0711 11.75 8C11.75 5.92893 10.0711 4.25 8 4.25C5.92893 4.25 4.25 5.92893 4.25 8C4.25 10.0711 5.92893 11.75 8 11.75Z" stroke="white" strokeMiterlimit="10" strokeLinecap="round"></path>
+                				      <path d="M8 6.875V8.375H9.5" stroke="white" strokeLinecap="round" strokeLinejoin="round"></path>
+                				    </g>
+                				    <defs>
+                				      <clipPath id="clip0_1903_7632">
+                				        <rect width="10" height="10" fill="white" transform="translate(3 3)"></rect>
+                				      </clipPath>
+                				    </defs>
+                					</svg>
 												) : null}
 												{e.event2 ? (
-													<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-														<rect x="0.5" y="0.5" width="19" height="19" rx="4.5" fill="white"></rect>
-														<rect x="0.5" y="0.5" width="19" height="19" rx="4.5" stroke="#FFBBC2"></rect>
-														<path d="M15.3332 6.66699H4.6665V9.33366H15.3332V6.66699Z" stroke="#FF5566" strokeLinecap="round"></path>
-														<path d="M14 9.33301V15.333H6V9.33301" stroke="#FF5566" strokeLinecap="round"></path>
-														<path d="M10 15.3337V6.66699" stroke="#FF5566" strokeLinecap="round"></path>
-														<path d="M10.6909 6.60585C10.5659 6.30015 10.9276 5.69431 11.6288 5.09958C11.7092 5.03288 11.7896 4.97174 11.87 4.90504C11.9013 4.87725 12.2496 4.57711 12.6516 4.69383C12.9687 4.78832 13.0982 5.07179 13.1205 5.13293L13.2992 5.69431C13.4466 6.15564 13.0937 6.6392 12.6427 6.66699" stroke="#FF5566" strokeLinecap="round"></path>
-														<path d="M9.30876 6.60585C9.43381 6.30015 9.07205 5.69431 8.37085 5.09958C8.29046 5.03288 8.21007 4.97174 8.12968 4.90504C8.09841 4.87725 7.75005 4.57711 7.34809 4.69383C7.03099 4.78832 6.90147 5.07179 6.87914 5.13293L6.70049 5.69431C6.5531 6.15564 6.90593 6.6392 7.35702 6.66699" stroke="#FF5566" strokeLinecap="round"></path>
+													<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+														<rect x="0.5" y="0.5" width="15" height="15" rx="4.5" fill="white"/>
+														<rect x="0.5" y="0.5" width="15" height="15" rx="4.5" stroke="#FFBBC2"/>
+														<path d="M11.3332 5.91699H4.6665V7.58366H11.3332V5.91699Z" stroke="#FF5566" strokeLinejoin="round"/>
+														<path d="M10.5 7.58301V11.333H5.5V7.58301" stroke="#FF5566" strokeLinejoin="round"/>
+														<path d="M8 11.3337V5.91699" stroke="#FF5566" strokeLinejoin="round"/>
+														<path d="M8.43176 5.87878C8.3536 5.68772 8.57971 5.30906 9.01795 4.93736C9.0682 4.89567 9.11844 4.85746 9.16869 4.81577C9.18823 4.7984 9.40596 4.61081 9.65718 4.68377C9.85537 4.74282 9.93632 4.91999 9.95028 4.9582L10.0619 5.30906C10.154 5.5974 9.93353 5.89962 9.6516 5.91699" stroke="#FF5566" strokeLinejoin="round"/>
+														<path d="M7.56791 5.87878C7.64607 5.68772 7.41997 5.30906 6.98172 4.93736C6.93148 4.89567 6.88123 4.85746 6.83099 4.81577C6.81145 4.7984 6.59372 4.61081 6.34249 4.68377C6.14431 4.74282 6.06336 4.91999 6.0494 4.9582L5.93774 5.30906C5.84563 5.5974 6.06615 5.89962 6.34808 5.91699" stroke="#FF5566" strokeLinejoin="round"/>
 													</svg>
 												) : null}
 											</div>
@@ -186,7 +200,7 @@ export default function PopularComics(){
 										<p className="w-[20px] flex-shrink-0 text-[16px] font-bold text-black text-center">{e.rank}</p>
 
 										<div className="mt-[10px] flex flex-col gap-[4px]">
-											<div className="rounded-tr-[5px] flex justify-start items-center">
+											<div className="rounded-tr-[5px] flex justify-start items-center gap-1">
 												{e.tag.map((tag)=>(
 													<span key={tag} className={tagStyle[tag]}>{tag.toUpperCase()}</span>
 												))}

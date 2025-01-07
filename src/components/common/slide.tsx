@@ -25,9 +25,9 @@ export default function WorkSlide({items, name, title, more, arrow}: WorkSlidePr
 
   return (
     <>
-			<section className="mt-[30px] px-[20px] xs:mt-[45px]">
-        <article className="max-w-[768px] mx-auto px-[20px]">
-					<div className="mb-5 flex justify-between items-center">
+			<section className="mt-[30px] xs:mt-[45px]">
+        <article className="max-w-[768px] mx-auto pl-[20px]">
+					<div className="mb-5 pr-[20px] flex justify-between items-center">
 						<h3 className="text-[20px] font-bold text-black leading-[29px]">{title}</h3>
 						<Link href={more} className="text-[12px] font-bold text-gray-400">More</Link>
 					</div>
@@ -48,7 +48,7 @@ export default function WorkSlide({items, name, title, more, arrow}: WorkSlidePr
         			    slidesPerGroup: 3,
         			  },
         			}}
-      		    className="mySwiper"
+      		    className="mySwiper pr-[20px]"
       		  >
       		    {slideitems.map((e, i) => (
       		      <SwiperSlide key={i} className="w-[120px]">

@@ -55,37 +55,45 @@ export default function FreeCoupon(){
 	const freeCouponText = useRef<HTMLElement[]>([]);
 
 	useEffect(()=>{
-		if (freeCouponTextWrap.current.length > 0) {
-			freeCouponText.current.forEach((_, i)=> {
-				const wrap = freeCouponTextWrap.current[i];
-				const text = freeCouponText.current[i];
-				let innerText = freeCouponText.current[i].innerText;
-				let resultText = innerText;
-	
-				if (wrap.clientHeight < text.clientHeight) {
-          while (wrap.clientHeight < text.clientHeight) {
+		const textTruncate = () => {
+			if (freeCouponTextWrap.current.length > 0) {
+        freeCouponText.current.forEach((_, i) => {
+          const wrap = freeCouponTextWrap.current[i];
+          const text = freeCouponText.current[i];
+          let innerText = freeCouponText.current[i].innerText;
+          let resultText = innerText;
+
+          if (wrap.clientHeight < text.clientHeight) {
+            while (wrap.clientHeight < text.clientHeight) {
+              resultText = resultText.slice(0, -1);
+              text.innerText = resultText;
+            }
+
+            while (resultText[resultText.length - 1] !== " ") {
+              resultText = resultText.slice(0, -1);
+            }
+
             resultText = resultText.slice(0, -1);
-            text.innerText = resultText;
+
+            text.innerText = resultText + "...";
           }
-
-					while (resultText[resultText.length - 1] !== " ") {
-						resultText = resultText.slice(0, -1);
-					}
-
-					resultText = resultText.slice(0, -1);
-
-					text.innerText = resultText + "...";
-        }
-			})
+        });
+      }
 		}
+
+		textTruncate();
+
+		window.addEventListener("resize", ()=>{
+			textTruncate();
+		});
 	}, []);
 	//useeffect를 사용하니 텍스트가 다보였다가 이후에 스크립트가 돌면서 바뀜 이전 app-banner쪽 깜빡임과 같은 원인으로 추정됨
 
 	return (
     <>
-      <section className="mt-[30px] px-[20px] xs:mt-[45px]">
-        <article className="max-w-[768px] mx-auto px-[20px]">
-					<div className="mb-5 flex justify-between items-center">
+      <section className="mt-[30px] xs:mt-[45px]">
+        <article className="max-w-[768px] mx-auto pl-[20px]">
+					<div className="mb-5 pr-[20px] flex justify-between items-center">
 						<h3 className="text-[20px] font-bold text-black leading-[29px]">🎁 Free Coupon</h3>
 						<Link href={`#`} className="text-[12px] font-bold text-gray-400">More</Link>
 					</div>
