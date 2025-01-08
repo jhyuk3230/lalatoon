@@ -12,7 +12,7 @@ export default function FooterLang() {
 	return (
     <>
       <div className={`relative z-[1] group ${langOpen ? "visible" : ""}`}>
-				<button className="w-[150px] h-[25px] px-[10px] rounded-[25px] bg-white text-[12px] font-normal text-black text-left leading-[25px] relative" onClick={langListOpen}>
+				<button className="xs:w-[150px] h-[25px] pl-[10px] pr-[25px] rounded-[25px] bg-white text-[12px] font-normal text-black text-left leading-[25px] relative" onClick={langListOpen}>
 					English
 					<svg xmlns="http://www.w3.org/2000/svg" width="6" height="5" viewBox="0 0 6 5" fill="none" className="absolute right-[10px] top-[50%] -translate-y-[50%]">
             <path d="M3 4.5L0 0.5L6 0.5L3 4.5Z" fill="black"></path>

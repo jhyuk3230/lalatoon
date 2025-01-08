@@ -9,7 +9,7 @@ const headerNavList: HeaderNavItem[] = [
 
 export default function HeaderNav(){
 	return(
-		<nav>
+		<nav className="hidden md:block">
 			<ul className="flex items-center gap-[30px]">
 				{headerNavList.map((e, i) => (
           <li key={i}>

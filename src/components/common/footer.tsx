@@ -6,11 +6,11 @@ export default function Footer() {
     <>
       <footer className="mt-[70px]">
         <article className="w-full max-w-[768px] mx-auto px-5 py-[10px] bg-[#EBEBEB] flex justify-between items-center">
-					<ul className="flex justify-start items-center gap-5">
+					<ul className="flex justify-start items-center gap-[10px] flex-wrap xs:gap-5">
 						<li><Link href={`#`} className="text-[12px] font-normal text-gray-700 leading-[18px]">Terms of Use</Link></li>
 						<li><Link href={`#`} className="text-[12px] font-normal text-gray-700 leading-[18px]">Privacy Policy</Link></li>
-						<li><Link href={`#`} className="text-[12px] font-normal text-gray-700 leading-[18px]">Notifications</Link></li>
-						<li><Link href={`#`} className="text-[12px] font-normal text-gray-700 leading-[18px]">FAQ</Link></li>
+						{/* <li><Link href={`#`} className="text-[12px] font-normal text-gray-700 leading-[18px]">Notifications</Link></li> */}
+						{/* <li><Link href={`#`} className="text-[12px] font-normal text-gray-700 leading-[18px]">FAQ</Link></li> */}
 					</ul>
 
 					<FooterLang />

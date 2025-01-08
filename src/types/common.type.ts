@@ -13,3 +13,9 @@ export type tagStyleType = {
   up?: string;
   end?: string;
 };
+
+export type UserData = {
+	id: string;
+	pw: string;
+	adult: boolean;
+};

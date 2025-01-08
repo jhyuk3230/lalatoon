@@ -9,7 +9,7 @@ export default function Home() {
       <Header />
       <GlobalNav />
       <main className="mt-[70px] overflow-x-hidden">
-        <Main />
+				<Main />
       </main>
 			<Footer />
     </>

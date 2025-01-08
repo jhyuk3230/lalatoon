@@ -1,12 +1,14 @@
 "use client"
-import { useAdultStore } from "@/store/common/common.store";
+import { useAdultCheckStore, useAdultStore, useLoginStore } from "@/store/common/common.store";
 
 export default function AdultBtn() {
 	const isAdult = useAdultStore((state) => state.isAdult);
 	const setIsAdult = useAdultStore((state) => state.setIsAdult);
+	const isLogin = useLoginStore((state) => state.isLogin);
+	const isAdultCheck = useAdultCheckStore((state) => state.isAdultCheck);
 
 	const adultOnclick = () => {
-		setIsAdult(!isAdult);
+		isLogin ? (isAdultCheck? setIsAdult(!isAdult) : alert("성인인증 후 이용해주세요")) : alert("로그인 후 이용해주세요");
 	}
 
 	return (
