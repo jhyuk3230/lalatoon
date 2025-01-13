@@ -1,74 +1,128 @@
+"use client";
 import { useAdultCheckStore, useLoginStore, useNavStore } from "@/store/common/common.store";
-import { UserData } from "@/types/common.type";
+import { getCookie, hasCookie, setCookie } from "cookies-next";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { UserList } from "../dummy/user-list";
+import { UserFetch } from "@/apis/user/user.fetch";
 
-const userData: UserData[] = [
-  { id: "test", pw: "testpw", adult: false },
-  { id: "test2", pw: "testpw2", adult: true },
-  { id: "test3", pw: "testpw3", adult: true },
-];
+const userData = UserList;
 
 export default function GlobalNavUser() {
+	// 로그인 상태
 	const isLogin = useLoginStore((state) => state.isLogin);
   const setIsLogin = useLoginStore((state) => state.setIsLogin);
+
+	// 네비게이션 상태
 	const setIsNavActive = useNavStore((state) => state.setIsNavActive);
+
+	// 성인 인증 상태
 	const setIsAdultCheck = useAdultCheckStore((state) => state.setIsAdultCheck);
+
+	// 팝업
 	const [userPopup, setUserPopup] = useState(false);
 	const [login, setLogin] = useState(false);
 	const [signup, setSignup] = useState(false);
-	const [id, setId] = useState("");
+
+	// 로그인
+	const [email, setEmail] = useState("");
 	const [pw, setPw] = useState("");
 	const [loginError, setLoginError] = useState(false);
 	const [remember, setRemember] = useState(true);
 
+	// 회원가입
 	const [emailCheck, setEmailCheck] = useState(false);
 	const [ageCheck, setAgeCheck] = useState(true);
 	const [signupId, setSignupId] = useState("");
 	const [signupPw, setSignupPw] = useState("");
+	const [signupIdCheck, setSignupIdCheck] = useState(false);
+  const [signupPwCheck, setSignupPwCheck] = useState(false);
+	const [idDuplicate, setIdDuplicate] = useState(false);
 
+	// 로그인 쿠키
+	const loginId = getCookie("loginId");
+	const isloginCookie = hasCookie("loginId");
+	
+	// 로그인 쿠키 체크
+	useEffect(() => {
+		if (isloginCookie) {
+			const cookieId = loginId?.toString() || "";
+			const user = userData.find((e) => e.id === cookieId);
+      setEmail(cookieId);
+			setIsLogin(true);
+			setIsAdultCheck(user?.adult || false);
+    }
+	}, [])
+
+	// 로그인 팝업
 	const loginPopup = () => {
 		setUserPopup(true);
 		setLogin(true);
 		setSignup(false);
 	}
+
+	// 회원가입 팝업
 	const signupPopup = () => {
 		setUserPopup(true);
 		setLogin(false);
 		setSignup(true);
 	}
+
+	// 로그인 버튼
 	const loginBtn = () => {
-		const user = userData.find((e) => e.id === id && e.pw === pw);
+		const user = userData.find((e) => e.id === email && e.pw === pw);
 		if (user) {
 			setIsLogin(true);
 			setUserPopup(false);
 			setIsNavActive(false);
 			setIsAdultCheck(user.adult);
+			setCookie("loginId", email);
 		}else{
 			setLoginError(true);
 		}
 	};
 
-	const signupBtn = () => {
-		if (signupId !== "") {
-			if (signupPw !== "") {
-				if (emailCheck !== false) {
-					if (ageCheck !== false) {
-						alert("회원가입이 완료되었습니다");
-						userData.push({id: signupId, pw: signupPw, adult: false});
-						setUserPopup(false);
-						setIsNavActive(false);
-					}else{
-						alert("만 14세 이상인지 확인해주세요");
-					}
-				}else{
-					alert("이용약관에 동의 해주세요");
-				}
-			}else{
-				alert("비밀번호를 입력해주세요");
+	// 회원가입 내용 체크
+	const signupBtn = async () => {
+		try {
+			if (signupId === "" || !signupId.includes("@") || !signupId.includes(".")) {
+				setSignupIdCheck(true);
+				setIdDuplicate(false);
+				setSignupPwCheck(false);
+				return;
+      }
+
+      if (signupPw === "" && signupPw.length < 6) {
+        setSignupIdCheck(false);
+				setIdDuplicate(false);
+        setSignupPwCheck(true);
+        return;
+      }
+
+      if (!emailCheck || !ageCheck) {
+        return;
+      }
+
+			const userIdCheck = userData.find((e) => e.id === signupId);
+      console.log(userIdCheck?.id);
+
+      if (userIdCheck?.id === signupId) {
+				setSignupIdCheck(false);
+				setIdDuplicate(true);
+				setSignupPwCheck(false);
+				return;
+      }
+
+			const newUser = { id: signupId, pw: signupPw, adult: false };
+
+			const result = await UserFetch(newUser);
+
+			if (result.success) {
+				setUserPopup(false);
+				setIsNavActive(false);
 			}
-		}else{
-			alert("아이디를 입력해주세요");
+		} catch (error) {
+			console.error(error);
 		}
 	}
 
@@ -89,9 +143,8 @@ export default function GlobalNavUser() {
 				{isLogin ? (
 					<>
 						<div>
-							<h3 className="text-[13px] font-medium text-white leading-[15px]">{id}</h3>
+							<h3 className="text-[13px] font-medium text-white leading-[15px]">{email}</h3>
 						</div>
-
 						<ul className="w-full px-[15px] flex flex-col gap-[5px]">
 							<li className="py-[5px] px-[20px] border border-gray-300 rounded-[50px] flex justify-between items-center">
 								<span className="text-[12px] font-normal text-white leading-[18px]">웹 코인</span>
@@ -125,7 +178,7 @@ export default function GlobalNavUser() {
 								{login ? (
 									<>
 										<div className="px-[10px] flex flex-col gap-[10px]">
-											<input type="text" placeholder="이메일" className="px-[10px] py-[5px] border-b border-b-black text-[13px] font-normal leading-[19px]" onChange={(e) => setId(e.target.value)}/>
+											<input type="text" placeholder="이메일" className="px-[10px] py-[5px] border-b border-b-black text-[13px] font-normal leading-[19px]" onChange={(e) => setEmail(e.target.value)}/>
 											<input type="password" placeholder="비밀번호" className="px-[10px] py-[5px] border-b border-b-black text-[13px] font-normal leading-[19px]" onChange={(e) => setPw(e.target.value)} />
 											{loginError ? (
 												<p className="text-[10px] font-normal text-red-500">존재하지 않는 이메일이거나 비밀번호가 틀립니다.</p>
@@ -158,6 +211,15 @@ export default function GlobalNavUser() {
 										<div className="px-[10px] pb-[20px] flex flex-col gap-[10px]">
 											<input type="text" placeholder="이메일" className="px-[10px] py-[5px] border-b border-b-black text-[13px] font-normal leading-[19px]" onChange={(e) => {const value = e.target.value.replace(/[^a-zA-Z0-9@._-]/g, ""); setSignupId(value); e.target.value = value;}} />
 											<input type="password" placeholder="비밀번호" className="px-[10px] py-[5px] border-b border-b-black text-[13px] font-normal leading-[19px]" onChange={(e) => {const value = e.target.value.replace(/[^a-zA-Z0-9!@#$%^&*()_+-=]/g, ""); setSignupPw(value); e.target.value = value;}} />
+											{signupIdCheck ? (
+												<p className="text-[10px] font-normal text-red-500">유효한 이메일 주소를 입력해주세요</p>
+											) : null}
+											{signupPwCheck ? (
+												<p className="text-[10px] font-normal text-red-500">비밀번호는 6자 이상이어야 합니다</p>
+											) : null}
+											{idDuplicate ? (
+												<p className="text-[10px] font-normal text-red-500">중복된 이메일입니다</p>
+											) : null}
 											<label htmlFor="email-check" className="flex items-start gap-[5px] text-[12px] font-normal text-black leading-[19px]">
 												<input type="checkbox" className="sound-only peer" id="email-check" checked={emailCheck} onChange={(e) => setEmailCheck(e.target.checked)} />
 												<div className="w-[18px] h-[18px] rounded-[5px] inline-block bg-gray-400 relative flex-shrink-0 peer-checked:bg-green-500"><span className="w-[10px] h-[6px] border-l-2 border-l-white border-b-2 border-b-white inline-block absolute left-[50%] top-[40%] -translate-x-1/2 -translate-y-1/2 -rotate-45"></span></div>
@@ -172,7 +234,7 @@ export default function GlobalNavUser() {
 													<b className="text-red-500">(필수)</b> <b>만 14세 이상입니다</b>
 												</div>
 											</label>
-											<button className="max-w-[170px] w-full min-h-[40px] mx-auto px-4 py-1 rounded-[50px] block bg-[#f56] text-[13px] font-bold text-white leading-[17px]" onClick={signupBtn}>회원가입</button>
+											<button className={`max-w-[170px] w-full min-h-[40px] mx-auto px-4 py-1 rounded-[50px] block bg-[#f56] text-[13px] font-bold text-white leading-[17px] ${!emailCheck || !ageCheck ? "opacity-50" : ""}`} onClick={signupBtn} disabled={!emailCheck || !ageCheck}>회원가입</button>
 										</div>
 									</>
 								) : null}

@@ -1,5 +1,8 @@
 "use client"
 import { useAdultCheckStore, useAdultStore, useLoginStore } from "@/store/common/common.store";
+import { useEffect } from "react";
+import { getCookie, setCookie } from "cookies-next";
+import { redirect } from "next/navigation";
 
 export default function AdultBtn() {
 	const isAdult = useAdultStore((state) => state.isAdult);
@@ -8,8 +11,28 @@ export default function AdultBtn() {
 	const isAdultCheck = useAdultCheckStore((state) => state.isAdultCheck);
 
 	const adultOnclick = () => {
-		isLogin ? (isAdultCheck? setIsAdult(!isAdult) : alert("성인인증 후 이용해주세요")) : alert("로그인 후 이용해주세요");
+		if (isLogin) {
+			if (isAdultCheck) {
+				setIsAdult(!isAdult);
+				setCookie("adult", !isAdult);
+      }else{
+				alert("성인인증 후 이용해주세요");
+				redirect("/adult");
+			}
+    }else{
+			alert("로그인 후 이용해주세요");
+		}
+
+		// isLogin ? ( isAdultCheck ? setIsAdult(!isAdult) : alert("성인인증 후 이용해주세요")) : alert("로그인 후 이용해주세요" );
 	}
+
+	useEffect(() => {
+		const isAdultCookie = !!getCookie("adult");
+		// const isAdultCookie = Boolean(getCookie("adult")); !!와 같은 기능
+		if (isAdultCookie) {
+			setIsAdult(isAdultCookie);
+		}
+	}, [])
 
 	return (
 		<>

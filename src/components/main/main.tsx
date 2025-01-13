@@ -91,17 +91,19 @@ export default async function Main(){
 
   return (
     <>
-      <MainBanner />
-      <QuickMenu />
-      <RecentlyRead />
-      <AppBanner hasCookie={(await cookieStore).has("appRefusal")} />
-      <NewComics />
-      <Favorites />
-      <FreeCoupon />
-      <PopularComics />
-      <WaitFree />
-      <WorkSlide items={newcomicsList} name="work1" title="Recommended Comics" more="#" arrow={false} />
-      <WorkSlide items={newcomicsList} name="work2" title="Today's Comics" more="#" arrow={false} />
+			<main className="mt-[70px] pb-[70px] overflow-x-hidden">
+				<MainBanner />
+      	<QuickMenu />
+      	<RecentlyRead />
+      	<AppBanner hasCookie={(await cookieStore).has("appRefusal")} />
+      	<NewComics />
+      	<Favorites />
+      	<FreeCoupon />
+      	<PopularComics />
+      	<WaitFree />
+      	<WorkSlide items={newcomicsList} name="work1" title="Recommended Comics" more="#" arrow={false} />
+      	<WorkSlide items={newcomicsList} name="work2" title="Today's Comics" more="#" arrow={false} />
+			</main>
     </>
   );
 }

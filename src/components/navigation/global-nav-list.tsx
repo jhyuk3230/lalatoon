@@ -2,6 +2,7 @@ import Link from "next/link";
 import { MyNavItem } from "@/types/common.type";
 import { useLoginStore, useNavStore } from "@/store/common/common.store";
 import GlobalNavUser from "./global-nav-user";
+import GlobalNavLogout from "./global-nav-logout";
 
 const myNavList: MyNavItem[] = [
   { text: "내 서재", link: "#" },
@@ -13,7 +14,7 @@ const myNavList: MyNavItem[] = [
 export default function GlobalNavList() {
 	const isNavActive = useNavStore((state) => state.isNavActive);
 	const isLogin = useLoginStore((state) => state.isLogin);
-	const setIsLogin = useLoginStore((state) => state.setIsLogin);
+	// const setIsLogin = useLoginStore((state) => state.setIsLogin);
 
 	return (
 		<>
@@ -26,9 +27,7 @@ export default function GlobalNavList() {
 							<li key={i} className="py-[10px] border-b border-b-gray-100 text-center"><Link href={e.link}>{e.text}</Link></li>
 						))}
 						{isLogin ? (
-							<li className="py-[10px] border-b border-b-gray-100 text-center">
-								<button onClick={() => setIsLogin(false)}>로그아웃</button>
-							</li>
+							<GlobalNavLogout />
 						) : null}
 					</ul>
 				</div>
