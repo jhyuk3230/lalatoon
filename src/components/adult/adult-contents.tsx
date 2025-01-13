@@ -1,6 +1,6 @@
 import DefaultLayout from "@/assets/common/default-layout";
 import Link from "next/link";
-import AdultBtn from "./adult-btn";
+import AdultCertificationBtn from "./adult-certification-btn";
 import { cookies } from "next/headers";
 
 export default async function AdultContents() {
@@ -19,7 +19,7 @@ export default async function AdultContents() {
 								정보통신망 이용촉진 및 정보보호 등에 관한 법률 및 청소년 보호법의 규정에 의하여 <br />
 								19세 미만의 청소년은 이용할 수 없습니다.
 							</p>
-							<AdultBtn loginIdCookie={loginId} />
+							<AdultCertificationBtn loginIdCookie={loginId} />
 							<Link href={`/`} className="mt-3 text-[12px] font-normal text-black underline">19세 미만 나가기</Link>
 							<div className="mt-10 p-5 border border-gray-300">
 								<p className="text-[14px] font-normal text-gray-400 leading-[20px]">관련 법령에 따라 성인인증은 인증일로부터 1년간 유효하며, 기간이 만료되면 재인증이 필요합니다.<br />해외 거주로 인증 수단을 통해 성인인증이 어려운 경우 1:1문의하기를 통해 문의 바랍니다.</p>

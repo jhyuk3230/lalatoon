@@ -6,6 +6,10 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 import { tagStyleType } from "@/types/common.type";
 import { recentlyReadItem } from "@/types/recently.type";
+import { getCookie } from "cookies-next";
+import { UserList } from "@/components/dummy/user-list";
+
+const userData = UserList;
 
 export default function RecentlyRead(){
 	const recentlyReadList: recentlyReadItem[] = [
@@ -14,6 +18,7 @@ export default function RecentlyRead(){
       img: "https://thumb-g2.lalatoon.com/upload/thumbnail/20180720111425/2020_08_18_15977285189297.jpg",
       tag: ["new", "up"],
       title: "title",
+			adult: false,
     },
     {
       link: "#2",
@@ -34,42 +39,49 @@ export default function RecentlyRead(){
     //   img: "https://thumb-g2.lalatoon.com/upload/thumbnail/20180720111425/2020_08_18_15977285189297.jpg",
     //   tag: ["new", "up", "end"],
     //   title: "title title title title title",
+    //   adult: false,
     // },
     // {
     //   link: "#5",
     //   img: "https://thumb-g2.lalatoon.com/upload/thumbnail/20180720111425/2020_08_18_15977285189297.jpg",
     //   tag: ["new", "up", "end"],
     //   title: "title title title title title",
+    //   adult: false,
     // },
     // {
     //   link: "#6",
     //   img: "https://thumb-g2.lalatoon.com/upload/thumbnail/20180720111425/2020_08_18_15977285189297.jpg",
     //   tag: ["new", "up", "end"],
     //   title: "title title title title title",
+    //   adult: false,
     // },
     // {
     //   link: "#7",
     //   img: "https://thumb-g2.lalatoon.com/upload/thumbnail/20180720111425/2020_08_18_15977285189297.jpg",
     //   tag: ["new", "up", "end"],
     //   title: "title title title title title",
+    //   adult: false,
     // },
     // {
     //   link: "#8",
     //   img: "https://thumb-g2.lalatoon.com/upload/thumbnail/20180720111425/2020_08_18_15977285189297.jpg",
     //   tag: ["new", "up", "end"],
     //   title: "title title title title title",
+    //   adult: false,
     // },
     // {
     //   link: "#9",
     //   img: "https://thumb-g2.lalatoon.com/upload/thumbnail/20180720111425/2020_08_18_15977285189297.jpg",
     //   tag: ["new", "up", "end"],
     //   title: "title title title title title",
+    //   adult: false,
     // },
     // {
     //   link: "#10",
     //   img: "https://thumb-g2.lalatoon.com/upload/thumbnail/20180720111425/2020_08_18_15977285189297.jpg",
     //   tag: ["new", "up", "end"],
     //   title: "title title title title title",
+    //   adult: false,
     // },
   ];
 

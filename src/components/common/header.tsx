@@ -1,6 +1,7 @@
 import HeaderNav from "@/components/navigation/header-nav";
 import NavBtn from "../navigation/nav-button";
 import AdultBtn from "./adult-btn";
+import Link from "next/link";
 
 
 export default function Header() {
@@ -9,7 +10,7 @@ export default function Header() {
 			<header className="w-full bg-white fixed left-0 top-0 z-[5]">
 				<section className="max-w-[768px] h-[70px] mx-auto px-[20px] flex justify-between items-center">
 					<article className="flex gap-10 items-center">
-						<div className="logo">
+						<Link href="/" className="logo">
 							<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
 								<g clipPath="url(#clip0_1842_24554)">
 									<path d="M0 0H30V30H10.2632C4.59868 30 0 25.4013 0 19.7368V0Z" fill="#FF5566"></path>
@@ -22,7 +23,7 @@ export default function Header() {
 									</clipPath>
 								</defs>
 							</svg>
-						</div>
+						</Link>
 						<HeaderNav />
 					</article>
 

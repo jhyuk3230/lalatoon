@@ -4,7 +4,7 @@ export const UserList: UserData[] = [
   {
     "id": "test",
     "pw": "testpw",
-    "adult": false
+    "adult": true
   },
   {
     "id": "test2",

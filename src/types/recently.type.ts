@@ -6,5 +6,5 @@ export type recentlyReadItem = {
 	// 수정은 했으나 이해는 안됨됨
   tag: Array<keyof tagStyleType>;
   title: string;
-  adult?: boolean;
+  adult: boolean;
 };

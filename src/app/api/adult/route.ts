@@ -3,14 +3,15 @@ import path from "path";
 import { UserData } from "@/types/common.type";
 import { NextRequest, NextResponse } from "next/server";
 
-export async function POST(request: NextRequest) {
+export async function PUT(request: NextRequest) {
 	try{
 		// 입력내용
-  	const newUser = await request.json();
-		// console.log("newUser",newUser);
-		
+  	const { userId } = await request.json();
+		// console.log("userId",userId);
+
 		// 수정해야할 데이터 파일 경로
 		const filePath = path.join(process.cwd(), 'src/components/dummy/user-list.ts');
+		// console.log("filePath",filePath);
 		
 		// 수정해야할 데이터 파일 내용 가져오기
 		let fileContent = await fs.readFile(filePath, 'utf8');
@@ -21,8 +22,16 @@ export async function POST(request: NextRequest) {
 		
 		if (userDataMatch) {
 			const userData: UserData[] = JSON.parse(userDataMatch[1]);
+			console.log("userData",userData);
 
-			userData.push(newUser);
+			const userIndex = userData.findIndex(user => user.id === userId);
+			// console.log("userIndex",userIndex);
+
+			if (userIndex === -1) {
+				return NextResponse.json({success: false, error: "사용자를 찾을 수 없습니다"});
+			}
+
+			userData[userIndex].adult = true;
 
 			fileContent = fileContent.replace(/export const UserList: UserData\[\] = [\s\S]*?;/,
 				`export const UserList: UserData[] = ${JSON.stringify(userData, null, 2)};`
@@ -30,10 +39,10 @@ export async function POST(request: NextRequest) {
 
 			await fs.writeFile(filePath, fileContent, 'utf8');
 
-			return NextResponse.json({success: true, message: "회원가입이 완료되었습니다."});
+			return NextResponse.json({success: true, message: "성인 인증이 완료되었습니다"});
 		}
 
-		return NextResponse.json({success: false, error: "회원가입 실패"});
+		return NextResponse.json({success: false, error: "데이터를 찾을 수 없습니다"});
 	} catch(error) {
 		console.error(error);
 	}

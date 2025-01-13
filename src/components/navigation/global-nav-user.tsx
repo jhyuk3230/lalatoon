@@ -104,7 +104,6 @@ export default function GlobalNavUser() {
       }
 
 			const userIdCheck = userData.find((e) => e.id === signupId);
-      console.log(userIdCheck?.id);
 
       if (userIdCheck?.id === signupId) {
 				setSignupIdCheck(false);

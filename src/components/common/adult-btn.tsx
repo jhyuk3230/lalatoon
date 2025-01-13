@@ -9,7 +9,7 @@ export default function AdultBtn() {
 	const setIsAdult = useAdultStore((state) => state.setIsAdult);
 	const isLogin = useLoginStore((state) => state.isLogin);
 	const isAdultCheck = useAdultCheckStore((state) => state.isAdultCheck);
-
+	
 	const adultOnclick = () => {
 		if (isLogin) {
 			if (isAdultCheck) {
@@ -22,13 +22,13 @@ export default function AdultBtn() {
     }else{
 			alert("로그인 후 이용해주세요");
 		}
-
+		
 		// isLogin ? ( isAdultCheck ? setIsAdult(!isAdult) : alert("성인인증 후 이용해주세요")) : alert("로그인 후 이용해주세요" );
 	}
-
+	
 	useEffect(() => {
-		const isAdultCookie = !!getCookie("adult");
-		// const isAdultCookie = Boolean(getCookie("adult")); !!와 같은 기능
+		const adultCookie = getCookie("adult");
+		const isAdultCookie = adultCookie === "true";
 		if (isAdultCookie) {
 			setIsAdult(isAdultCookie);
 		}

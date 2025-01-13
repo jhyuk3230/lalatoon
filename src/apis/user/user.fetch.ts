@@ -1,5 +1,4 @@
 import { UserData } from "@/types/common.type";
-import { NextRequest } from "next/server";
 
 export async function UserFetch(userData: UserData) {
   try {
@@ -12,9 +11,8 @@ export async function UserFetch(userData: UserData) {
 		})
 
 		const result = await response.json();
-		console.log(result);
 		return result;
-		
+
   } catch (error) {
     console.error(error);
   }
