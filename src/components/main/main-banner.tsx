@@ -1,11 +1,105 @@
 "use client"
 import { Swiper, SwiperSlide } from "swiper/react";
-
 import { Navigation, Pagination } from "swiper/modules";
 import Link from "next/link";
+import { MainBannerType } from "@/types/mainbanner.type";
+import Image from "next/image";
 
 export default function MainBanner() {
-	const slideArray = [1, 2, 3, 4, 5, 6];
+	const slideArray: MainBannerType[] = [
+		{
+			link: "#1",
+			img: "https://dsn-global2.lalatoon.com/assets/web/img/global_f/bn_01_img.png",
+			logo: "https://dsn-global2.lalatoon.com/assets/web/img/global_f/bn_01_logo.png",
+			title: "title title title title title title title title",
+			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+			adult: false,
+			event1: true,
+			event2: true,
+			fixedTag1: true,
+			fixedTag2: true,
+			tag: ["new", "up", "end"],
+		},
+		{
+			link: "#2",
+			img: "https://dsn-global2.lalatoon.com/assets/web/img/global_f/bn_02_img.png",
+			logo: "https://dsn-global2.lalatoon.com/assets/web/img/global_f/bn_02_logo.png",
+			title: "title title title title title title title title",
+			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+			adult: true,
+			event1: true,
+			event2: true,
+			fixedTag1: true,
+			fixedTag2: true,
+			tag: ["new", "up", "end"],
+		},
+		{
+			link: "#3",
+			img: "https://dsn-global2.lalatoon.com/assets/web/img/global_f/bn_03_img.png",
+			logo: "https://dsn-global2.lalatoon.com/assets/web/img/global_f/bn_03_logo.png",
+			title: "title title title title title title title title",
+			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+			adult: false,
+			event1: true,
+			event2: true,
+			fixedTag1: true,
+			fixedTag2: true,
+			tag: ["new", "up", "end"],
+		},
+		{
+			link: "#4",
+			img: "https://dsn-global2.lalatoon.com/assets/web/img/global_f/bn_04_img.png",
+			logo: "https://dsn-global2.lalatoon.com/assets/web/img/global_f/bn_04_logo.png",
+			title: "title title title title title title title title",
+			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+			adult: true,
+			event1: true,
+			event2: true,
+			fixedTag1: true,
+			fixedTag2: true,
+			tag: ["new", "up", "end"],
+		},
+		{
+			link: "#5",
+			img: "https://dsn-global2.lalatoon.com/assets/web/img/global_f/bn_05_img.png",
+			logo: "https://dsn-global2.lalatoon.com/assets/web/img/global_f/bn_05_logo.png",
+			title: "title title title title title title title title",
+			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+			adult: true,
+			event1: true,
+			event2: true,
+			fixedTag1: true,
+			fixedTag2: true,
+			tag: ["new", "up", "end"],
+		},
+		{
+			link: "#6",
+			img: "https://dsn-global2.lalatoon.com/assets/web/img/global_f/bn_06_img.png",
+			logo: "https://dsn-global2.lalatoon.com/assets/web/img/global_f/bn_06_logo.png",
+			title: "title title title title title title title title",
+			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+			adult: false,
+			event1: true,
+			event2: true,
+			fixedTag1: true,
+			fixedTag2: true,
+			tag: ["new", "up", "end"],
+		},
+		{
+			link: "#7",
+			img: "https://dsn-global2.lalatoon.com/assets/web/img/global_f/bn_07_img.png",
+			logo: "https://dsn-global2.lalatoon.com/assets/web/img/global_f/bn_07_logo.png",
+			title: "title title title title title title title title",
+			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+			adult: false,
+			event1: true,
+			event2: true,
+			fixedTag1: true,
+			fixedTag2: true,
+			tag: ["new", "up", "end"],
+		},
+	];
+
   return (
     <>
       <section className="max-w-[768px] mx-auto xxs:pt-[10px]">
@@ -30,11 +124,13 @@ export default function MainBanner() {
           	  className="mySwiper"
           	>
           	  {slideArray.map((e, i) => (
-          	    <SwiperSlide className="w-[360px] !h-[387px] overflow-hidden md:w-[400px] md:!h-[430px] xxs:rounded-[10px]" key={i}>
-          	      <Link href={`#`} className="h-full block bg-black">
-          	        {e}
-          	      </Link>
-          	    </SwiperSlide>
+								i < 4 ? (
+									<SwiperSlide className="w-[360px] !h-[387px] overflow-hidden md:w-[400px] md:!h-[430px] xxs:rounded-[10px]" key={i}>
+          	    	  <Link href={`#`} className="h-full block bg-black">
+          	    	    <Image src={e.img} alt={e.title} width={720} height={774} />
+          	    	  </Link>
+          	    	</SwiperSlide>
+								) : null
           	  ))}
           	</Swiper>
 						{/* <button className="slide__prev w-[52px] h-[52px] rounded-[52px] hidden justify-center items-center bg-white/80 absolute top-[50%] -left-[26px] -translate-y-[50%] z-[1] shadow-[0_3px_6px_0px_rgba(0,0,0,.16)] hover:bg-white focus:bg-white lg:flex">

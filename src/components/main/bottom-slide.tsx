@@ -85,6 +85,25 @@ export default function BottomSlide(){
 				adult: false,
 				event2: true,
 			},
+			{
+				link: "#9",
+				img: "https://thumb-g2.lalatoon.com/upload/thumbnail/20180720111425/2020_08_18_15977285189297.jpg",
+				tag: ["new", "up", "end"],
+				title: "title title title title title",
+				discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+				adult: false,
+				event2: true,
+			},
+			{
+			link: "#10",
+			img: "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+				tag: ["new", "up"],
+				title: "title",
+				discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+				adult: false,
+				event1: true,
+				event2: true,
+			},
 		];
 
 	const tagStyle: tagStyleType = {

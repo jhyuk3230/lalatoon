@@ -3,7 +3,7 @@ import Link from "next/link";
 import { tagStyleType } from "@/types/common.type";
 import { FavoritesItem } from "@/types/favorites.type ";
 import FavoritesSlide from "./favorites-slide";
-import { UserList } from "../dummy/user-list";
+import { UserList } from "@/components/dummy/user-list";
 import FavoritesMoreLink from "./favorites-more-link";
 import { useAdultStore } from "@/store/common/common.store";
 import { getCookie } from "cookies-next";

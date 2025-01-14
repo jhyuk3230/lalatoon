@@ -1,13 +1,19 @@
 "use client"
-
 import Link from "next/link";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 import { FreeCouponItem } from "@/types/free-coupon.type";
 import { useEffect, useRef } from "react";
+import { UserList } from "@/components/dummy/user-list";
+import { getCookie } from "cookies-next";
+import { useAdultStore } from "@/store/common/common.store";
+
+const userData = UserList;
 
 export default function FreeCoupon(){
+	const isAdult = useAdultStore((state) => state.isAdult);
+
 	const freeCouponList: FreeCouponItem[] = [
     {
       link: "#1",
@@ -19,11 +25,13 @@ export default function FreeCoupon(){
       link: "#2",
       img: "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
       title: "title title title title title title title title title title title title title title",
+			adult: false,
     },
     {
       link: "#3",
       img: "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
       title: "title title title title title title title",
+			adult: false,
     },
     {
       link: "#4",
@@ -35,7 +43,7 @@ export default function FreeCoupon(){
       link: "#5",
       img: "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
       title: "title title title title title title title title",
-      adult: true,
+      adult: false,
     },
     {
       link: "#6",
@@ -51,42 +59,58 @@ export default function FreeCoupon(){
     },
   ];
 
+	const userIdCookie = getCookie("loginId");
+	const adultCookie = getCookie("adult");
+	const user = userData.find((e) => e.id == userIdCookie);
+
+	const resultList = freeCouponList.filter((item) => {
+		if (isAdult && adultCookie == "true" && user?.adult == true) {
+      return true;
+    } else {
+      return !item.adult;
+    }
+	})
+
 	const freeCouponTextWrap = useRef<HTMLHeadingElement[]>([]);
 	const freeCouponText = useRef<HTMLElement[]>([]);
 
-	useEffect(()=>{
-		const textTruncate = () => {
-			if (freeCouponTextWrap.current.length > 0) {
-        freeCouponText.current.forEach((_, i) => {
-          const wrap = freeCouponTextWrap.current[i];
-          const text = freeCouponText.current[i];
-          let innerText = freeCouponText.current[i].innerText;
-          let resultText = innerText;
+	const textTruncate = () => {
+    if (freeCouponTextWrap.current.length > 0) {
+      freeCouponText.current.forEach((_, i) => {
+        const wrap = freeCouponTextWrap.current[i];
+        const text = freeCouponText.current[i];
+        let innerText = freeCouponText.current[i].innerText;
+        let resultText = innerText;
 
-          if (wrap.clientHeight < text.clientHeight) {
-            while (wrap.clientHeight < text.clientHeight) {
-              resultText = resultText.slice(0, -1);
-              text.innerText = resultText;
-            }
-
-            while (resultText[resultText.length - 1] !== " ") {
-              resultText = resultText.slice(0, -1);
-            }
-
+        if (wrap.clientHeight < text.clientHeight) {
+          while (wrap.clientHeight < text.clientHeight) {
             resultText = resultText.slice(0, -1);
-
-            text.innerText = resultText + "...";
+            text.innerText = resultText;
           }
-        });
-      }
-		}
 
+          while (resultText[resultText.length - 1] !== " ") {
+            resultText = resultText.slice(0, -1);
+          }
+
+          resultText = resultText.slice(0, -1);
+
+          text.innerText = resultText + "...";
+        }
+      });
+    }
+  };
+
+	useEffect(()=>{
 		textTruncate();
 
 		window.addEventListener("resize", ()=>{
 			textTruncate();
 		});
 	}, []);
+
+	useEffect(() => {
+    textTruncate();
+  }, [isAdult]);
 	//useeffect를 사용하니 텍스트가 다보였다가 이후에 스크립트가 돌면서 바뀜 이전 app-banner쪽 깜빡임과 같은 원인으로 추정됨
 
 	return (
@@ -109,7 +133,7 @@ export default function FreeCoupon(){
           	  modules={[Pagination, Navigation]}
           	  className="mySwiper"
 						>
-							{freeCouponList.map((e, i)=>(
+							{resultList.map((e, i)=>(
 								<SwiperSlide key={i} className="w-[320px] mt-4 rounded-[10px] bg-gray-50 md:w-[358px]">
 									<Link href={e.link} className="block relative">
 										<div className="w-6 h-6 rounded-bt-[10px] rounded-bl-[10px] flex justify-center items-center bg-red-500 absolute top-0 right-0">
@@ -134,7 +158,6 @@ export default function FreeCoupon(){
 												</p>
 											) : null}
 										</div>
-
 
 										<div className="h-[100px] pl-[134px] pr-8 flex flex-col items-end justify-center">
 											<h4 className="max-h-[36px] text-right" ref={(element) => {

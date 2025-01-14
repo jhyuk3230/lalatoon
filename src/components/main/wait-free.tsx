@@ -6,8 +6,15 @@ import { tagStyleType } from "@/types/common.type";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 import { waitFreeItem } from "@/types/wait-free.type";
+import { UserList } from "@/components/dummy/user-list";
+import { useAdultStore } from "@/store/common/common.store";
+import { getCookie } from "cookies-next";
+
+const userData = UserList;
 
 export default function WaitFree(){
+	const isAdult = useAdultStore((state) => state.isAdult);
+	
 	const waitFreeList: waitFreeItem[] = [
     {
 			link: "#1",
@@ -15,6 +22,7 @@ export default function WaitFree(){
       tag: ["new", "up"],
       title: "title",
 			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+			adult: false,
 			event1: true,
 			event2: true,
     },
@@ -42,6 +50,7 @@ export default function WaitFree(){
       tag: ["new", "up", "end"],
       title: "title title title title title title title",
 			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+			adult: false,
 			event1: true,
 			event2: true,
     },
@@ -60,6 +69,34 @@ export default function WaitFree(){
       tag: ["new", "up", "end"],
       title: "title title title title title",
 			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+			adult: false,
+			event2: true,
+    },
+		{
+			link: "#7",
+      img: "https://thumb-g2.lalatoon.com/upload/thumbnail/20180720111425/2020_08_18_15977285189297.jpg",
+      tag: ["new", "up", "end"],
+      title: "title title title title title",
+			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+			adult: false,
+			event2: true,
+    },
+		{
+			link: "#8",
+      img: "https://thumb-g2.lalatoon.com/upload/thumbnail/20180720111425/2020_08_18_15977285189297.jpg",
+      tag: ["new", "up", "end"],
+      title: "title title title title title",
+			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+			adult: true,
+			event2: true,
+    },
+		{
+			link: "#9",
+      img: "https://thumb-g2.lalatoon.com/upload/thumbnail/20180720111425/2020_08_18_15977285189297.jpg",
+      tag: ["new", "up", "end"],
+      title: "title title title title title",
+			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+			adult: false,
 			event2: true,
     },
   ];
@@ -69,6 +106,17 @@ export default function WaitFree(){
     up: "px-1 inline-block bg-[#FFEBEC] text-[8px] font-bold text-red-500 leading-[14px]",
     end: "px-1 inline-block bg-[#999] text-[8px] font-bold text-white leading-[14px]",
   };
+
+	const userIdCookie = getCookie("loginId");
+	const adultCookie = getCookie("adult");
+	const user = userData.find((e) => e.id == userIdCookie);
+	const resultList = waitFreeList.filter((item) => {
+		if (isAdult && adultCookie == "true" && user?.adult == true) {
+			return true;
+    } else{
+			return !item.adult;
+		}
+	})
 
 	return (
     <>
@@ -89,7 +137,7 @@ export default function WaitFree(){
           	  modules={[Pagination, Navigation]}
           	  className="mySwiper pr-[20px]"
 						>
-							{waitFreeList.map((e, i)=>(
+							{resultList.map((e, i)=>(
 								<SwiperSlide key={i} className="w-[210px]">
 									<Link href={e.link} className="block">
 										<div className="h-[300px] rounded-[10px] relative overflow-hidden">

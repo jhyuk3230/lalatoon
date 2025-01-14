@@ -1,13 +1,19 @@
 "use client"
-
 import { newComicsItem } from "@/types/new-comics.type ";
 import Link from "next/link";
 import Image from "next/image";
 import { tagStyleType } from "@/types/common.type";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
+import { UserList } from "@/components/dummy/user-list";
+import { useAdultStore } from "@/store/common/common.store";
+import { getCookie } from "cookies-next";
+
+const userData = UserList;
 
 export default function NewComics(){
+	const isAdult = useAdultStore((state) => state.isAdult);
+
 	const newcomicsList: newComicsItem[] = [
     {
 			link: "#1",
@@ -15,6 +21,7 @@ export default function NewComics(){
       tag: ["new", "up"],
       title: "title",
 			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+			adult: false,
 			event1: true,
 			event2: true,
     },
@@ -42,6 +49,7 @@ export default function NewComics(){
       tag: ["new", "up", "end"],
       title: "title title title title title title title",
 			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+			adult: false,
 			event1: true,
 			event2: true,
     },
@@ -60,6 +68,26 @@ export default function NewComics(){
       tag: ["new", "up", "end"],
       title: "title title title title title",
 			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+			adult: false,
+			event2: true,
+    },
+		{
+			link: "#7",
+      img: "https://thumb-g2.lalatoon.com/upload/thumbnail/20180720111425/2020_08_18_15977285189297.jpg",
+      tag: ["new", "up", "end"],
+      title: "title title title title title",
+			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+			adult: false,
+			event2: true,
+    },
+		{
+			link: "#1",
+      img: "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+      tag: ["new", "up"],
+      title: "title",
+			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+			adult: true,
+			event1: true,
 			event2: true,
     },
   ];
@@ -69,6 +97,19 @@ export default function NewComics(){
     up: "px-1 inline-block bg-[#FFEBEC] text-[8px] font-bold text-red-500 leading-[14px]",
     end: "px-1 inline-block bg-[#999] text-[8px] font-bold text-white leading-[14px]",
   };
+
+	const userIdCookie = getCookie("loginId");
+	const adultCookie = getCookie("adult");
+	const user = userData.find((e) => e.id == userIdCookie);
+	const resultList = newcomicsList.filter((item) => {
+		if (isAdult && adultCookie == "true" && user?.adult == true) {
+			return true;
+		} else{
+			return !item.adult;
+		}
+	});
+
+	isAdult
 
 	return (
     <>
@@ -89,7 +130,7 @@ export default function NewComics(){
           	  modules={[Pagination, Navigation]}
           	  className="mySwiper pr-[20px]"
 						>
-							{newcomicsList.map((e, i)=>(
+							{resultList.map((e, i)=>(
 								<SwiperSlide key={i} className="w-[210px]">
 									<Link href={e.link} className="block">
 										<div className="pb-[100%] rounded-[10px] relative overflow-hidden">

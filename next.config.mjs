@@ -1,16 +1,20 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-		remotePatterns: [
-			{
+    remotePatterns: [
+      {
         protocol: "https",
         hostname: "thumb-g1.lalatoon.com",
       },
-			{
+      {
         protocol: "https",
         hostname: "thumb-g2.lalatoon.com",
       },
-		]
+      {
+        protocol: "https",
+        hostname: "dsn-global2.lalatoon.com",
+      },
+    ],
   },
 };
 
