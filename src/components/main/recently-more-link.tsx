@@ -4,21 +4,14 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { tagStyleType } from "@/types/common.type";
 import { recentlyReadItem } from "@/types/recently.type";
-import { getCookie } from "cookies-next";
 import { UserList } from "@/components/dummy/user-list";
 
 const userData = UserList;
 
-export default function RecentlyReadMoreLink({recentlyReadList}: {recentlyReadList: recentlyReadItem[]}){
-	const tagStyle: tagStyleType = {
-    new: "px-1 rounded-[14px] inline-block bg-[#FFC506] text-[8px] font-bold text-black leading-[14px]",
-    up: "px-1 rounded-[14px] inline-block bg-[#FFEBEC] text-[8px] font-bold text-red-500 leading-[14px]",
-    end: "px-1 rounded-[14px] inline-block bg-[#999999] text-[8px] font-bold text-white leading-[14px]",
-  };
+export default function RecentlyReadMoreLink({recentlyReadList, tagStyles}: {recentlyReadList: recentlyReadItem[], tagStyles: tagStyleType}){
+	const tagStyle: tagStyleType = tagStyles;
 
 	const resultList = recentlyReadList;
-
-	console.log(resultList);
 
 	const recentlyReadWrap = useRef<HTMLDivElement>(null);
 	const recentlyReadUl = useRef<HTMLUListElement>(null);

@@ -114,10 +114,10 @@ export default async function RecentlyRead(){
 					</div>
 					{resultList.length > 5 ? (
 						<div className="recently relative">
-							<RecentlyReadSlide recentlyReadList={resultList} />
+							<RecentlyReadSlide recentlyReadList={resultList} tagStyles={tagStyle} />
 						</div>
 					) : (
-						<RecentlyReadMoreLink recentlyReadList={resultList} />
+						<RecentlyReadMoreLink recentlyReadList={resultList} tagStyles={tagStyle} />
 					)}
         </article>
       </section>

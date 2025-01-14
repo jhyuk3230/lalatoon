@@ -6,13 +6,8 @@ import { Navigation, Pagination } from "swiper/modules";
 import { tagStyleType } from "@/types/common.type";
 import { recentlyReadItem } from "@/types/recently.type";
 
-export default function RecentlyReadSlide({recentlyReadList}: {recentlyReadList: recentlyReadItem[]}) {
-
-  const tagStyle: tagStyleType = {
-    new: "px-1 rounded-[14px] inline-block bg-[#FFC506] text-[8px] font-bold text-black leading-[14px]",
-    up: "px-1 rounded-[14px] inline-block bg-[#FFEBEC] text-[8px] font-bold text-red-500 leading-[14px]",
-    end: "px-1 rounded-[14px] inline-block bg-[#999999] text-[8px] font-bold text-white leading-[14px]",
-  };
+export default function RecentlyReadSlide({recentlyReadList, tagStyles}: {recentlyReadList: recentlyReadItem[], tagStyles: tagStyleType}) {
+  const tagStyle: tagStyleType = tagStyles;
 
   const resultList = recentlyReadList;
 

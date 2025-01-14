@@ -6,7 +6,7 @@ export type FavoritesItem = {
   tag: Array<keyof tagStyleType>;
   // ㄴ수정은 했으나 이해는 안됨됨
   title: string;
-  adult?: boolean;
+  adult: boolean;
 	event1?: boolean;
 	event2?: boolean;
 };
