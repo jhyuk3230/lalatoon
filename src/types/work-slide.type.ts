@@ -7,7 +7,7 @@ export type WorkSlideItem = {
   // ㄴ수정은 했으나 이해는 안됨됨
   title: string;
   discription: string;
-  adult?: boolean;
+  adult: boolean;
 	event1?: boolean;
 	event2?: boolean;
 };

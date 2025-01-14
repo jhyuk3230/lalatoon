@@ -1,15 +1,18 @@
+"use client"
 import Link from "next/link";
-import Image from "next/image";
 import { tagStyleType } from "@/types/common.type";
 import { FavoritesItem } from "@/types/favorites.type ";
 import FavoritesSlide from "./favorites-slide";
-import { cookies } from "next/headers";
 import { UserList } from "../dummy/user-list";
 import FavoritesMoreLink from "./favorites-more-link";
+import { useAdultStore } from "@/store/common/common.store";
+import { getCookie } from "cookies-next";
 
 const userData = UserList;
 
-export default async function Favorites(){
+export default function Favorites(){
+	const isAdult = useAdultStore((state) => state.isAdult);
+
 	const favoritesList: FavoritesItem[] = [
     {
       link: "#1",
@@ -109,23 +112,18 @@ export default async function Favorites(){
     end: "px-1 inline-block bg-[#999] text-[8px] font-bold text-white leading-[14px]",
   };
 
-	// 성인 여부에 따라 리스트 적용
-	let resultList: FavoritesItem[] = [];
-	const allList = favoritesList;
-	const adultListN = favoritesList.filter((e) => e.adult == false);	
-	const cookieStore = cookies();
-	const userIdCookie = (await cookieStore).get("loginId");
-	const adultCookie = (await cookieStore).get("adult");
-	const user = userData.find((e) => e.id == userIdCookie?.value)
+	const userIdCookie = getCookie("loginId");
+	const adultCookie = getCookie("adult");
+	const user = userData.find((e) => e.id == userIdCookie);
 
 	// 성인 여부에 따라 리스트 적용
-	if (user?.adult == true && adultCookie?.value == "true") {
-		resultList = allList;
-	}else{
-		resultList = adultListN;
-	}
-
-	console.log(resultList);
+	const resultList = favoritesList.filter((item: FavoritesItem) => {
+		if (isAdult && adultCookie == "true" && user?.adult == true) {
+			return true;
+		} else{
+			return !item.adult;
+		}
+	})
 
 	return (
     <>

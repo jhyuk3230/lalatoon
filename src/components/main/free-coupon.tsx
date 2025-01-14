@@ -123,9 +123,19 @@ export default function FreeCoupon(){
 												</g>
 											</svg>
 										</div>
-										<div className="w-[100px] h-[100px] rounded-[100px] absolute left-4 bottom-4 overflow-hidden">
-											<Image src={e.img} alt={`#`} width={100} height={100} />
+
+										<div className="absolute left-4 bottom-4">
+											<div className="w-[100px] h-[100px] rounded-[100px] overflow-hidden">
+												<Image src={e.img} alt={`#`} width={100} height={100} />
+											</div>
+											{e.adult ? (
+												<p className="adult-m w-4 h-4 border border-[#FF3B42] rounded-[16px] bg-white absolute bottom-1 right-1">
+													<span className="w-full inline-block text-[8px] font-black text-black text-center absolute top-[50%] translate-y-[-50%]">19</span>
+												</p>
+											) : null}
 										</div>
+
+
 										<div className="h-[100px] pl-[134px] pr-8 flex flex-col items-end justify-center">
 											<h4 className="max-h-[36px] text-right" ref={(element) => {
 												if (element) freeCouponTextWrap.current[i] = element;

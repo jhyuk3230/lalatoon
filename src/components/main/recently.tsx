@@ -1,14 +1,18 @@
+"use client"
 import Link from "next/link";
 import { tagStyleType } from "@/types/common.type";
 import { recentlyReadItem } from "@/types/recently.type";
-import { cookies } from "next/headers";
 import { UserList } from "@/components/dummy/user-list";
 import RecentlyReadSlide from "./recently-slide";
 import RecentlyReadMoreLink from "./recently-more-link";
+import { useAdultStore } from "@/store/common/common.store";
+import { getCookie } from "cookies-next";
 
 const userData = UserList;
 
-export default async function RecentlyRead(){
+export default function RecentlyRead(){
+	const isAdult = useAdultStore((state) => state.isAdult);
+	
 	const recentlyReadList: recentlyReadItem[] = [
     {
       link: "#1",
@@ -88,21 +92,18 @@ export default async function RecentlyRead(){
     end: "px-1 rounded-[14px] inline-block bg-[#999999] text-[8px] font-bold text-white leading-[14px]",
   };
 
-	// 성인 여부에 따라 리스트 적용
-	let resultList: recentlyReadItem[] = [];
-	const allList = recentlyReadList;
-	const adultListN = recentlyReadList.filter((e)=>e.adult == false);	
-	const cookieStore = cookies();
-	const userIdCookie = (await cookieStore).get("loginId");
-	const adultCookie = (await cookieStore).get("adult");
-	const user = userData.find((e) => e.id == userIdCookie?.value)
+	const userIdCookie = getCookie("loginId");
+	const adultCookie = getCookie("adult");
+	const user = userData.find((e) => e.id == userIdCookie);
 
 	// 성인 여부에 따라 리스트 적용
-	if (user?.adult == true && adultCookie?.value == "true") {
-		resultList = allList;
-	}else{
-		resultList = adultListN;
-	}
+	const resultList = recentlyReadList.filter((item: recentlyReadItem) => {
+    if (isAdult && adultCookie == "true" && user?.adult == true) {
+      return true;
+    } else {
+      return !item.adult;
+    }
+  });
 
 	return (
     <>
