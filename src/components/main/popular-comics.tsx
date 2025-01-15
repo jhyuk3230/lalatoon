@@ -4,77 +4,155 @@ import Link from "next/link";
 import Image from "next/image";
 import { tagStyleType } from "@/types/common.type";
 import { popularComicsItem } from "@/types/popular-comics.type ";
+import { UserList } from "@/components/dummy/user-list";
+import { useAdultStore } from "@/store/common/common.store";
+import { getCookie } from "cookies-next";
+
+const userData = UserList;
 
 export default function PopularComics(){
+	const isAdult = useAdultStore((state) => state.isAdult);
+
 	const popularComicsList: popularComicsItem[] = [
     {
-			rank: 1,
-			link: "#1",
+      rank: 1,
+      link: "#1",
       img: "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
       tag: ["new", "up"],
       title: "title",
-			event1: true,
-			event2: true,
+      event1: true,
+      event2: true,
     },
     {
-			rank: 2,
-			link: "#2",
-			img: "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+      rank: 2,
+      link: "#2",
+      img: "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
       tag: ["new", "up", "end"],
-      title: "title title title title title title title title title title title title",
+      title:
+        "title title title title title title title title title title title title",
       adult: true,
-			event1: true,
+      event1: true,
     },
     {
-			rank: 3,
-			link: "#3",
-			img: "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+      rank: 3,
+      link: "#3",
+      img: "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
       tag: ["new", "up"],
       title: "title title title title title",
       adult: true,
-			event2: true,
+      event2: true,
     },
     {
-			rank: 4,
-			link: "#4",
+      rank: 4,
+      link: "#4",
       img: "https://thumb-g2.lalatoon.com/upload/thumbnail/20180720111425/2020_08_18_15977285189297.jpg",
       tag: ["new", "up", "end"],
       title: "title title title title title title title",
-			event1: true,
-			event2: true,
+      event1: true,
+      event2: true,
     },
     {
-			rank: 5,
-			link: "#5",
+      rank: 5,
+      link: "#5",
       img: "https://thumb-g2.lalatoon.com/upload/thumbnail/20180720111425/2020_08_18_15977285189297.jpg",
       tag: ["new"],
       title: "title title title title title",
-			adult: true,
-			event1: true,
+      adult: true,
+      event1: true,
     },
     {
-			rank: 6,
-			link: "#6",
+      rank: 6,
+      link: "#6",
       img: "https://thumb-g2.lalatoon.com/upload/thumbnail/20180720111425/2020_08_18_15977285189297.jpg",
       tag: ["new", "up", "end"],
       title: "title title title title title",
-			event2: true,
+      event2: true,
     },
-		{
-			rank: 7,
-			link: "#7",
+    {
+      rank: 7,
+      link: "#7",
       img: "https://thumb-g2.lalatoon.com/upload/thumbnail/20180720111425/2020_08_18_15977285189297.jpg",
       tag: ["new", "up", "end"],
       title: "title title title title title",
-			event2: true,
+      event2: true,
     },
-		{
-			rank: 8,
-			link: "#8",
+    {
+      rank: 8,
+      link: "#8",
       img: "https://thumb-g2.lalatoon.com/upload/thumbnail/20180720111425/2020_08_18_15977285189297.jpg",
       tag: ["new", "up", "end"],
       title: "title title title title title",
-			event2: true,
+      event2: true,
+    },
+    {
+      rank: 9,
+      link: "#9",
+      img: "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+      tag: ["new", "up"],
+      title: "title",
+      event1: true,
+      event2: true,
+    },
+    {
+      rank: 10,
+      link: "#10",
+      img: "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+      tag: ["new", "up", "end"],
+      title:
+        "title title title title title title title title title title title title",
+      adult: true,
+      event1: true,
+    },
+    {
+      rank: 11,
+      link: "#11",
+      img: "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+      tag: ["new", "up"],
+      title: "title title title title title",
+      adult: true,
+      event2: true,
+    },
+    {
+      rank: 12,
+      link: "#12",
+      img: "https://thumb-g2.lalatoon.com/upload/thumbnail/20180720111425/2020_08_18_15977285189297.jpg",
+      tag: ["new", "up", "end"],
+      title: "title title title title title title title",
+      event1: true,
+      event2: true,
+    },
+    {
+      rank: 13,
+      link: "#13",
+      img: "https://thumb-g2.lalatoon.com/upload/thumbnail/20180720111425/2020_08_18_15977285189297.jpg",
+      tag: ["new"],
+      title: "title title title title title",
+      adult: true,
+      event1: true,
+    },
+    {
+      rank: 14,
+      link: "#14",
+      img: "https://thumb-g2.lalatoon.com/upload/thumbnail/20180720111425/2020_08_18_15977285189297.jpg",
+      tag: ["new", "up", "end"],
+      title: "title title title title title",
+      event2: true,
+    },
+    {
+      rank: 15,
+      link: "#15",
+      img: "https://thumb-g2.lalatoon.com/upload/thumbnail/20180720111425/2020_08_18_15977285189297.jpg",
+      tag: ["new", "up", "end"],
+      title: "title title title title title",
+      event2: true,
+    },
+    {
+      rank: 16,
+      link: "#16",
+      img: "https://thumb-g2.lalatoon.com/upload/thumbnail/20180720111425/2020_08_18_15977285189297.jpg",
+      tag: ["new", "up", "end"],
+      title: "title title title title title",
+      event2: true,
     },
   ];
 
@@ -84,7 +162,19 @@ export default function PopularComics(){
     end: "px-1 rounded-[14px] inline-block bg-[#999999] text-[8px] font-bold text-white leading-[14px]",
   };
 
-	const items = popularComicsList;
+	const userIdCookie = getCookie("loginId");
+	const adultCookie = getCookie("adult");
+	const user = userData.find((e) => e.id == userIdCookie);
+
+	const resultList = popularComicsList.filter((item) => {
+		if (isAdult && adultCookie == "true" && user?.adult == true) {
+			return true;
+		} else {
+			return !item.adult;
+		}
+	})
+
+	const items = resultList;
 	const resultArray = [];
 	for (let i = 0; i < items.length; i += 4) { // i += 4 i에 4를 더함 = 0,5가 출력
 		resultArray.push(items.slice(i, i + 4)); // i 부터 i+4직전까지 잘라냄 // i~i+3 = 0~3 // 다음 i는 5기 때문에 5~8
