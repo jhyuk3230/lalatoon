@@ -27,7 +27,7 @@ export default function QuickMenu(){
     <>
       <section className="mt-5">
         <article className="max-w-[768px] mx-auto pl-[20px]">
-          <ul className="whitespace-nowrap overflow-x-auto">
+          <ul className="pr-5 whitespace-nowrap overflow-x-auto">
 						{quickMenuArray.map((e, i)=>(
 							<li className="w-[88px] mr-2 inline-block break-keep last:mr-0 xs:w-auto xs:mr-3 xxs:w-[calc((100% - 24px) / 4)]" key={i}>
             	  <Link href={e.link} className="w-full rounded-[6px] py-[18px] px-1 flex flex-col items-center gap-[2px] bg-[#f7f7f7] xs:w-[173px] xs:flex-row xs:justify-center xs:gap-2">

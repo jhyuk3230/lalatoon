@@ -18,4 +18,5 @@ export type UserData = {
 	id: string;
 	pw: string;
 	adult: boolean;
+	favorite?: string[];
 };

@@ -19,18 +19,16 @@ export default async function Main(){
 
   return (
     <>
-			<main className="mt-[70px] pb-[70px] overflow-x-hidden">
-				<MainBanner />
-      	<QuickMenu />
-      	<RecentlyRead />
-      	<AppBanner hasCookie={(await cookieStore).has("appRefusal")} />
-      	<NewComics />
-      	<Favorites />
-      	<FreeCoupon />
-      	<PopularComics />
-      	<WaitFree />
-      	<BottomSlide />
-			</main>
+			<MainBanner />
+      <QuickMenu />
+      <RecentlyRead />
+      <AppBanner hasCookie={(await cookieStore).has("appRefusal")} />
+      <NewComics />
+      <Favorites />
+      <FreeCoupon />
+      <PopularComics />
+      <WaitFree />
+      <BottomSlide />
     </>
   );
 }

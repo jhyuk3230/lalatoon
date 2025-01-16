@@ -11,7 +11,9 @@ export default function DefaultLayout({
     <>
       <Header />
       <GlobalNav />
-      {children}
+			<main className="mt-[70px] pb-[70px] overflow-x-hidden">
+      	{children}
+			</main>
       <Footer />
     </>
   );

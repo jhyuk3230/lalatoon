@@ -7,12 +7,14 @@ import Image from "next/image";
 import { UserList } from "@/components/dummy/user-list";
 import { getCookie } from "cookies-next";
 import { useAdultStore } from "@/store/common/common.store";
-import { useEffect } from "react";
+import type { Swiper as SwiperType } from "swiper";
+import { useEffect, useRef, useState } from "react";
 
 const userData = UserList;
 
 export default function MainBanner() {
 	const isAdult = useAdultStore((state) => state.isAdult);
+	const swiperRef = useRef<SwiperType>();
 
 	const slideArray: MainBannerType[] = [
 		{
@@ -109,7 +111,24 @@ export default function MainBanner() {
     }
   });
 
-	// useEffect(() =>{}, [isAdult, resultList])
+	const [windowWidth, setWindowWidth] = useState(0);
+
+	useEffect(() => {
+		const windowWidthObserver = () => {
+			setWindowWidth(window.innerWidth);
+		}
+
+		window.addEventListener("resize", windowWidthObserver);
+		return () => window.removeEventListener("resize", windowWidthObserver);
+	}, []);
+
+	useEffect(() =>{
+		if (swiperRef.current && swiperRef.current.autoplay) {
+			setTimeout(() => {
+				swiperRef.current?.autoplay.start();
+			}, 100);
+		}
+	}, [isAdult, resultList, windowWidth]);
 
   return (
     <>
@@ -117,6 +136,8 @@ export default function MainBanner() {
         <article>
 					<div className="main-banner relative">
           	<Swiper
+							onSwiper={(swiper) => {swiperRef.current = swiper}}
+							// onBeforeInit={(swiper) => {swiperRef.current = swiper}}
           	  slidesPerView="auto"
           	  spaceBetween={12}
           	  centeredSlides={true}
@@ -140,76 +161,74 @@ export default function MainBanner() {
           	  className="mySwiper"
           	>
           	  {resultList.map((e, i) => (
-								i < 8 ? (
-									<SwiperSlide className="w-[378px] !h-[405px] overflow-hidden xxs:rounded-[10px] group" key={i}>
-          	    	  <Link href={e.link} className={`h-full block relative`} style={{backgroundColor: e.bgColor || ''}}>
-											<Image src={e.img} alt={e.title || ''} width={720} height={774} />
-											{e.eventImg ? (
-												<>
-													<div className="absolute top-2 left-2">
-														<Image src={e.eventImg} alt={e.title || ''} width={48} height={48}></Image>
-													</div>
-												</>
-											) : null}
-											{e.adult ? (
-												<>
-													<p className="adult-m w-4 h-4 border border-[#FF3B42] rounded-[16px] bg-white absolute top-[10px] right-[10px]">
-														<span className="w-full inline-block text-[8px] font-black text-black text-center absolute top-[50%] translate-y-[-50%]">19</span>
-													</p>
-												</>
-											) : null}
-													<div className="w-full p-5 pb-[10px] block absolute left-0 bottom-0">
-														<div className="w-full h-full absolute left-0 bottom-0" style={{background: `linear-gradient(to top, ${e.gradient}, transparent)`}}></div>
-														<div className="relative">
-															{e.logo || e.title || e.discription ? (
-																<>
-																	{e.logo ? (
+								<SwiperSlide className="w-[378px] !h-[405px] overflow-hidden xxs:rounded-[10px] group" key={i}>
+          	      <Link href={e.link} className={`h-full block relative`} style={{backgroundColor: e.bgColor || ''}}>
+										<Image src={e.img} alt={e.title || ''} width={720} height={774} />
+										{e.eventImg ? (
+											<>
+												<div className="absolute top-2 left-2">
+													<Image src={e.eventImg} alt={e.title || ''} width={48} height={48}></Image>
+												</div>
+											</>
+										) : null}
+										{e.adult ? (
+											<>
+												<p className="adult-m w-4 h-4 border border-[#FF3B42] rounded-[16px] bg-white absolute top-[10px] right-[10px]">
+													<span className="w-full inline-block text-[8px] font-black text-black text-center absolute top-[50%] translate-y-[-50%]">19</span>
+												</p>
+											</>
+										) : null}
+												<div className="w-full p-5 pb-[10px] block absolute left-0 bottom-0">
+													<div className="w-full h-full absolute left-0 bottom-0" style={{background: `linear-gradient(to top, ${e.gradient}, transparent)`}}></div>
+													<div className="relative">
+														{e.logo || e.title || e.discription ? (
+															<>
+																{e.logo ? (
+																	<>
+																		<Image src={e.logo} alt={e.title || ''} width={1000} height={1000} className="object-contain" onLoadingComplete={(img) => {img.width = Math.round(img.naturalWidth / 1.2); img.height = Math.round(img.naturalHeight / 1.2);}} />
+																	</>
+																) : null}
+																<div>
+																	{e.title ? (
+																		<h4 className="mt-3 text-[20px] font-bold text-white leading-[29px] line-clamp-2 text-black-shadow-3">{e.title}</h4>
+																	) : null}
+																	{e.discription ? (
+																		<p className="mt-3 text-[12px] font-normal text-white leading-[18px] line-clamp-2 text-black-shadow-3">{e.discription}</p>
+																	) : null}
+																	{e.fixedTag1 || e.fixedTag2 || e.tag ? (
 																		<>
-																			<Image src={e.logo} alt={e.title || ''} width={1000} height={1000} className="object-contain" onLoadingComplete={(img) => {img.width = Math.round(img.naturalWidth / 1.2); img.height = Math.round(img.naturalHeight / 1.2);}} />
+																			<ul className="mt-4 flex justify-start items-center gap-1">
+																				{e.fixedTag1 ? (
+																					<li className="h-5 p-1 rounded-[4px] inline-block bg-black text-[11px] font-medium text-white leading-[13px]">할인</li>
+																				) : null}
+																				{e.fixedTag2 ? (
+																					<li className="h-5 p-1 rounded-[4px] inline-block bg-black text-[11px] font-medium text-white leading-[13px]">무료</li>
+																				) : null}
+																				{e.tag ? (
+																					<>
+																						{e.tag.map((tag) => (
+																							<li key={tag} className="h-5 p-1 rounded-[4px] inline-block bg-black/30 text-[11px] font-medium text-white leading-[13px]">{tag.toUpperCase()}</li>
+																						))}
+																					</>
+																				) : null}
+																			</ul>
 																		</>
 																	) : null}
-																	<div>
-																		{e.title ? (
-																			<h4 className="mt-3 text-[20px] font-bold text-white leading-[29px] line-clamp-2 text-black-shadow-3">{e.title}</h4>
-																		) : null}
-																		{e.discription ? (
-																			<p className="mt-3 text-[12px] font-normal text-white leading-[18px] line-clamp-2 text-black-shadow-3">{e.discription}</p>
-																		) : null}
-																		{e.fixedTag1 || e.fixedTag2 || e.tag ? (
-																			<>
-																				<ul className="mt-4 flex justify-start items-center gap-1">
-																					{e.fixedTag1 ? (
-																						<li className="h-5 p-1 rounded-[4px] inline-block bg-black text-[11px] font-medium text-white leading-[13px]">할인</li>
-																					) : null}
-																					{e.fixedTag2 ? (
-																						<li className="h-5 p-1 rounded-[4px] inline-block bg-black text-[11px] font-medium text-white leading-[13px]">무료</li>
-																					) : null}
-																					{e.tag ? (
-																						<>
-																							{e.tag.map((tag) => (
-																								<li key={tag} className="h-5 p-1 rounded-[4px] inline-block bg-black/30 text-[11px] font-medium text-white leading-[13px]">{tag.toUpperCase()}</li>
-																							))}
-																						</>
-																					) : null}
-																				</ul>
-																			</>
-																		) : null}
-																	</div>
-																</>
-															) : null}
-															<div className="mt-[10px] flex justify-between items-center">
-																<p className="text-[8px] font-normal text-white/70 leading-[20px] line-clamp-1">{e.copylight}</p>
-																<div className="h-5 px-2 py-1 rounded-[50px] inline-flex justify-center items-center gap-[1px] bg-black/30 text-[11px] leading-[12px] opacity-0 group-[.swiper-slide-active]:opacity-100">
-																	<span className="text-white">{i + 1}</span>
-																	<span className="text-white/40">/</span>
-																	<span className="text-white/40">{resultList.length}</span>
 																</div>
+															</>
+														) : null}
+														<div className="mt-[10px] flex justify-between items-center">
+															<p className="text-[8px] font-normal text-white/70 leading-[20px] line-clamp-1">{e.copylight}</p>
+															<div className="h-5 px-2 py-1 rounded-[50px] inline-flex justify-center items-center gap-[1px] bg-black/30 text-[11px] leading-[12px] opacity-0 group-[.swiper-slide-active]:opacity-100">
+																<span className="text-white">{i + 1}</span>
+																<span className="text-white/40">/</span>
+																<span className="text-white/40">{resultList.length}</span>
 															</div>
 														</div>
 													</div>
-          	    	  </Link>
-          	    	</SwiperSlide>
-								) : null
+												</div>
+          	      </Link>
+          	    </SwiperSlide>
           	  ))}
           	</Swiper>
 						{/* <button className="slide__prev w-[52px] h-[52px] rounded-[52px] hidden justify-center items-center bg-white/80 absolute top-[50%] -left-[26px] -translate-y-[50%] z-[1] shadow-[0_3px_6px_0px_rgba(0,0,0,.16)] hover:bg-white focus:bg-white lg:flex">

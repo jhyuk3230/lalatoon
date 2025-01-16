@@ -22,7 +22,7 @@ export async function PUT(request: NextRequest) {
 		
 		if (userDataMatch) {
 			const userData: UserData[] = JSON.parse(userDataMatch[1]);
-			console.log("userData",userData);
+			// console.log("userData",userData);
 
 			const userIndex = userData.findIndex(user => user.id === userId);
 			// console.log("userIndex",userIndex);
