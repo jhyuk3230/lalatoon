@@ -11,6 +11,7 @@ export const UserList: UserData[] = [
     id: "test2",
     pw: "testpw2",
     adult: true,
+    favorite: ["2", "3", "6"],
   },
   {
     id: "test3",

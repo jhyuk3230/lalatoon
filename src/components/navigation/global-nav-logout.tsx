@@ -1,6 +1,7 @@
 "use client"
 import { useAdultStore, useLoginStore, useNavStore } from "@/store/common/common.store";
 import { deleteCookie } from "cookies-next";
+import { redirect } from "next/navigation";
 
 export default function GlobalNavLogout() {
 	const setIsLogin = useLoginStore((state) => state.setIsLogin);
@@ -13,6 +14,7 @@ export default function GlobalNavLogout() {
 		setIsNavActive(false);
 		deleteCookie("loginId");
 		deleteCookie("adult");
+		redirect("/");
 	};
 
 	return (

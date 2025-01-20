@@ -20,3 +20,18 @@ export type UserData = {
 	adult: boolean;
 	favorite?: string[];
 };
+
+export type EpisodeTagStyle = {
+  "Sci-fi": string;
+  Drama: string;
+  Romance: string;
+  BL: string;
+  "School life": string;
+  Fantasy: string;
+  Horror: string;
+  Thriller: string;
+  Historical: string;
+  Gossip: string;
+  Comedy: string;
+  Action: string;
+};

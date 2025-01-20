@@ -16,7 +16,7 @@ export default function NewComics(){
 
 	const newcomicsList: newComicsItem[] = [
     {
-			link: "#1",
+			link: "/episode/1",
       img: "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
       tag: ["new", "up"],
       title: "title",
@@ -26,7 +26,7 @@ export default function NewComics(){
 			event2: true,
     },
     {
-			link: "#2",
+			link: "/episode/2",
 			img: "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
       tag: ["new", "up", "end"],
       title: "title title title title title title title title title title title title",
@@ -35,7 +35,7 @@ export default function NewComics(){
 			event1: true,
     },
     {
-			link: "#3",
+			link: "/episode/3",
 			img: "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
       tag: ["new", "up"],
       title: "title title title title title",
@@ -44,7 +44,7 @@ export default function NewComics(){
 			event2: true,
     },
     {
-			link: "#4",
+			link: "/episode/4",
       img: "https://thumb-g2.lalatoon.com/upload/thumbnail/20180720111425/2020_08_18_15977285189297.jpg",
       tag: ["new", "up", "end"],
       title: "title title title title title title title",
@@ -54,7 +54,7 @@ export default function NewComics(){
 			event2: true,
     },
     {
-			link: "#5",
+			link: "/episode/5",
       img: "https://thumb-g2.lalatoon.com/upload/thumbnail/20180720111425/2020_08_18_15977285189297.jpg",
       tag: ["new"],
       title: "title title title title title",
@@ -63,7 +63,7 @@ export default function NewComics(){
 			event1: true,
     },
     {
-			link: "#6",
+			link: "/episode/6",
       img: "https://thumb-g2.lalatoon.com/upload/thumbnail/20180720111425/2020_08_18_15977285189297.jpg",
       tag: ["new", "up", "end"],
       title: "title title title title title",

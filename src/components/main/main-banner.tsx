@@ -185,7 +185,7 @@ export default function MainBanner() {
 															<>
 																{e.logo ? (
 																	<>
-																		<Image src={e.logo} alt={e.title || ''} width={1000} height={1000} className="object-contain" onLoadingComplete={(img) => {img.width = Math.round(img.naturalWidth / 1.2); img.height = Math.round(img.naturalHeight / 1.2);}} />
+																		<Image src={e.logo} alt={e.title || ''} width={1000} height={1000} className="object-contain" onLoad={(event) => {const img = event.target; if (img instanceof HTMLImageElement) {img.width = Math.round(img.naturalWidth / 1.2); img.height = Math.round(img.naturalHeight / 1.2);}}} />
 																	</>
 																) : null}
 																<div>
