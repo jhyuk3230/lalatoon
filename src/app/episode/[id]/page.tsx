@@ -6,18 +6,20 @@ import EpisodeTop from "@/components/episode/episode-top";
 import { EpisodeItem } from "@/types/episode.type ";
 import { cookies } from "next/headers";
 
-const userData = UserList;
+// const userData = UserList;
 
 export default async function Episode({ params }: { params: Promise<{id: string}> }) {
+	const userData = require("@/components/dummy/user-list.json");
 	const { id } = await params;
 	const userIdCookie = (await cookies()).get("loginId")?.value;
-	const user = userData.find((e) => e.id === userIdCookie);
-	const readData = user?.read?.find((e) => e.work === id);
+	const user = userData.find((e: {id: string}) => e.id === userIdCookie);
+	const readData = user?.read?.find((e: {work: string}) => e.work === id);
 
 	const episodeData: EpisodeItem[] = [
     {
       id: "1",
       thumb: "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+			adult: false,
       tag: ["Drama", "Romance", "School life"],
       title: "글자 제한 없음 / Welcome! To the BL esearch Club Welcome! To the BL Research Club To the BL Research Club",
       copyRight: "Wang Yi",
@@ -139,6 +141,7 @@ export default async function Episode({ params }: { params: Promise<{id: string}
 		{
       id: "2",
       thumb: "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+			adult: true,
       tag: ["Drama", "Romance", "School life"],
       title: "TEST NAME",
       copyRight: "Wang Yi",
@@ -200,6 +203,7 @@ export default async function Episode({ params }: { params: Promise<{id: string}
 		{
       id: "3",
       thumb: "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+			adult: true,
       tag: ["Drama", "Romance", "School life"],
       title: "TEST NAME",
       copyRight: "Wang Yi",
@@ -231,6 +235,7 @@ export default async function Episode({ params }: { params: Promise<{id: string}
 		{
       id: "4",
       thumb: "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+			adult: false,
       tag: ["Drama", "Romance", "School life"],
       title: "TEST NAME",
       copyRight: "Wang Yi",
@@ -262,6 +267,7 @@ export default async function Episode({ params }: { params: Promise<{id: string}
 		{
       id: "5",
       thumb: "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+			adult: true,
       tag: ["Drama", "Romance", "School life"],
       title: "TEST NAME",
       copyRight: "Wang Yi",
@@ -293,6 +299,7 @@ export default async function Episode({ params }: { params: Promise<{id: string}
 		{
       id: "6",
       thumb: "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+			adult: false,
       tag: ["Drama", "Romance", "School life"],
       title: "TEST NAME",
       copyRight: "Wang Yi",
@@ -324,6 +331,7 @@ export default async function Episode({ params }: { params: Promise<{id: string}
 		{
       id: "7",
       thumb: "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+			adult: true,
       tag: ["Drama", "Romance", "School life"],
       title: "글자 제한 없음 / Welcome! To the BL esearch Club Welcome! To the BL Research Club To the BL Research Club",
       copyRight: "Wang Yi",

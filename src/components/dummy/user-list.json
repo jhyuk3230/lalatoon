@@ -1,6 +1,4 @@
-import { UserData } from "@/types/common.type";
-
-export const UserList: UserData[] = [
+[
   {
     "id": "test",
     "pw": "testpw",
@@ -123,6 +121,9 @@ export const UserList: UserData[] = [
   {
     "id": "test4@test.com",
     "pw": "testpw4",
-    "adult": false
+    "adult": true,
+    "favorite": [
+      "1"
+    ]
   }
-];
+]

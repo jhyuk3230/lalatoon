@@ -5,9 +5,8 @@ import { EpisodeTagStyle } from "@/types/common.type";
 import Link from "next/link";
 
 export default function EpisodeTop({ id, data, read }: { id: string, data: EpisodeItem, read: string[] }) {
-	const { thumb, tag, title, copyRight, description } = data;
+	const { thumb, adult, tag, title, copyRight, description } = data;
 	const lastRead = read[read.length - 1];
-	console.log(lastRead);
 	const tagStyle: EpisodeTagStyle = {
 		"Sci-fi": "px-[5px] border border-[#68BCCE] rounded-[50px] bg-[#68BCCE] text-[10px] font-normal flex-shrink-0 m-sm:bg-white m-sm:text-[#68BCCE]",
 		Drama: "px-[5px] border border-[#FF7B89] rounded-[50px] bg-[#FF7B89] text-[10px] font-normal flex-shrink-0 m-sm:bg-white m-sm:text-[#FF7B89]",
@@ -29,9 +28,11 @@ export default function EpisodeTop({ id, data, read }: { id: string, data: Episo
           <div className="w-full h-[480px] block bg-black flex-shrink-0 relative overflow-hidden m-sm:w-[210px] m-sm:h-[310px] m-sm:rounded-[10px]">
 						<Image src={thumb} alt={title} width={210} height={310} />
 
-						<p className="adult-m w-4 h-4 border border-[#FF3B42] rounded-[16px] hidden bg-white absolute top-[6px] right-[6px] m-sm:!inline-block">
-							<span className="w-full inline-block text-[8px] font-black text-black text-center absolute top-[50%] translate-y-[-50%]">19</span>
-						</p>
+						{adult ? (
+							<p className="adult-m w-4 h-4 border border-[#FF3B42] rounded-[16px] hidden bg-white absolute top-[6px] right-[6px] m-sm:!inline-block">
+								<span className="w-full inline-block text-[8px] font-black text-black text-center absolute top-[50%] translate-y-[-50%]">19</span>
+							</p>
+						) : null}
 					</div>
           <div className="flex flex-col gap-5">
             <div className="flex flex-col gap-2">

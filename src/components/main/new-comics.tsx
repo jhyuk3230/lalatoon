@@ -5,14 +5,12 @@ import Image from "next/image";
 import { tagStyleType } from "@/types/common.type";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
-import { UserList } from "@/components/dummy/user-list";
 import { useAdultStore } from "@/store/common/common.store";
 import { getCookie } from "cookies-next";
 
-const userData = UserList;
-
 export default function NewComics(){
 	const isAdult = useAdultStore((state) => state.isAdult);
+	const userData = require("@/components/dummy/user-list.json");
 
 	const newcomicsList: newComicsItem[] = [
     {
@@ -100,7 +98,10 @@ export default function NewComics(){
 
 	const userIdCookie = getCookie("loginId");
 	const adultCookie = getCookie("adult");
-	const user = userData.find((e) => e.id == userIdCookie);
+	const user = userData.find((e: {id: string}) => e.id == userIdCookie);
+	console.log(isAdult);
+	console.log(adultCookie);
+	console.log(user?.adult);
 	const resultList = newcomicsList.filter((item) => {
 		if (isAdult && adultCookie == "true" && user?.adult == true) {
 			return true;
@@ -108,8 +109,6 @@ export default function NewComics(){
 			return !item.adult;
 		}
 	});
-
-	isAdult
 
 	return (
     <>

@@ -6,14 +6,12 @@ import { tagStyleType } from "@/types/common.type";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 import { waitFreeItem } from "@/types/wait-free.type";
-import { UserList } from "@/components/dummy/user-list";
 import { useAdultStore } from "@/store/common/common.store";
 import { getCookie } from "cookies-next";
 
-const userData = UserList;
-
 export default function WaitFree(){
 	const isAdult = useAdultStore((state) => state.isAdult);
+	const userData = require("@/components/dummy/user-list.json");
 	
 	const waitFreeList: waitFreeItem[] = [
     {
@@ -109,7 +107,7 @@ export default function WaitFree(){
 
 	const userIdCookie = getCookie("loginId");
 	const adultCookie = getCookie("adult");
-	const user = userData.find((e) => e.id == userIdCookie);
+	const user = userData.find((e: {id: string}) => e.id == userIdCookie);
 	const resultList = waitFreeList.filter((item) => {
 		if (isAdult && adultCookie == "true" && user?.adult == true) {
 			return true;

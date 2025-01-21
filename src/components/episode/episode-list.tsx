@@ -5,16 +5,17 @@ import { EpisodeItem } from "@/types/episode.type ";
 import { UserList } from "../dummy/user-list";
 import { cookies } from "next/headers";
 
-const userData = UserList;
+// const userData = UserList;
 
 export default async function EpisodeList({ id, data, read }: { id: string, data: EpisodeItem, read: string[] }) {
+	const userData = require("@/components/dummy/user-list.json")
 	const { price } = data;
 	const list = data.episodeList;
 	const expiration = data.expiration;
 	const lastRead = read[read.length - 1];
 	const userIdCookie = (await cookies()).get("loginId")?.value;
-	const user = userData.find((e) => e.id === userIdCookie);
-	const collect = user?.collection?.find((e) => e.work === id);
+	const user = userData.find((e: {id: string}) => e.id === userIdCookie);
+	const collect = user?.collection?.find((e: {work: string}) => e.work === id);
 	const collectEpisode = collect?.episode;
 	
   return (

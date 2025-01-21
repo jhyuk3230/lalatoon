@@ -3,15 +3,13 @@ import Link from "next/link";
 import { tagStyleType } from "@/types/common.type";
 import { FavoritesItem } from "@/types/favorites.type ";
 import FavoritesSlide from "./favorites-slide";
-import { UserList } from "@/components/dummy/user-list";
 import FavoritesMoreLink from "./favorites-more-link";
 import { useAdultStore } from "@/store/common/common.store";
 import { getCookie } from "cookies-next";
 
-const userData = UserList;
-
 export default function Favorites(){
 	const isAdult = useAdultStore((state) => state.isAdult);
+	const userData = require("@/components/dummy/user-list.json");
 
 	const favoritesList: FavoritesItem[] = [
     {
@@ -114,7 +112,7 @@ export default function Favorites(){
 
 	const userIdCookie = getCookie("loginId");
 	const adultCookie = getCookie("adult");
-	const user = userData.find((e) => e.id == userIdCookie);
+	const user = userData.find((e: {id: string}) => e.id == userIdCookie);
 
 	// 성인 여부에 따라 리스트 적용
 	const resultList = favoritesList.filter((item: FavoritesItem) => {

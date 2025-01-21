@@ -6,9 +6,10 @@ import { useEffect, useState } from "react";
 import { UserList } from "../dummy/user-list";
 import { UserFetch } from "@/apis/user/user.fetch";
 
-const userData = UserList;
+// const userData = UserList;
 
 export default function GlobalNavUser() {
+	const userData = require("@/components/dummy/user-list.json")
 	// 로그인 상태
 	const isLogin = useLoginStore((state) => state.isLogin);
   const setIsLogin = useLoginStore((state) => state.setIsLogin);
@@ -47,7 +48,7 @@ export default function GlobalNavUser() {
 	useEffect(() => {
 		if (isloginCookie) {
 			const cookieId = loginId?.toString() || "";
-			const user = userData.find((e) => e.id === cookieId);
+			const user = userData.find((e: {id: string}) => e.id === cookieId);
       setEmail(cookieId);
 			setIsLogin(true);
 			setIsAdultCheck(user?.adult || false);
@@ -70,7 +71,7 @@ export default function GlobalNavUser() {
 
 	// 로그인 버튼
 	const loginBtn = () => {
-		const user = userData.find((e) => e.id === email && e.pw === pw);
+		const user = userData.find((e: {id: string, pw: string}) => e.id === email && e.pw === pw);
 		if (user) {
 			setIsLogin(true);
 			setUserPopup(false);
@@ -103,7 +104,7 @@ export default function GlobalNavUser() {
         return;
       }
 
-			const userIdCheck = userData.find((e) => e.id === signupId);
+			const userIdCheck = userData.find((e: {id: string}) => e.id === signupId);
 
       if (userIdCheck?.id === signupId) {
 				setSignupIdCheck(false);

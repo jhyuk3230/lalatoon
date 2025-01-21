@@ -1,16 +1,18 @@
 "use client";
 
+import { FavoriteFetch } from "@/apis/episode/favorite.fetch";
 import { UserList } from "@/components/dummy/user-list";
 import { useLoginStore } from "@/store/common/common.store";
 import { getCookie } from "cookies-next";
 import { useEffect, useState } from "react";
 
-const userData = UserList;
+// const userData = UserList;
 
 export default function EpisodeFavoriteBtn({ episodeId }: { episodeId: string }) {
+	const userData = require("@/components/dummy/user-list.json");
 	const [favorite, setFavorite] = useState(false);
-	const userIdCookie = getCookie("loginId");
-	const user = userData.find((e) => e.id == userIdCookie);
+	const userIdCookie = getCookie("loginId") || "";
+	const user = userData.find((e: { id: string; }) => e.id == userIdCookie);
 	const isLogin = useLoginStore((state) => state.isLogin);
 
 	useEffect(() => {
@@ -20,8 +22,9 @@ export default function EpisodeFavoriteBtn({ episodeId }: { episodeId: string })
     }
   }, [isLogin, user?.favorite, episodeId]);
 
-	const favoriteOnClick = () => {
+	const favoriteOnClick = async () => {
 		setFavorite(!favorite);
+		FavoriteFetch(!favorite, episodeId, userIdCookie);
 	}
 
   return (

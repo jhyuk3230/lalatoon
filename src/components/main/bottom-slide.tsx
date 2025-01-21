@@ -1,15 +1,14 @@
 "use client"
 import WorkSlide from "@/components/common/slide";
 import { WorkSlideItem } from "@/types/work-slide.type";
-import { UserList } from "@/components/dummy/user-list";
 import { useAdultStore } from "@/store/common/common.store";
 import { getCookie } from "cookies-next";
 import { tagStyleType } from "@/types/common.type";
 
-const userData = UserList;
-
 export default function BottomSlide(){
 	const isAdult = useAdultStore((state) => state.isAdult);
+	const userData = require("@/components/dummy/user-list.json");
+
 	const newcomicsList: WorkSlideItem[] = [
 		{
 			link: "#1",
@@ -114,7 +113,7 @@ export default function BottomSlide(){
 
 	const userIdCookie = getCookie("loginId");
 	const adultCookie = getCookie("adult");
-	const user = userData.find((e) => e.id == userIdCookie);
+	const user = userData.find((e: {id: string}) => e.id == userIdCookie);
 
 	// 성인 여부에 따라 리스트 적용
 	const resultList = newcomicsList.filter((item: WorkSlideItem) => {

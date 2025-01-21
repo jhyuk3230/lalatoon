@@ -4,15 +4,13 @@ import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import Link from "next/link";
 import { MainBannerType } from "@/types/mainbanner.type";
 import Image from "next/image";
-import { UserList } from "@/components/dummy/user-list";
 import { getCookie } from "cookies-next";
 import { useAdultStore } from "@/store/common/common.store";
 import type { Swiper as SwiperType } from "swiper";
 import { useEffect, useRef, useState } from "react";
 
-const userData = UserList;
-
 export default function MainBanner() {
+	const userData = require("@/components/dummy/user-list.json")
 	const isAdult = useAdultStore((state) => state.isAdult);
 	const swiperRef = useRef<SwiperType>();
 
@@ -101,7 +99,7 @@ export default function MainBanner() {
 
 	const userIdCookie = getCookie("loginId");
 	const adultCookie = getCookie("adult");
-	const user = userData.find((e) => e.id == userIdCookie);
+	const user = userData.find((e: {id: string}) => e.id == userIdCookie);
 
 	const resultList = slideArray.filter((item: MainBannerType) => {
     if (isAdult && adultCookie == "true" && user?.adult == true) {

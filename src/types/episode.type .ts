@@ -17,6 +17,7 @@ type EpisodeList = {
 export type EpisodeItem = {
 	id: string;
 	thumb: string;
+	adult: boolean;
 	tag: Array<string>;
 	title: string;
 	copyRight: string;

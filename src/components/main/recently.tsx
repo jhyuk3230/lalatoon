@@ -2,16 +2,14 @@
 import Link from "next/link";
 import { tagStyleType } from "@/types/common.type";
 import { recentlyReadItem } from "@/types/recently.type";
-import { UserList } from "@/components/dummy/user-list";
 import RecentlyReadSlide from "./recently-slide";
 import RecentlyReadMoreLink from "./recently-more-link";
 import { useAdultStore } from "@/store/common/common.store";
 import { getCookie } from "cookies-next";
 
-const userData = UserList;
-
 export default function RecentlyRead(){
 	const isAdult = useAdultStore((state) => state.isAdult);
+	const userData = require("@/components/dummy/user-list.json");
 	
 	const recentlyReadList: recentlyReadItem[] = [
     {
@@ -94,7 +92,7 @@ export default function RecentlyRead(){
 
 	const userIdCookie = getCookie("loginId");
 	const adultCookie = getCookie("adult");
-	const user = userData.find((e) => e.id == userIdCookie);
+	const user = userData.find((e: {id: string}) => e.id == userIdCookie);
 
 	// 성인 여부에 따라 리스트 적용
 	const resultList = recentlyReadList.filter((item: recentlyReadItem) => {

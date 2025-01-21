@@ -5,14 +5,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 import { FreeCouponItem } from "@/types/free-coupon.type";
 import { useEffect, useRef } from "react";
-import { UserList } from "@/components/dummy/user-list";
 import { getCookie } from "cookies-next";
 import { useAdultStore } from "@/store/common/common.store";
 
-const userData = UserList;
-
 export default function FreeCoupon(){
 	const isAdult = useAdultStore((state) => state.isAdult);
+	const userData = require("@/components/dummy/user-list.json");
 
 	const freeCouponList: FreeCouponItem[] = [
     {
@@ -61,7 +59,7 @@ export default function FreeCoupon(){
 
 	const userIdCookie = getCookie("loginId");
 	const adultCookie = getCookie("adult");
-	const user = userData.find((e) => e.id == userIdCookie);
+	const user = userData.find((e: {id: string}) => e.id == userIdCookie);
 
 	const resultList = freeCouponList.filter((item) => {
 		if (isAdult && adultCookie == "true" && user?.adult == true) {

@@ -4,14 +4,12 @@ import Link from "next/link";
 import Image from "next/image";
 import { tagStyleType } from "@/types/common.type";
 import { popularComicsItem } from "@/types/popular-comics.type ";
-import { UserList } from "@/components/dummy/user-list";
 import { useAdultStore } from "@/store/common/common.store";
 import { getCookie } from "cookies-next";
 
-const userData = UserList;
-
 export default function PopularComics(){
 	const isAdult = useAdultStore((state) => state.isAdult);
+	const userData = require("@/components/dummy/user-list.json");
 
 	const popularComicsList: popularComicsItem[] = [
     {
@@ -164,7 +162,7 @@ export default function PopularComics(){
 
 	const userIdCookie = getCookie("loginId");
 	const adultCookie = getCookie("adult");
-	const user = userData.find((e) => e.id == userIdCookie);
+	const user = userData.find((e: {id: string}) => e.id == userIdCookie);
 
 	const resultList = popularComicsList.filter((item) => {
 		if (isAdult && adultCookie == "true" && user?.adult == true) {
