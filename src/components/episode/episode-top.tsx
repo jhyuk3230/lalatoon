@@ -2,9 +2,12 @@ import { EpisodeItem } from "@/types/episode.type ";
 import EpisodeFavoriteBtn from "./episode-favorite-btn";
 import Image from "next/image";
 import { EpisodeTagStyle } from "@/types/common.type";
+import Link from "next/link";
 
-export default function EpisodeTop({ id, data }: { id: string, data: EpisodeItem }) {
+export default function EpisodeTop({ id, data, read }: { id: string, data: EpisodeItem, read: string[] }) {
 	const { thumb, tag, title, copyRight, description } = data;
+	const lastRead = read[read.length - 1];
+	console.log(lastRead);
 	const tagStyle: EpisodeTagStyle = {
 		"Sci-fi": "px-[5px] border border-[#68BCCE] rounded-[50px] bg-[#68BCCE] text-[10px] font-normal flex-shrink-0 m-sm:bg-white m-sm:text-[#68BCCE]",
 		Drama: "px-[5px] border border-[#FF7B89] rounded-[50px] bg-[#FF7B89] text-[10px] font-normal flex-shrink-0 m-sm:bg-white m-sm:text-[#FF7B89]",
@@ -42,7 +45,11 @@ export default function EpisodeTop({ id, data }: { id: string, data: EpisodeItem
 						</div>
             <p className="text-[12px] font-normal text-white leading-[18px] line-clamp-4 m-sm:text-[13px] m-sm:text-gray-500 m-sm:leading-[19px]">{description}</p>
             <div className="flex justify-start items-center gap-[5px] m-sm:gap-3">
-							<button className="min-w-[160px] h-[40px] px-3 rounded-[50px] bg-green-600 text-[13px] font-medium text-black m-sm:px-5 m-sm:text-[14px] m-sm:font-normal">Continue reading &#39;Episode 99&#39;</button>
+							{ lastRead !== undefined ? (
+								<Link href={``} className="min-w-[160px] h-[40px] px-3 rounded-[50px] flex justify-center items-center bg-green-600 text-[13px] font-medium text-black m-sm:px-5 m-sm:text-[14px] m-sm:font-normal">Continue reading &#39;Episode {lastRead}&#39;</Link>
+							) : (
+								<Link href={``} className="min-w-[160px] h-[40px] px-3 rounded-[50px] flex justify-center items-center bg-green-600 text-[13px] font-medium text-black m-sm:px-5 m-sm:text-[14px] m-sm:font-normal">Read First Episode</Link>
+							) }
 							<EpisodeFavoriteBtn episodeId={id} />
 						</div>
           </div>

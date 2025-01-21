@@ -19,6 +19,15 @@ export type UserData = {
 	pw: string;
 	adult: boolean;
 	favorite?: string[];
+	coupon?: string[];
+	read?: {
+		work: string;
+		episode: string[];
+	}[]
+	collection?: {
+		work: string;
+		episode: string[];
+	}[]
 };
 
 export type EpisodeTagStyle = {

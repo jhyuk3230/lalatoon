@@ -1,18 +1,18 @@
 type EpisodeList = {
-	id: string;
-	thumb: string;
-	title: string;
-	episodeNum: string;
-	prologue: boolean;
-	notice: boolean;
-	epilogue: boolean;
-	special: boolean;
-	new: boolean;
-	rating: string;
-	date: string;
-	waitFree: boolean;
-	coupon: boolean;
-}
+  id: string;
+  thumb: string;
+  title: string;
+  episodeNum: string;
+  prologue: boolean;
+  notice: boolean;
+  epilogue: boolean;
+  special: boolean;
+  new: boolean;
+  rating: string;
+  date: string;
+  waitFree: boolean;
+  coupon: boolean;
+};
 
 export type EpisodeItem = {
 	id: string;
@@ -26,5 +26,6 @@ export type EpisodeItem = {
 	serviceEnd: string;
 	price: number;
 	waitFreeTime: number;
+	expiration: boolean;
 	episodeList: Array<EpisodeList>;
 };
