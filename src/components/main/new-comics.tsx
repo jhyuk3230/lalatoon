@@ -99,9 +99,6 @@ export default function NewComics(){
 	const userIdCookie = getCookie("loginId");
 	const adultCookie = getCookie("adult");
 	const user = userData.find((e: {id: string}) => e.id == userIdCookie);
-	console.log(isAdult);
-	console.log(adultCookie);
-	console.log(user?.adult);
 	const resultList = newcomicsList.filter((item) => {
 		if (isAdult && adultCookie == "true" && user?.adult == true) {
 			return true;

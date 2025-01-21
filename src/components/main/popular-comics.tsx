@@ -229,7 +229,7 @@ export default function PopularComics(){
 											) : null}
 										</div>
 
-										<p className="w-[20px] flex-shrink-0 text-[16px] font-bold text-black text-center">{e.rank}</p>
+										<p className="w-[20px] flex-shrink-0 text-[16px] font-bold text-black text-center">{i + 1}</p>
 
 										<div className="mt-[10px] flex flex-col gap-[4px]">
 											<div className="rounded-tr-[5px] flex justify-start items-center gap-1">
@@ -285,7 +285,7 @@ export default function PopularComics(){
 											) : null}
 										</div>
 
-										<p className="w-[20px] flex-shrink-0 text-[16px] font-bold text-black text-center">{e.rank}</p>
+										<p className="w-[20px] flex-shrink-0 text-[16px] font-bold text-black text-center">{i + 5}</p>
 
 										<div className="mt-[10px] flex flex-col gap-[4px]">
 											<div className="rounded-tr-[5px] flex justify-start items-center gap-1">

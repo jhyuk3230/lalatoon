@@ -3,10 +3,7 @@ import { useAdultCheckStore, useLoginStore, useNavStore } from "@/store/common/c
 import { getCookie, hasCookie, setCookie } from "cookies-next";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { UserList } from "../dummy/user-list";
 import { UserFetch } from "@/apis/user/user.fetch";
-
-// const userData = UserList;
 
 export default function GlobalNavUser() {
 	const userData = require("@/components/dummy/user-list.json")
@@ -43,6 +40,10 @@ export default function GlobalNavUser() {
 	// 로그인 쿠키
 	const loginId = getCookie("loginId");
 	const isloginCookie = hasCookie("loginId");
+
+	// 코인
+	const [webcoin, setWebCoin] = useState(0);
+	const [appcoin, setAppCoin] = useState(0);
 	
 	// 로그인 쿠키 체크
 	useEffect(() => {
@@ -52,6 +53,8 @@ export default function GlobalNavUser() {
       setEmail(cookieId);
 			setIsLogin(true);
 			setIsAdultCheck(user?.adult || false);
+			setWebCoin(user.webcoin);
+      setAppCoin(user.appcoin);
     }
 	}, [])
 
@@ -78,6 +81,8 @@ export default function GlobalNavUser() {
 			setIsNavActive(false);
 			setIsAdultCheck(user.adult);
 			setCookie("loginId", email);
+			setWebCoin(user.webcoin);
+			setAppCoin(user.appcoin);
 		}else{
 			setLoginError(true);
 		}
@@ -148,11 +153,11 @@ export default function GlobalNavUser() {
 						<ul className="w-full px-[15px] flex flex-col gap-[5px]">
 							<li className="py-[5px] px-[20px] border border-gray-300 rounded-[50px] flex justify-between items-center">
 								<span className="text-[12px] font-normal text-white leading-[18px]">웹 코인</span>
-								<span className="text-[15px] font-bold text-white leading-[18px]">500</span>
+								<span className="text-[15px] font-bold text-white leading-[18px]">{webcoin}</span>
 							</li>
 							<li className="py-[5px] px-[20px] border border-gray-300 rounded-[50px] flex justify-between items-center">
 								<span className="text-[12px] font-normal text-white leading-[18px]">앱 코인</span>
-								<span className="text-[15px] font-bold text-white leading-[18px]">500</span>
+								<span className="text-[15px] font-bold text-white leading-[18px]">{appcoin}</span>
 							</li>
 						</ul>
 					</>

@@ -3,6 +3,8 @@
     "id": "test",
     "pw": "testpw",
     "adult": true,
+    "webcoin": 268,
+    "appcoin": 118,
     "favorite": [
       "1",
       "4",
@@ -55,6 +57,8 @@
     "id": "test2",
     "pw": "testpw2",
     "adult": true,
+    "webcoin": 108,
+    "appcoin": 0,
     "favorite": [
       "2",
       "3",
@@ -103,6 +107,8 @@
     "id": "test3",
     "pw": "testpw3",
     "adult": true,
+    "webcoin": 0,
+    "appcoin": 0,
     "coupon": [
       "90",
       "31/12"
@@ -111,19 +117,25 @@
   {
     "id": "dsfsjfklsd@jsdklfs.com",
     "pw": "sdjkflsdfs",
-    "adult": false
+    "adult": false,
+    "webcoin": 0,
+    "appcoin": 0
   },
   {
     "id": "aaa@jksldfsd.com",
     "pw": "asdasdasd",
-    "adult": false
+    "adult": false,
+    "webcoin": 0,
+    "appcoin": 0
   },
   {
     "id": "test4@test.com",
     "pw": "testpw4",
     "adult": true,
+    "webcoin": 96,
+    "appcoin": 50,
     "favorite": [
-      "1"
+      "4"
     ]
   }
 ]
