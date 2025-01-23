@@ -18,6 +18,8 @@ export type UserData = {
 	id: string;
 	pw: string;
 	adult: boolean;
+	webcoin: number;
+	appcoin: number;
 	favorite?: string[];
 	coupon?: string[];
 	read?: {

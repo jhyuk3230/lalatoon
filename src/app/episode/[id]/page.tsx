@@ -43,8 +43,9 @@ export default async function Episode({ params }: { params: Promise<{id: string}
 					new: true,
 					rating: "9.1",
 					date: "Apr 21, 2018",
-					waitFree: true,
+					waitFree: false,
 					coupon: false,
+					free: true,
 				},
 				{
 					id: "2",
@@ -59,7 +60,8 @@ export default async function Episode({ params }: { params: Promise<{id: string}
 					rating: "9.3",
 					date: "Apr 23, 2018",
 					waitFree: false,
-					coupon: true,
+					coupon: false,
+					free: true,
 				},
 				{
 					id: "3",
@@ -75,6 +77,7 @@ export default async function Episode({ params }: { params: Promise<{id: string}
 					date: "Apr 25, 2018",
 					waitFree: false,
 					coupon: false,
+					free: true,
 				},
 				{
 					id: "4",
@@ -88,8 +91,9 @@ export default async function Episode({ params }: { params: Promise<{id: string}
 					new: true,
 					rating: "9.7",
 					date: "Apr 27, 2018",
-					waitFree: false,
+					waitFree: true,
 					coupon: false,
+					free: false,
 				},
 				{
 					id: "5",
@@ -104,7 +108,8 @@ export default async function Episode({ params }: { params: Promise<{id: string}
 					rating: "9.9",
 					date: "Apr 28, 2018",
 					waitFree: false,
-					coupon: false,
+					coupon: true,
+					free: false,
 				},
 				{
 					id: "6",
@@ -120,6 +125,7 @@ export default async function Episode({ params }: { params: Promise<{id: string}
 					date: "Apr 21, 2018",
 					waitFree: false,
 					coupon: false,
+					free: false,
 				},
 				{
 					id: "7",
@@ -135,6 +141,7 @@ export default async function Episode({ params }: { params: Promise<{id: string}
 					date: "Apr 21, 2018",
 					waitFree: false,
 					coupon: false,
+					free: false,
 				}
 			]
     },
@@ -165,8 +172,9 @@ export default async function Episode({ params }: { params: Promise<{id: string}
 					new: true,
 					rating: "9.9",
 					date: "Apr 21, 2018",
-					waitFree: true,
+					waitFree: false,
 					coupon: false,
+					free: true,
 				},
 				{
 					id: "2",
@@ -180,8 +188,9 @@ export default async function Episode({ params }: { params: Promise<{id: string}
 					new: true,
 					rating: "9.9",
 					date: "Apr 21, 2018",
-					waitFree: false,
+					waitFree: true,
 					coupon: false,
+					free: false,
 				},
 				{
 					id: "3",
@@ -196,7 +205,24 @@ export default async function Episode({ params }: { params: Promise<{id: string}
 					rating: "9.9",
 					date: "Apr 21, 2018",
 					waitFree: false,
+					coupon: true,
+					free: false,
+				},
+				{
+					id: "4",
+					thumb: "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+					title: "TEST NAME",
+					episodeNum: "4",
+					prologue: false,
+					notice: false,
+					epilogue: false,
+					special: false,
+					new: true,
+					rating: "9.9",
+					date: "Apr 21, 2018",
+					waitFree: false,
 					coupon: false,
+					free: false,
 				},
 			]
     },
@@ -229,6 +255,7 @@ export default async function Episode({ params }: { params: Promise<{id: string}
 					date: "Apr 21, 2018",
 					waitFree: true,
 					coupon: false,
+					free: false,
 				}
 			]
     },
@@ -261,6 +288,7 @@ export default async function Episode({ params }: { params: Promise<{id: string}
 					date: "Apr 21, 2018",
 					waitFree: true,
 					coupon: false,
+					free: false,
 				}
 			]
     },
@@ -293,6 +321,7 @@ export default async function Episode({ params }: { params: Promise<{id: string}
 					date: "Apr 21, 2018",
 					waitFree: true,
 					coupon: false,
+					free: false,
 				}
 			]
     },
@@ -325,6 +354,7 @@ export default async function Episode({ params }: { params: Promise<{id: string}
 					date: "Apr 21, 2018",
 					waitFree: true,
 					coupon: false,
+					free: false,
 				}
 			]
     },
@@ -352,11 +382,12 @@ export default async function Episode({ params }: { params: Promise<{id: string}
 					notice: false,
 					epilogue: false,
 					special: false,
-					new: false,
+					new: true,
 					rating: "9.1",
 					date: "Apr 21, 2018",
-					waitFree: true,
+					waitFree: false,
 					coupon: false,
+					free: true,
 				},
 				{
 					id: "2",
@@ -367,11 +398,12 @@ export default async function Episode({ params }: { params: Promise<{id: string}
 					notice: false,
 					epilogue: false,
 					special: false,
-					new: false,
+					new: true,
 					rating: "9.3",
 					date: "Apr 23, 2018",
 					waitFree: false,
-					coupon: true,
+					coupon: false,
+					free: true,
 				},
 				{
 					id: "3",
@@ -382,11 +414,12 @@ export default async function Episode({ params }: { params: Promise<{id: string}
 					notice: false,
 					epilogue: false,
 					special: false,
-					new: false,
+					new: true,
 					rating: "9.5",
 					date: "Apr 25, 2018",
 					waitFree: false,
 					coupon: false,
+					free: true,
 				},
 				{
 					id: "4",
@@ -397,11 +430,12 @@ export default async function Episode({ params }: { params: Promise<{id: string}
 					notice: true,
 					epilogue: false,
 					special: false,
-					new: false,
+					new: true,
 					rating: "9.7",
 					date: "Apr 27, 2018",
-					waitFree: false,
+					waitFree: true,
 					coupon: false,
+					free: false,
 				},
 				{
 					id: "5",
@@ -416,7 +450,8 @@ export default async function Episode({ params }: { params: Promise<{id: string}
 					rating: "9.9",
 					date: "Apr 28, 2018",
 					waitFree: false,
-					coupon: false,
+					coupon: true,
+					free: false,
 				},
 				{
 					id: "6",
@@ -432,6 +467,7 @@ export default async function Episode({ params }: { params: Promise<{id: string}
 					date: "Apr 21, 2018",
 					waitFree: false,
 					coupon: false,
+					free: false,
 				},
 				{
 					id: "7",
@@ -447,6 +483,7 @@ export default async function Episode({ params }: { params: Promise<{id: string}
 					date: "Apr 21, 2018",
 					waitFree: false,
 					coupon: false,
+					free: false,
 				}
 			]
     },

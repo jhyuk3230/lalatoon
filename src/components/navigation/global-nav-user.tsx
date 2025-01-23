@@ -118,7 +118,7 @@ export default function GlobalNavUser() {
 				return;
       }
 
-			const newUser = { id: signupId, pw: signupPw, adult: false };
+			const newUser = { id: signupId, pw: signupPw, adult: false, webcoin: 0, appcoin: 0, favorite: [], coupon: [], read: [], collection: [] };
 
 			const result = await UserFetch(newUser);
 

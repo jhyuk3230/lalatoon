@@ -1,12 +1,9 @@
 "use client";
 
 import { FavoriteFetch } from "@/apis/episode/favorite.fetch";
-import { UserList } from "@/components/dummy/user-list";
 import { useLoginStore } from "@/store/common/common.store";
 import { getCookie } from "cookies-next";
 import { useEffect, useState } from "react";
-
-// const userData = UserList;
 
 export default function EpisodeFavoriteBtn({ episodeId }: { episodeId: string }) {
 	const userData = require("@/components/dummy/user-list.json");

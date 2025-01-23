@@ -1,32 +1,43 @@
 [
   {
-    "id": "test",
+    "id": "test@test.com",
     "pw": "testpw",
-    "adult": true,
-    "webcoin": 268,
-    "appcoin": 118,
+    "adult": false,
+    "webcoin": 78,
+    "appcoin": 100,
     "favorite": [
-      "1",
-      "4",
-      "8"
+      "1"
     ],
     "coupon": [
       "10",
-      "12/05"
+      "12/25"
     ],
     "read": [
       {
         "work": "1",
         "episode": [
           "1",
+          "2",
           "3",
-          "4"
+          "4",
+          "5",
+          "6",
+          "7"
         ]
       },
       {
         "work": "2",
         "episode": [
-          "2"
+          "4",
+          "2",
+          "3",
+          "1"
+        ]
+      },
+      {
+        "work": "3",
+        "episode": [
+          "1"
         ]
       },
       {
@@ -40,102 +51,36 @@
       {
         "work": "1",
         "episode": [
-          "1"
-        ]
-      },
-      {
-        "work": "7",
-        "episode": [
           "1",
+          "2",
           "3",
-          "4"
-        ]
-      }
-    ]
-  },
-  {
-    "id": "test2",
-    "pw": "testpw2",
-    "adult": true,
-    "webcoin": 108,
-    "appcoin": 0,
-    "favorite": [
-      "2",
-      "3",
-      "6"
-    ],
-    "coupon": [
-      "10",
-      "12/05"
-    ],
-    "read": [
-      {
-        "work": "2",
-        "episode": [
-          "2"
+          "4",
+          "5",
+          "6",
+          "7"
         ]
       },
-      {
-        "work": "7",
-        "episode": [
-          "1",
-          "2"
-        ]
-      }
-    ],
-    "collection": [
       {
         "work": "2",
         "episode": [
           "1",
           "2",
-          "3"
+          "3",
+          "4"
         ]
       },
       {
-        "work": "7",
+        "work": "3",
         "episode": [
-          "1",
-          "3",
-          "4",
-          "5"
+          "1"
+        ]
+      },
+      {
+        "work": "4",
+        "episode": [
+          "1"
         ]
       }
-    ]
-  },
-  {
-    "id": "test3",
-    "pw": "testpw3",
-    "adult": true,
-    "webcoin": 0,
-    "appcoin": 0,
-    "coupon": [
-      "90",
-      "31/12"
-    ]
-  },
-  {
-    "id": "dsfsjfklsd@jsdklfs.com",
-    "pw": "sdjkflsdfs",
-    "adult": false,
-    "webcoin": 0,
-    "appcoin": 0
-  },
-  {
-    "id": "aaa@jksldfsd.com",
-    "pw": "asdasdasd",
-    "adult": false,
-    "webcoin": 0,
-    "appcoin": 0
-  },
-  {
-    "id": "test4@test.com",
-    "pw": "testpw4",
-    "adult": true,
-    "webcoin": 96,
-    "appcoin": 50,
-    "favorite": [
-      "4"
     ]
   }
 ]

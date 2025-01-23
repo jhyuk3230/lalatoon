@@ -12,6 +12,7 @@ type EpisodeList = {
   date: string;
   waitFree: boolean;
   coupon: boolean;
+	free: boolean;
 };
 
 export type EpisodeItem = {

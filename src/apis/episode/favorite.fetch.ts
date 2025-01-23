@@ -1,7 +1,7 @@
 export async function FavoriteFetch(favoriteState: boolean, favoriteId: string, userIdCookie: string) {
 	try {
 		const userId = userIdCookie;
-    const response = await fetch("/api/episode", {
+    const response = await fetch("/api/episode/favorite", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
