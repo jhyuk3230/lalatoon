@@ -75,7 +75,9 @@
     "adult": false,
     "webcoin": 13,
     "appcoin": 30,
-    "favorite": [],
+    "favorite": [
+      "2"
+    ],
     "coupon": [],
     "read": [
       {

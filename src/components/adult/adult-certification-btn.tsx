@@ -34,7 +34,7 @@ export default function AdultCertificationBtn({ loginIdCookie }: AdultBtnProps) 
 					alert("인증되었습니다.");
 					setTimeout(() => {
 						redirect("/");
-					}, 1000)
+					}, 500)
 				}
 			} catch (error) {
 				console.error(error);
@@ -43,7 +43,7 @@ export default function AdultCertificationBtn({ loginIdCookie }: AdultBtnProps) 
 			alert("이미 인증되었습니다.");
 			setTimeout(() => {
 				redirect("/");
-			}, 1000);
+			}, 500);
 		}
 	}
 
