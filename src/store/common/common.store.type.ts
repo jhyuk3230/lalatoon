@@ -17,3 +17,8 @@ export type LoginState = {
   isLogin: boolean;
   setIsLogin: (state: boolean) => void;
 };
+
+export type CoinState = {
+  isCoin: number;
+  setIsCoin: (state: number) => void;
+};

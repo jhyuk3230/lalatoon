@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { AdultCheckState, AdultState, LoginState, NavState } from "@/store/common/common.store.type";
+import { AdultCheckState, AdultState, CoinState, LoginState, NavState } from "@/store/common/common.store.type";
 
 export const useNavStore = create<NavState>((set) => ({
   isNavActive: false,
@@ -19,4 +19,9 @@ export const useAdultCheckStore = create<AdultCheckState>((set) => ({
 export const useLoginStore = create<LoginState>((set) => ({
   isLogin: false,
   setIsLogin: (state) => set({ isLogin: state }),
+}));
+
+export const useCoinStore = create<CoinState>((set) => ({
+  isCoin: 0,
+  setIsCoin: (state) => set({ isCoin: state }),
 }));

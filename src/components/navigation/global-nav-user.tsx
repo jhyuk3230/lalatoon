@@ -1,12 +1,12 @@
 "use client";
-import { useAdultCheckStore, useLoginStore, useNavStore } from "@/store/common/common.store";
+import { useAdultCheckStore, useCoinStore, useLoginStore, useNavStore } from "@/store/common/common.store";
 import { getCookie, hasCookie, setCookie } from "cookies-next";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { UserFetch } from "@/apis/user/user.fetch";
 
 export default function GlobalNavUser() {
-	const userData = require("@/components/dummy/user-list.json")
+	const userData = require("@/components/dummy/user-list.json");
 	// 로그인 상태
 	const isLogin = useLoginStore((state) => state.isLogin);
   const setIsLogin = useLoginStore((state) => state.setIsLogin);
@@ -44,19 +44,25 @@ export default function GlobalNavUser() {
 	// 코인
 	const [webcoin, setWebCoin] = useState(0);
 	const [appcoin, setAppCoin] = useState(0);
+
+	const isCoin = useCoinStore((state) => state.isCoin);
+
+	useEffect(() => {
+		setWebCoin(isCoin);
+	}, [isCoin]);
 	
 	// 로그인 쿠키 체크
 	useEffect(() => {
-		if (isloginCookie) {
-			const cookieId = loginId?.toString() || "";
-			const user = userData.find((e: {id: string}) => e.id === cookieId);
+    if (isloginCookie) {
+      const cookieId = loginId?.toString() || "";
+      const user = userData.find((e: { id: string }) => e.id === cookieId);
       setEmail(cookieId);
-			setIsLogin(true);
-			setIsAdultCheck(user?.adult || false);
-			setWebCoin(user.webcoin);
+      setIsLogin(true);
+      setIsAdultCheck(user?.adult || false);
+      setWebCoin(user.webcoin);
       setAppCoin(user.appcoin);
     }
-	}, [])
+  }, []);
 
 	// 로그인 팝업
 	const loginPopup = () => {

@@ -5,6 +5,7 @@ import { EpisodeItem } from "@/types/episode.type ";
 import { getCookie } from "cookies-next";
 import { ReadFetch } from "@/apis/episode/read.fetch";
 import { useEffect, useState } from "react";
+import { useCoinStore } from "@/store/common/common.store";
 
 export default function EpisodeLink({ id, data, read }: { id: string, data: EpisodeItem, read: string[] }) {
 	const [user, setUser] = useState<any>(null);
@@ -16,19 +17,25 @@ export default function EpisodeLink({ id, data, read }: { id: string, data: Epis
 	const collectEpisode = collect?.episode;
 	
 	const userIdCookie = getCookie("loginId");
+
+	const setIsCoin = useCoinStore((state) => state.setIsCoin);
 	
 	useEffect(()=>{
 		const userData = require("@/components/dummy/user-list.json");
 		const foundUser = userData.find((e: {id: string}) => e.id === userIdCookie);
 		setUser(foundUser);
-		
 	}, [id])
-	
+
 	const episodeOnClick = (episodeId: string) => {
 		const clickEpisode = list.find((e) => e.id === episodeId);
 		
 		if (!clickEpisode?.free) {
-			ReadFetch(id, episodeId, userIdCookie || "", price);
+			if (user.webcoin >= price) {
+				ReadFetch(id, episodeId, userIdCookie || "", price);
+				setIsCoin(user.webcoin - price);
+			}else{
+				alert("코인이 부족합니다");
+			}
     }else{
 			ReadFetch(id, episodeId, userIdCookie || "", 0);
 		}
