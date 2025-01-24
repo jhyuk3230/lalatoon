@@ -1,13 +1,10 @@
 import DefaultLayout from "@/assets/common/default-layout";
-import { UserList } from "@/components/dummy/user-list";
 import EpisodeAlert from "@/components/episode/episode-alert";
 import EpisodeList from "@/components/episode/episode-list";
 import EpisodeTop from "@/components/episode/episode-top";
 import { EpisodeItem } from "@/types/episode.type ";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
-
-// const userData = UserList;
 
 export default async function Episode({ params }: { params: Promise<{id: string}> }) {
   const userData = require("@/components/dummy/user-list.json");

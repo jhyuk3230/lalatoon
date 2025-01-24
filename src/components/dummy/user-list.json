@@ -3,7 +3,7 @@
     "id": "test@test.com",
     "pw": "testpw",
     "adult": true,
-    "webcoin": 80,
+    "webcoin": 78,
     "appcoin": 100,
     "favorite": [
       "1"
@@ -38,6 +38,12 @@
         "episode": [
           "1"
         ]
+      },
+      {
+        "work": "6",
+        "episode": [
+          "1"
+        ]
       }
     ],
     "collection": [
@@ -63,6 +69,12 @@
       },
       {
         "work": "3",
+        "episode": [
+          "1"
+        ]
+      },
+      {
+        "work": "6",
         "episode": [
           "1"
         ]
