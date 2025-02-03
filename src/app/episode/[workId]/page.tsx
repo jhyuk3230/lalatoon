@@ -6,12 +6,12 @@ import { EpisodeItem } from "@/types/episode.type ";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 
-export default async function Episode({ params }: { params: Promise<{id: string}> }) {
+export default async function Episode({ params }: { params: Promise<{workId: string}> }) {
   const userData = require("@/components/dummy/user-list.json");
-  const { id } = await params;
+  const { workId } = await params;
   const userIdCookie = (await cookies()).get("loginId")?.value;
   const user = userData.find((e: { id: string }) => e.id === userIdCookie);
-  const readData = user?.read?.find((e: { work: string }) => e.work === id);
+  const readData = user?.read?.find((e: { work: string }) => e.work === workId);
 
   const episodeData: EpisodeItem[] = [
     {
@@ -48,6 +48,9 @@ export default async function Episode({ params }: { params: Promise<{id: string}
           waitFree: false,
           coupon: false,
           free: true,
+          view: [
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+          ],
         },
         {
           id: "2",
@@ -65,6 +68,10 @@ export default async function Episode({ params }: { params: Promise<{id: string}
           waitFree: false,
           coupon: false,
           free: true,
+          view: [
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+          ],
         },
         {
           id: "3",
@@ -82,6 +89,11 @@ export default async function Episode({ params }: { params: Promise<{id: string}
           waitFree: false,
           coupon: false,
           free: true,
+          view: [
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+          ],
         },
         {
           id: "4",
@@ -99,6 +111,12 @@ export default async function Episode({ params }: { params: Promise<{id: string}
           waitFree: true,
           coupon: false,
           free: false,
+          view: [
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+          ],
         },
         {
           id: "5",
@@ -116,6 +134,13 @@ export default async function Episode({ params }: { params: Promise<{id: string}
           waitFree: false,
           coupon: true,
           free: false,
+          view: [
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+          ],
         },
         {
           id: "6",
@@ -133,6 +158,14 @@ export default async function Episode({ params }: { params: Promise<{id: string}
           waitFree: false,
           coupon: false,
           free: false,
+          view: [
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+          ],
         },
         {
           id: "7",
@@ -150,6 +183,15 @@ export default async function Episode({ params }: { params: Promise<{id: string}
           waitFree: false,
           coupon: false,
           free: false,
+          view: [
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+          ],
         },
       ],
     },
@@ -186,6 +228,9 @@ export default async function Episode({ params }: { params: Promise<{id: string}
           waitFree: false,
           coupon: false,
           free: true,
+          view: [
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+          ],
         },
         {
           id: "2",
@@ -203,6 +248,10 @@ export default async function Episode({ params }: { params: Promise<{id: string}
           waitFree: true,
           coupon: false,
           free: false,
+          view: [
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+          ],
         },
         {
           id: "3",
@@ -220,6 +269,11 @@ export default async function Episode({ params }: { params: Promise<{id: string}
           waitFree: false,
           coupon: true,
           free: false,
+          view: [
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+          ],
         },
         {
           id: "4",
@@ -237,6 +291,12 @@ export default async function Episode({ params }: { params: Promise<{id: string}
           waitFree: false,
           coupon: false,
           free: false,
+          view: [
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+          ],
         },
       ],
     },
@@ -273,6 +333,15 @@ export default async function Episode({ params }: { params: Promise<{id: string}
           waitFree: true,
           coupon: false,
           free: false,
+          view: [
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+          ],
         },
       ],
     },
@@ -309,6 +378,15 @@ export default async function Episode({ params }: { params: Promise<{id: string}
           waitFree: true,
           coupon: false,
           free: false,
+          view: [
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+          ],
         },
       ],
     },
@@ -345,6 +423,15 @@ export default async function Episode({ params }: { params: Promise<{id: string}
           waitFree: true,
           coupon: false,
           free: false,
+          view: [
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+          ],
         },
       ],
     },
@@ -381,6 +468,15 @@ export default async function Episode({ params }: { params: Promise<{id: string}
           waitFree: true,
           coupon: false,
           free: false,
+          view: [
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+          ],
         },
       ],
     },
@@ -418,6 +514,9 @@ export default async function Episode({ params }: { params: Promise<{id: string}
           waitFree: false,
           coupon: false,
           free: true,
+          view: [
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+          ],
         },
         {
           id: "2",
@@ -435,6 +534,10 @@ export default async function Episode({ params }: { params: Promise<{id: string}
           waitFree: false,
           coupon: false,
           free: true,
+          view: [
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+          ],
         },
         {
           id: "3",
@@ -452,6 +555,11 @@ export default async function Episode({ params }: { params: Promise<{id: string}
           waitFree: false,
           coupon: false,
           free: true,
+          view: [
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+          ],
         },
         {
           id: "4",
@@ -469,6 +577,12 @@ export default async function Episode({ params }: { params: Promise<{id: string}
           waitFree: true,
           coupon: false,
           free: false,
+          view: [
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+          ],
         },
         {
           id: "5",
@@ -486,6 +600,13 @@ export default async function Episode({ params }: { params: Promise<{id: string}
           waitFree: false,
           coupon: true,
           free: false,
+          view: [
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+          ],
         },
         {
           id: "6",
@@ -503,6 +624,14 @@ export default async function Episode({ params }: { params: Promise<{id: string}
           waitFree: false,
           coupon: false,
           free: false,
+          view: [
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+          ],
         },
         {
           id: "7",
@@ -520,12 +649,21 @@ export default async function Episode({ params }: { params: Promise<{id: string}
           waitFree: false,
           coupon: false,
           free: false,
+          view: [
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+          ],
         },
       ],
     },
   ];
 
-  const episode = episodeData.find((item) => item.id === id);
+  const episode = episodeData.find((item) => item.id === workId);
 
   if (episode?.adult && user == undefined) redirect("/"); //성인 작품 이면서 로그인이 안된경우
   if (episode?.adult && !user.adult) redirect("/"); //성인 작품 이면서 로그인이 되어있지만 성인인증이 안된경우
@@ -535,9 +673,9 @@ export default async function Episode({ params }: { params: Promise<{id: string}
   return (
     <>
       <DefaultLayout>
-        <EpisodeTop id={id} data={episode} read={readData?.episode || []} />
-        <EpisodeAlert id={id} data={episode} coupon={user?.coupon || []} />
-        <EpisodeList id={id} data={episode} read={readData?.episode || []} />
+        <EpisodeTop id={workId} data={episode} read={readData?.episode || []} />
+        <EpisodeAlert id={workId} data={episode} coupon={user?.coupon || []} />
+        <EpisodeList id={workId} data={episode} read={readData?.episode || []} />
       </DefaultLayout>
     </>
   );

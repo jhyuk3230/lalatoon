@@ -13,6 +13,7 @@ type EpisodeList = {
   waitFree: boolean;
   coupon: boolean;
 	free: boolean;
+	view: string[];
 };
 
 export type EpisodeItem = {

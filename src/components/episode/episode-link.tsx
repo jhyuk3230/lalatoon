@@ -6,6 +6,7 @@ import { getCookie } from "cookies-next";
 import { ReadFetch } from "@/apis/episode/read.fetch";
 import { useEffect, useState } from "react";
 import { useCoinStore } from "@/store/common/common.store";
+import { useRouter } from "next/navigation";
 
 export default function EpisodeLink({ id, data, read }: { id: string, data: EpisodeItem, read: string[] }) {
 	const [user, setUser] = useState<any>(null);
@@ -26,18 +27,24 @@ export default function EpisodeLink({ id, data, read }: { id: string, data: Epis
 		setUser(foundUser);
 	}, [id])
 
+	const router = useRouter();
+
 	const episodeOnClick = (episodeId: string) => {
 		const clickEpisode = list.find((e) => e.id === episodeId);
+		console.log(clickEpisode);
 		
 		if (!clickEpisode?.free) {
 			if (user.webcoin >= price) {
 				ReadFetch(id, episodeId, userIdCookie || "", price);
 				setIsCoin(user.webcoin - price);
+				router.replace(`/episode/${id}/${episodeId}`);
+				// redirect(`/episode/${id}/${episodeId}`);
 			}else{
 				alert("코인이 부족합니다");
 			}
     }else{
 			ReadFetch(id, episodeId, userIdCookie || "", 0);
+			router.replace(`/episode/${id}/${episodeId}`);
 		}
 	}
 	
