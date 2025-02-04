@@ -1,6 +1,5 @@
 "use client"
 import { UserList } from "@/components/dummy/user-list";
-import { setCookie } from "cookies-next";
 import { redirect } from "next/navigation";
 import { useEffect, useState } from "react";
 

@@ -1,10 +1,13 @@
 import Link from "next/link";
+import ViewNav from "./view-nav";
+import { EpisodeItem } from "@/types/episode.type ";
+import { cookies } from "next/headers";
 
-export default async function ViewHeader({workid, episodeid, episodelength}: {workid:string, episodeid: string, episodelength: number}) {
-	const toNumber = Number(episodeid);
-	const prev = toNumber - 1;
-	const next = toNumber + 1;
-
+export default async function ViewHeader({workid, episodeid, episodelength, data}: {workid:string, episodeid: string, episodelength: number, data:EpisodeItem}) {
+	const userData = require("@/components/dummy/user-list.json");
+	const userIdCookie = (await cookies()).get("loginId")?.value;
+	const user = userData.find((e: {id: string}) => e.id === userIdCookie);
+	
 	return (
 		<>
 			<header className="w-full bg-black fixed left-0 top-0 z-[5]">
@@ -31,20 +34,9 @@ export default async function ViewHeader({workid, episodeid, episodelength}: {wo
 					</article>
 				</section>
 
-				<section className="w-full h-[70px] bg-black fixed left-0 bottom-0">
+				<section className="w-full bg-black fixed left-0 bottom-0">
 					<article className="max-w-[768px] mx-auto px-[20px]">
-						<ul className="flex justify-center items-center gap-[20px]">
-							{prev > 0 ? (
-								<li><Link href={`/episode/${workid}/${prev}`} className="text-[16px] font-bold text-white">이전 에피소드</Link></li>
-							) : null}
-							<li>
-								<Link href={`/episode/${workid}`} className="text-[16px] font-bold text-white">리스트</Link>
-							</li>
-							{next <= episodelength ? (
-								<li><Link href={`/episode/${workid}/${next}`} className="text-[16px] font-bold text-white">다음 에피소드</Link></li>
-							) : null}
-							<li></li>
-						</ul>
+						<ViewNav workid={workid} episodeid={episodeid} episodelength={episodelength} data={data} user={user} />
 					</article>
 				</section>
 			</header>

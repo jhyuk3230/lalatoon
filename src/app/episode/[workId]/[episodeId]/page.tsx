@@ -662,8 +662,7 @@ export default async function EpisodeView({params}: {params:Promise<{workId: str
 	
 	return (
     <>
-      {/* <ViewLayout workid={workId} episodeid={episodeId}> */}
-      <ViewLayout workid={workId} episodeid={episodeId} episodelength={episodeLength || 0}>
+      <ViewLayout workid={workId} episodeid={episodeId} episodelength={episodeLength || 0} data={list!}>
         <section className="max-w-[768px] mx-auto">
           <article className="px-[20px]">
             {episodeImg?.map((e, i) => (

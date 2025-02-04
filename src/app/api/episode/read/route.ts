@@ -7,6 +7,7 @@ export async function PUT(request: NextRequest) {
 	try{
 		// 입력내용
 		const { workId, episodeId, userId, price } = await request.json();
+		console.log(episodeId);
 		
 		// 수정해야할 데이터 파일 경로
 		const filePath = path.join(process.cwd(), 'src/components/dummy/user-list.json');
@@ -15,16 +16,18 @@ export async function PUT(request: NextRequest) {
 		let fileContent = await fs.readFile(filePath, 'utf8');
 		const userData: UserData[] = JSON.parse(fileContent);
 		const userIndex = userData.findIndex((e) => e.id === userId);
-
+		
 		const user = userData[userIndex];
-
+		
 		// 클로버차감
 		const thisEpeisodeCollection = user.collection?.find((e) => e.work === workId);
 		const collectionBoolean = thisEpeisodeCollection?.episode.includes(episodeId);
 		if (!collectionBoolean) {
-      userData[userIndex].webcoin = user.webcoin - price;
+			userData[userIndex].webcoin = user.webcoin - price;
     }
 		
+		console.log(user);
+		console.log(user.read);
 		// read
 		if (!user.read) {
 			user.read = []
