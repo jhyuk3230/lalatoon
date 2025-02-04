@@ -6,8 +6,7 @@ import { NextRequest, NextResponse } from "next/server";
 export async function PUT(request: NextRequest) {
 	try{
 		// 입력내용
-		const { workId, episodeId, userId, price } = await request.json();
-		console.log(episodeId);
+		const { workId, episodeId, userId, price, notread } = await request.json();
 		
 		// 수정해야할 데이터 파일 경로
 		const filePath = path.join(process.cwd(), 'src/components/dummy/user-list.json');
@@ -26,29 +25,29 @@ export async function PUT(request: NextRequest) {
 			userData[userIndex].webcoin = user.webcoin - price;
     }
 		
-		console.log(user);
-		console.log(user.read);
 		// read
-		if (!user.read) {
-			user.read = []
-			user.read.push({ work: workId, episode: [episodeId] });
-    }
-		
-		// read work가 없는 경우 -1  *해당 작품에대한 정보가 있는지 확인 가능
-		const readIndex = user.read.findIndex((e) => e.work === workId);
-		
-		if (readIndex !== -1) {
-			const episodeList = user.read[readIndex].episode;
-			if (!episodeList.includes(episodeId)) {
-				episodeList.push(episodeId);
-      }else{
-				const delIndex = episodeList.findIndex((e) => e === episodeId);
-				episodeList.splice(delIndex, 1);
-				episodeList.push(episodeId);
+		if (!notread) {
+			if (!user.read) {
+				user.read = [];
+				user.read.push({ work: workId, episode: [episodeId] });
 			}
-    } else {
-			user.read.push({ work: workId, episode: [episodeId] });
-    }
+			
+			// read work가 없는 경우 -1  *해당 작품에대한 정보가 있는지 확인 가능
+			const readIndex = user.read.findIndex((e) => e.work === workId);
+			
+			if (readIndex !== -1) {
+				const episodeList = user.read[readIndex].episode;
+				if (!episodeList.includes(episodeId)) {
+					episodeList.push(episodeId);
+				}else{
+					const delIndex = episodeList.findIndex((e) => e === episodeId);
+					episodeList.splice(delIndex, 1);
+					episodeList.push(episodeId);
+				}
+			} else {
+				user.read.push({ work: workId, episode: [episodeId] });
+			}
+		}
 
 		// collection
 		if (!user.collection) {
@@ -58,7 +57,6 @@ export async function PUT(request: NextRequest) {
 
 		// collection work가 없는 경우 -1  *해당 작품에대한 정보가 있는지 확인 가능
 		const collectionIndex = user.collection?.findIndex((e) => e.work === workId);
-		// console.log(collectionIndex);
 		if (collectionIndex !== -1) {
 			const episodeList = user.collection[collectionIndex].episode;
 			if (!episodeList.includes(episodeId)) {

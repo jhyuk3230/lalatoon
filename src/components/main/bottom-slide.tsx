@@ -126,8 +126,8 @@ export default function BottomSlide(){
 
   return (
     <>
-      <WorkSlide items={resultList} tagStyles={tagStyle} name="work1" title="Recommended Comics" more="#" arrow={false} />
-      <WorkSlide items={resultList} tagStyles={tagStyle} name="work2" title="Today's Comics" more="#" arrow={false} />
+      <WorkSlide items={resultList} tagStyles={tagStyle} name="work1" title="Recommended Comics" more="#" arrow={false} white={false} blank={false} />
+      <WorkSlide items={resultList} tagStyles={tagStyle} name="work2" title="Today's Comics" more="#" arrow={false} white={false} blank={false} />
     </>
   );
 }

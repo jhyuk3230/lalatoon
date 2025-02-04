@@ -7,6 +7,8 @@ export default async function ViewHeader({workid, episodeid, episodelength, data
 	const userData = require("@/components/dummy/user-list.json");
 	const userIdCookie = (await cookies()).get("loginId")?.value;
 	const user = userData.find((e: {id: string}) => e.id === userIdCookie);
+
+	const episodeInfo = data.episodeList.find((e: { id: string }) => e.id === episodeid);
 	
 	return (
 		<>
@@ -27,6 +29,12 @@ export default async function ViewHeader({workid, episodeid, episodelength, data
 								</defs>
 							</svg>
 						</Link>
+					</article>
+
+					<article>
+						<h2 className="text-[20px] font-bold text-white">
+							{episodeInfo!.title} | {episodeInfo?.prologue ? "Prologue" : null}{episodeInfo?.notice ? "Notice" : null}{episodeInfo?.epilogue ? "Epilogue" : null}{episodeInfo?.special ? "Special" : null}{!episodeInfo?.prologue && !episodeInfo?.notice && !episodeInfo?.epilogue && !episodeInfo?.special ? `${episodeInfo?.episodeNum}화` : null}
+						</h2>
 					</article>
 
 					<article className="flex items-center gap-5">

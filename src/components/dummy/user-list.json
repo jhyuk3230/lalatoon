@@ -3,7 +3,7 @@
     "id": "test@test.com",
     "pw": "testpw",
     "adult": true,
-    "webcoin": 62,
+    "webcoin": 18,
     "appcoin": 100,
     "favorite": [
       "1"
@@ -13,6 +13,38 @@
       "12/25"
     ],
     "read": [
+      {
+        "work": "1",
+        "episode": []
+      },
+      {
+        "work": "2",
+        "episode": [
+          "4",
+          "2",
+          "3"
+        ]
+      },
+      {
+        "work": "3",
+        "episode": [
+          "1"
+        ]
+      },
+      {
+        "work": "6",
+        "episode": [
+          "1"
+        ]
+      },
+      {
+        "work": "4",
+        "episode": [
+          "1"
+        ]
+      }
+    ],
+    "collection": [
       {
         "work": "1",
         "episode": [
@@ -44,37 +76,9 @@
         "episode": [
           "1"
         ]
-      }
-    ],
-    "collection": [
-      {
-        "work": "1",
-        "episode": [
-          "7",
-          "6",
-          "5",
-          "1",
-          "4",
-          "2",
-          "3"
-        ]
       },
       {
-        "work": "2",
-        "episode": [
-          "4",
-          "2",
-          "3"
-        ]
-      },
-      {
-        "work": "3",
-        "episode": [
-          "1"
-        ]
-      },
-      {
-        "work": "6",
+        "work": "4",
         "episode": [
           "1"
         ]

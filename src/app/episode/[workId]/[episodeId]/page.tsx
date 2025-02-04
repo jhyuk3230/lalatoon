@@ -1,4 +1,5 @@
 import ViewLayout from "@/assets/common/view-layout";
+import ViewBottom from "@/components/view/view-bottom";
 import { EpisodeItem } from "@/types/episode.type ";
 import Image from "next/image";
 
@@ -29,7 +30,7 @@ export default async function EpisodeView({params}: {params:Promise<{workId: str
           thumb:
             "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
           title: "TEST NAME",
-          episodeNum: "1",
+          episodeNum: "0",
           prologue: true,
           notice: false,
           epilogue: false,
@@ -42,6 +43,7 @@ export default async function EpisodeView({params}: {params:Promise<{workId: str
           free: true,
           view: [
             "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+            "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
           ],
         },
         {
@@ -49,7 +51,7 @@ export default async function EpisodeView({params}: {params:Promise<{workId: str
           thumb:
             "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
           title: "TEST NAME",
-          episodeNum: "2",
+          episodeNum: "1",
           prologue: false,
           notice: false,
           epilogue: false,
@@ -70,7 +72,7 @@ export default async function EpisodeView({params}: {params:Promise<{workId: str
           thumb:
             "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
           title: "TEST NAME",
-          episodeNum: "3",
+          episodeNum: "2",
           prologue: false,
           notice: false,
           epilogue: false,
@@ -92,7 +94,7 @@ export default async function EpisodeView({params}: {params:Promise<{workId: str
           thumb:
             "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
           title: "TEST NAME",
-          episodeNum: "4",
+          episodeNum: "0",
           prologue: false,
           notice: true,
           epilogue: false,
@@ -115,7 +117,7 @@ export default async function EpisodeView({params}: {params:Promise<{workId: str
           thumb:
             "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
           title: "TEST NAME",
-          episodeNum: "5",
+          episodeNum: "0",
           prologue: false,
           notice: false,
           epilogue: false,
@@ -139,7 +141,7 @@ export default async function EpisodeView({params}: {params:Promise<{workId: str
           thumb:
             "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
           title: "TEST NAME",
-          episodeNum: "6",
+          episodeNum: "3",
           prologue: false,
           notice: false,
           epilogue: false,
@@ -164,7 +166,7 @@ export default async function EpisodeView({params}: {params:Promise<{workId: str
           thumb:
             "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
           title: "TEST NAME",
-          episodeNum: "6",
+          episodeNum: "0",
           prologue: false,
           notice: false,
           epilogue: true,
@@ -209,7 +211,7 @@ export default async function EpisodeView({params}: {params:Promise<{workId: str
           thumb:
             "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
           title: "TEST NAME",
-          episodeNum: "1",
+          episodeNum: "0",
           prologue: true,
           notice: false,
           epilogue: false,
@@ -229,7 +231,7 @@ export default async function EpisodeView({params}: {params:Promise<{workId: str
           thumb:
             "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
           title: "TEST NAME",
-          episodeNum: "2",
+          episodeNum: "1",
           prologue: false,
           notice: false,
           epilogue: false,
@@ -250,7 +252,7 @@ export default async function EpisodeView({params}: {params:Promise<{workId: str
           thumb:
             "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
           title: "TEST NAME",
-          episodeNum: "3",
+          episodeNum: "0",
           prologue: false,
           notice: true,
           epilogue: false,
@@ -272,7 +274,7 @@ export default async function EpisodeView({params}: {params:Promise<{workId: str
           thumb:
             "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
           title: "TEST NAME",
-          episodeNum: "4",
+          episodeNum: "2",
           prologue: false,
           notice: false,
           epilogue: false,
@@ -314,7 +316,7 @@ export default async function EpisodeView({params}: {params:Promise<{workId: str
           thumb:
             "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
           title: "TEST NAME",
-          episodeNum: "1",
+          episodeNum: "0",
           prologue: true,
           notice: false,
           epilogue: false,
@@ -359,7 +361,7 @@ export default async function EpisodeView({params}: {params:Promise<{workId: str
           thumb:
             "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
           title: "TEST NAME",
-          episodeNum: "1",
+          episodeNum: "0",
           prologue: true,
           notice: false,
           epilogue: false,
@@ -404,7 +406,7 @@ export default async function EpisodeView({params}: {params:Promise<{workId: str
           thumb:
             "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
           title: "TEST NAME",
-          episodeNum: "1",
+          episodeNum: "0",
           prologue: true,
           notice: false,
           epilogue: false,
@@ -449,7 +451,7 @@ export default async function EpisodeView({params}: {params:Promise<{workId: str
           thumb:
             "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
           title: "TEST NAME",
-          episodeNum: "1",
+          episodeNum: "0",
           prologue: true,
           notice: false,
           epilogue: false,
@@ -495,7 +497,7 @@ export default async function EpisodeView({params}: {params:Promise<{workId: str
           thumb:
             "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
           title: "TEST NAME",
-          episodeNum: "1",
+          episodeNum: "0",
           prologue: true,
           notice: false,
           epilogue: false,
@@ -515,7 +517,7 @@ export default async function EpisodeView({params}: {params:Promise<{workId: str
           thumb:
             "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
           title: "TEST NAME",
-          episodeNum: "2",
+          episodeNum: "1",
           prologue: false,
           notice: false,
           epilogue: false,
@@ -536,7 +538,7 @@ export default async function EpisodeView({params}: {params:Promise<{workId: str
           thumb:
             "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
           title: "TEST NAME",
-          episodeNum: "3",
+          episodeNum: "2",
           prologue: false,
           notice: false,
           epilogue: false,
@@ -558,7 +560,7 @@ export default async function EpisodeView({params}: {params:Promise<{workId: str
           thumb:
             "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
           title: "TEST NAME",
-          episodeNum: "4",
+          episodeNum: "0",
           prologue: false,
           notice: true,
           epilogue: false,
@@ -581,7 +583,7 @@ export default async function EpisodeView({params}: {params:Promise<{workId: str
           thumb:
             "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
           title: "TEST NAME",
-          episodeNum: "5",
+          episodeNum: "0",
           prologue: false,
           notice: false,
           epilogue: false,
@@ -605,7 +607,7 @@ export default async function EpisodeView({params}: {params:Promise<{workId: str
           thumb:
             "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
           title: "TEST NAME",
-          episodeNum: "6",
+          episodeNum: "3",
           prologue: false,
           notice: false,
           epilogue: false,
@@ -630,7 +632,7 @@ export default async function EpisodeView({params}: {params:Promise<{workId: str
           thumb:
             "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
           title: "TEST NAME",
-          episodeNum: "6",
+          episodeNum: "0",
           prologue: false,
           notice: false,
           epilogue: true,
@@ -669,6 +671,10 @@ export default async function EpisodeView({params}: {params:Promise<{workId: str
               <Image src={e} alt={`1`} width={800} height={100} key={i} />
             ))}
           </article>
+
+					<article className="mt-[50px] pb-[70px]">
+						<ViewBottom />
+					</article>
         </section>
       </ViewLayout>
     </>

@@ -1,12 +1,12 @@
-export async function ReadFetch(workId: string, episodeId: string, userIdCookie: string, price: number) {
+export async function ReadFetch(workId: string, episodeId: string, userIdCookie: string, price: number, notread?: boolean) {
 	try {
 		const userId = userIdCookie;
     const response = await fetch("/api/episode/read", {
-			method: "PUT",
+      method: "PUT",
       headers: {
-				"Content-Type": "application/json",
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify({ workId, episodeId, userId, price }),
+      body: JSON.stringify({ workId, episodeId, userId, price, notread }),
     });
 		
     const result = await response.json();

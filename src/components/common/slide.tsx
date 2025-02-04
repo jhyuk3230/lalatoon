@@ -13,9 +13,11 @@ type WorkSlideProps = {
   more: string;
   arrow: boolean;
   tagStyles: tagStyleType;
+	white: boolean;
+	blank: boolean;
 };
 
-export default function WorkSlide({items, name, title, more, arrow, tagStyles}: WorkSlideProps) {
+export default function WorkSlide({items, name, title, more, arrow, tagStyles, white, blank}: WorkSlideProps) {
   const slideitems = items;
 
   const tagStyle: tagStyleType = tagStyles;
@@ -25,11 +27,11 @@ export default function WorkSlide({items, name, title, more, arrow, tagStyles}: 
 			<section className="mt-[30px] xs:mt-[45px]">
         <article className="max-w-[768px] mx-auto pl-[20px]">
 					<div className="mb-5 pr-[20px] flex justify-between items-center">
-						<h3 className="text-[20px] font-bold text-black leading-[29px]">{title}</h3>
-						<Link href={more} className="text-[12px] font-bold text-gray-400">More</Link>
+						<h3 className={`text-[20px] font-bold ${white ? "text-white" : "text-black"} leading-[29px]`}>{title}</h3>
+						<Link href={more} className={`text-[12px] font-bold ${white ? "text-white" : "text-gray-400"}`}>More</Link>
 					</div>
 
-					<div className={`${name} relative`}>
+					<div className={`${name} ${blank ? "pr-5" : ""} relative`}>
       		  <Swiper
       		    slidesPerView="auto"
       		    spaceBetween={12}
@@ -45,7 +47,7 @@ export default function WorkSlide({items, name, title, more, arrow, tagStyles}: 
         			    slidesPerGroup: 3,
         			  },
         			}}
-      		    className="mySwiper pr-[20px]"
+      		    className={`mySwiper ${blank ? "" : "pr-5"}`}
       		  >
       		    {slideitems.map((e, i) => (
       		      <SwiperSlide key={i} className="w-[120px]">
