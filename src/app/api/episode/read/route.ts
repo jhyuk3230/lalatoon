@@ -36,14 +36,21 @@ export async function PUT(request: NextRequest) {
 			const readIndex = user.read.findIndex((e) => e.work === workId);
 			
 			if (readIndex !== -1) {
+				// 기존 읽은작품 배열
 				const episodeList = user.read[readIndex].episode;
-				if (!episodeList.includes(episodeId)) {
-					episodeList.push(episodeId);
-				}else{
-					const delIndex = episodeList.findIndex((e) => e === episodeId);
-					episodeList.splice(delIndex, 1);
-					episodeList.push(episodeId);
-				}
+
+				//기존에 읽은적 있는 작품의 경우 최근읽은 기능을 위해 에피소드 id를 맨뒤로 이동
+				const filteredList = episodeList.filter((e) => !episodeId.includes(e));
+
+				// 새로 읽은작품 배열과 병합
+				user.read[readIndex].episode = [...new Set([...filteredList, ...episodeId].flat())];
+				// if (!episodeList.includes(episodeId)) {
+				// 	episodeList.push(episodeId);
+				// }else{
+				// 	const delIndex = episodeList.findIndex((e) => e === episodeId);
+				// 	episodeList.splice(delIndex, 1);
+				// 	episodeList.push(episodeId);
+				// }
 			} else {
 				user.read.push({ work: workId, episode: [episodeId] });
 			}
@@ -58,10 +65,15 @@ export async function PUT(request: NextRequest) {
 		// collection work가 없는 경우 -1  *해당 작품에대한 정보가 있는지 확인 가능
 		const collectionIndex = user.collection?.findIndex((e) => e.work === workId);
 		if (collectionIndex !== -1) {
+			// 기존 소장 배열
 			const episodeList = user.collection[collectionIndex].episode;
-			if (!episodeList.includes(episodeId)) {
-				episodeList.push(episodeId);
-			}else{}
+
+			// 새로운 배열과 병합
+			user.collection[collectionIndex].episode = [...new Set([...episodeList, ...episodeId].flat())];
+
+			// if (!episodeList.includes(episodeId)) {
+			// 	episodeList.push(episodeId);
+			// }else{}
     }else{
 			user.collection.push({ work: workId, episode: [episodeId] });
 		}

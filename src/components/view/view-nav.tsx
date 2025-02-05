@@ -8,6 +8,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 export default function ViewNav({workid, episodeid, episodelength, data, user}: {workid:string, episodeid: string, episodelength: number, data:EpisodeItem, user:UserData}) {
+	console.log(episodeid);
 	const router = useRouter();
 	const toNumber = Number(episodeid);
 	const prev = toNumber - 1;
@@ -27,7 +28,7 @@ export default function ViewNav({workid, episodeid, episodelength, data, user}: 
 	
 	const prevEpisode = () => {
 		if (prevInfo?.free) {
-			ReadFetch(workid, prev.toString(), userIdCookie || "", 0);
+			ReadFetch(workid, [prev.toString()], userIdCookie || "", 0);
 			router.push(`/episode/${workid}/${prev}`);
     }else{
 			if (user === undefined) {
@@ -38,14 +39,14 @@ export default function ViewNav({workid, episodeid, episodelength, data, user}: 
 				
 				// 소장시 바로 이동
 				if (collect !== undefined) {
-					ReadFetch(workid, prev.toString(), userIdCookie || "", 0);
+					ReadFetch(workid, [prev.toString()], userIdCookie || "", 0);
 					router.push(`/episode/${workid}/${prev}`);
 				}
 
 				// 소장중이 아닐경우 코인 갯수 확인 후 코인소모
 				if (collect == undefined) {
 					if (user.webcoin >= data.price) {
-						ReadFetch(workid, prev.toString(), userIdCookie || "", data.price);
+						ReadFetch(workid, [prev.toString()], userIdCookie || "", data.price);
             setIsCoin(user.webcoin - data.price);
 						router.push(`/episode/${workid}/${prev}`);
 					}else{
@@ -55,10 +56,10 @@ export default function ViewNav({workid, episodeid, episodelength, data, user}: 
 			}
 		}
 	}
-	
+
 	const nextEpisode = () => {
 		if (nextInfo?.free) {
-			ReadFetch(workid, next.toString(), userIdCookie || "", 0);
+			ReadFetch(workid, [next.toString()], userIdCookie || "", 0);
 			router.push(`/episode/${workid}/${next}`);
     }else{
 			if (user === undefined) {
@@ -69,14 +70,14 @@ export default function ViewNav({workid, episodeid, episodelength, data, user}: 
 				
 				// 소장시 바로 이동
 				if (collect !== undefined) {
-					ReadFetch(workid, next.toString(), userIdCookie || "", 0);
+					ReadFetch(workid, [next.toString()], userIdCookie || "", 0);
 					router.push(`/episode/${workid}/${next}`);
 				}
 
 				// 소장중이 아닐경우 코인 갯수 확인 후 코인소모
 				if (collect == undefined) {
 					if (user.webcoin >= data.price) {
-						ReadFetch(workid, next.toString(), userIdCookie || "", data.price);
+						ReadFetch(workid, [next.toString()], userIdCookie || "", data.price);
             setIsCoin(user.webcoin - data.price);
 						router.push(`/episode/${workid}/${next}`);
 					}else{

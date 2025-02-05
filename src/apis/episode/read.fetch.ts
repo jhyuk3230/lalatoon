@@ -1,4 +1,4 @@
-export async function ReadFetch(workId: string, episodeId: string, userIdCookie: string, price: number, notread?: boolean) {
+export async function ReadFetch(workId: string, episodeId: string[], userIdCookie: string, price: number, notread?: boolean) {
 	try {
 		const userId = userIdCookie;
     const response = await fetch("/api/episode/read", {

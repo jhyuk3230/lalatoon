@@ -47,9 +47,11 @@ export default function GlobalNavUser() {
 
 	const isCoin = useCoinStore((state) => state.isCoin);
 
+	console.log(isCoin);
+
 	useEffect(() => {
-		setWebCoin(isCoin);
-	}, [isCoin]);
+    setWebCoin(isCoin);
+  }, [isCoin]);
 	
 	// 로그인 쿠키 체크
 	useEffect(() => {

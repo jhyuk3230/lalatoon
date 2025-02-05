@@ -1,4 +1,4 @@
-type EpisodeList = {
+export type EpisodeList = {
   id: string;
   thumb: string;
   title: string;

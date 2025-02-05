@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { AdultCheckState, AdultState, CoinState, LoginState, NavState } from "@/store/common/common.store.type";
+import { AdultCheckState, AdultState, CoinState, EpisodeListState, LoginState, NavState, PurchaseState } from "@/store/common/common.store.type";
 
 export const useNavStore = create<NavState>((set) => ({
   isNavActive: false,
@@ -24,4 +24,14 @@ export const useLoginStore = create<LoginState>((set) => ({
 export const useCoinStore = create<CoinState>((set) => ({
   isCoin: 0,
   setIsCoin: (state) => set({ isCoin: state }),
+}));
+
+export const usePurchaseStore = create<PurchaseState>((set) => ({
+  isPurchase: false,
+  setIsPurchase: (state) => set({ isPurchase: state }),
+}));
+
+export const useEpisodeListStore = create<EpisodeListState>((set) => ({
+  isEpisodeList: [],
+  setIsEpisodeList: (state) => set({ isEpisodeList: state }),
 }));

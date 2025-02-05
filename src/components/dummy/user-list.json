@@ -3,7 +3,7 @@
     "id": "test@test.com",
     "pw": "testpw",
     "adult": true,
-    "webcoin": 18,
+    "webcoin": 790,
     "appcoin": 100,
     "favorite": [
       "1"
@@ -15,7 +15,11 @@
     "read": [
       {
         "work": "1",
-        "episode": []
+        "episode": [
+          "3",
+          "2",
+          "1"
+        ]
       },
       {
         "work": "2",
@@ -55,32 +59,6 @@
           "5",
           "6",
           "7"
-        ]
-      },
-      {
-        "work": "2",
-        "episode": [
-          "4",
-          "2",
-          "3"
-        ]
-      },
-      {
-        "work": "3",
-        "episode": [
-          "1"
-        ]
-      },
-      {
-        "work": "6",
-        "episode": [
-          "1"
-        ]
-      },
-      {
-        "work": "4",
-        "episode": [
-          "1"
         ]
       }
     ]
