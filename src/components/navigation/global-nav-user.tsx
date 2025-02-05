@@ -47,8 +47,6 @@ export default function GlobalNavUser() {
 
 	const isCoin = useCoinStore((state) => state.isCoin);
 
-	console.log(isCoin);
-
 	useEffect(() => {
     setWebCoin(isCoin);
   }, [isCoin]);

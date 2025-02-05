@@ -674,7 +674,7 @@ export default async function Episode({ params }: { params: Promise<{workId: str
   return (
     <>
       <DefaultLayout>
-        <EpisodeTop id={workId} data={episode} read={readData?.episode || []} />
+        <EpisodeTop id={workId} data={episode} read={readData?.episode || []} episode={episode?.episodeList} user={user} />
         <EpisodeAlert id={workId} data={episode} coupon={user?.coupon || []} />
         <EpisodeList id={workId} data={episode} read={readData?.episode || []} />
       </DefaultLayout>

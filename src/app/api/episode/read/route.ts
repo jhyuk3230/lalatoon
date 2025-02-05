@@ -7,6 +7,8 @@ export async function PUT(request: NextRequest) {
 	try{
 		// 입력내용
 		const { workId, episodeId, userId, price, notread } = await request.json();
+
+		console.log(notread);
 		
 		// 수정해야할 데이터 파일 경로
 		const filePath = path.join(process.cwd(), 'src/components/dummy/user-list.json');
@@ -25,8 +27,10 @@ export async function PUT(request: NextRequest) {
 			userData[userIndex].webcoin = user.webcoin - price;
     }
 		
+		console.log(notread);
 		// read
-		if (!notread) {
+		if (notread !== true) {
+			console.log("aaa");
 			if (!user.read) {
 				user.read = [];
 				user.read.push({ work: workId, episode: [episodeId] });

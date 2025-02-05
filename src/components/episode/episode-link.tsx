@@ -9,14 +9,10 @@ import { useCoinStore, useEpisodeListStore } from "@/store/common/common.store";
 import { useRouter } from "next/navigation";
 
 export default function EpisodeLink({ id, data, read }: { id: string, data: EpisodeItem, read: string[] }) {
-	console.log(data.episodeList);
-	// const isPurchase = usePurchaseStore((state) => state.isPurchase);
-	// console.log(isPurchase);
 	const isEpisodeList = useEpisodeListStore((state) => state.isEpisodeList);
 	const setIsEpisodeList = useEpisodeListStore((state) => state.setIsEpisodeList);
 	const [user, setUser] = useState<any>(null);
 	const { price } = data;
-	const [list, setList] = useState(data.episodeList);
 	const expiration = data.expiration;
 	const collect = user?.collection.find((e: {work: string}) => e.work === id);
 	const collectEpisode = collect?.episode;
@@ -36,15 +32,20 @@ export default function EpisodeLink({ id, data, read }: { id: string, data: Epis
 	const router = useRouter();
 
 	const episodeOnClick = (episodeId: string) => {
-		const clickEpisode = list.find((e) => e.id === episodeId);
+		const clickEpisode = isEpisodeList.find((e) => e.id === episodeId);
 		
 		if (!clickEpisode?.free) {
-			if (user.webcoin >= price) {
-				ReadFetch(id, [episodeId], userIdCookie || "", price);
-				setIsCoin(user.webcoin - price);
+			if (user.collection[0].episode.find((e:string) => e === clickEpisode?.id)) {
+				ReadFetch(id, [episodeId], userIdCookie || "", 0);
 				router.push(`/episode/${id}/${episodeId}`);
-			}else{
-				alert("코인이 부족합니다");
+			} else {
+				if (user.webcoin >= price) {
+					ReadFetch(id, [episodeId], userIdCookie || "", price);
+					setIsCoin(user.webcoin - price);
+					router.push(`/episode/${id}/${episodeId}`);
+				}else{
+					alert("코인이 부족합니다");
+				}
 			}
     }else{
 			ReadFetch(id, [episodeId], userIdCookie || "", 0);
@@ -55,7 +56,7 @@ export default function EpisodeLink({ id, data, read }: { id: string, data: Epis
   return (
     <>
       <ul className="border-t border-black">
-				{ list.map((e, i) => (
+				{ isEpisodeList.map((e, i) => (
 					<li className={`border-b border-gray-100 ${read.includes(e.id) ? "bg-gray-50" : ""} ${expiration && !collectEpisode?.includes(e.id) ? "opacity-30 pointer-events-none" : ""}`} key={i}>
 						<button data-link={`${expiration ? "" : "#"}`} className="w-full py-2 px-3 flex justify-between items-center text-left" onClick={() => {episodeOnClick(e.id)}}>
 							<div className="flex justify-start items-center gap-[15px]">

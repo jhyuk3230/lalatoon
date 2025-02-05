@@ -1,12 +1,11 @@
 "use client";
 
 import { ReadFetch } from "@/apis/episode/read.fetch";
-import { useCoinStore, usePurchaseStore } from "@/store/common/common.store";
+import { useCoinStore } from "@/store/common/common.store";
 import { EpisodeItem } from "@/types/episode.type ";
 import { getCookie } from "cookies-next";
 
 export default function EpisodePurchaseAll({ id, data }: { id: string, data: EpisodeItem }) {
-	const setIsPurchase = usePurchaseStore((state) => state.setIsPurchase);
 	const setIsCoin = useCoinStore((state) => state.setIsCoin);
 	const userData = require("@/components/dummy/user-list.json");
 	const userIdCookie = getCookie("loginId");
@@ -17,11 +16,9 @@ export default function EpisodePurchaseAll({ id, data }: { id: string, data: Epi
 	const purchaseAll = async () => {
     if (userIdCookie !== undefined) {
 			const sortingPurchaseList = data.episodeList.map((item) => item.id).filter((item) => !episodeList.episode.includes(item));
-			console.log();
       if (user.webcoin >= data.price * data.episodeList.length) {
 				if (sortingPurchaseList.length > 0) {
 					await ReadFetch(id, sortingPurchaseList, userIdCookie, data.price * data.episodeList.length, true);
-					setIsPurchase(true);
 					setIsCoin(user.webcoin - data.price * data.episodeList.length);
         } else{
 					alert("이미 소장중입니다.");
