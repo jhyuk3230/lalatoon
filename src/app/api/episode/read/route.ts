@@ -7,8 +7,6 @@ export async function PUT(request: NextRequest) {
 	try{
 		// 입력내용
 		const { workId, episodeId, userId, price, notread } = await request.json();
-
-		console.log(notread);
 		
 		// 수정해야할 데이터 파일 경로
 		const filePath = path.join(process.cwd(), 'src/components/dummy/user-list.json');
@@ -26,14 +24,12 @@ export async function PUT(request: NextRequest) {
 		if (!collectionBoolean) {
 			userData[userIndex].webcoin = user.webcoin - price;
     }
-		
-		console.log(notread);
+
 		// read
 		if (notread !== true) {
-			console.log("aaa");
 			if (!user.read) {
 				user.read = [];
-				user.read.push({ work: workId, episode: [episodeId] });
+				user.read.push({ work: workId, episode: episodeId });
 			}
 			
 			// read work가 없는 경우 -1  *해당 작품에대한 정보가 있는지 확인 가능
@@ -56,18 +52,20 @@ export async function PUT(request: NextRequest) {
 				// 	episodeList.push(episodeId);
 				// }
 			} else {
-				user.read.push({ work: workId, episode: [episodeId] });
+				user.read.push({ work: workId, episode: episodeId });
 			}
 		}
 
 		// collection
+		// console.log(user.collection);
 		if (!user.collection) {
       user.collection = [];
-      user.collection.push({ work: workId, episode: [episodeId] });
+      user.collection.push({ work: workId, episode: episodeId });
     }
 
 		// collection work가 없는 경우 -1  *해당 작품에대한 정보가 있는지 확인 가능
 		const collectionIndex = user.collection?.findIndex((e) => e.work === workId);
+
 		if (collectionIndex !== -1) {
 			// 기존 소장 배열
 			const episodeList = user.collection[collectionIndex].episode;
@@ -79,7 +77,7 @@ export async function PUT(request: NextRequest) {
 			// 	episodeList.push(episodeId);
 			// }else{}
     }else{
-			user.collection.push({ work: workId, episode: [episodeId] });
+			user.collection.push({ work: workId, episode: episodeId });
 		}
 
 		await fs.writeFile(filePath, JSON.stringify(userData, null, 2), "utf8");

@@ -68,7 +68,7 @@ export default function EpisodeTopBtn({ id, data, read, episode, user }: { id: s
 					)}
 				</>
 			) : (
-				<button data-link={`/episode/${id}/1`} className="min-w-[160px] h-[40px] px-3 rounded-[50px] flex justify-center items-center bg-green-600 text-[13px] font-medium text-black m-sm:px-5 m-sm:text-[14px] m-sm:font-normal">Read First Episode</button>
+				<button data-link={`/episode/${id}/1`} className="min-w-[160px] h-[40px] px-3 rounded-[50px] flex justify-center items-center bg-green-600 text-[13px] font-medium text-black m-sm:px-5 m-sm:text-[14px] m-sm:font-normal" onClick={() => {topBtnClick(`/episode/${id}/1`, "1");}}>Read First Episode</button>
 			) }
     </>
   );

@@ -15,12 +15,16 @@ export default function EpisodePurchaseAll({ id, data }: { id: string, data: Epi
 
 	const purchaseAll = async () => {
     if (userIdCookie !== undefined) {
-			const sortingPurchaseList = data.episodeList.map((item) => item.id).filter((item) => !episodeList.episode.includes(item));
+			const sortingPurchaseList = data.episodeList.map((item) => item.id).filter((item) => episodeList?.episode.includes(item));
       if (user.webcoin >= data.price * data.episodeList.length) {
 				if (sortingPurchaseList.length > 0) {
 					await ReadFetch(id, sortingPurchaseList, userIdCookie, data.price * data.episodeList.length, true);
 					setIsCoin(user.webcoin - data.price * data.episodeList.length);
-        } else{
+        } else if(sortingPurchaseList.length == 0) {
+					const allEpisodeList = data.episodeList.map((item) => item.id);
+					await ReadFetch(id, allEpisodeList, userIdCookie, data.price * data.episodeList.length, true);
+					setIsCoin(user.webcoin - data.price * data.episodeList.length);
+				} else{
 					alert("이미 소장중입니다.");
 				}
       } else {
