@@ -10,98 +10,16 @@ import type { Swiper as SwiperType } from "swiper";
 import { useEffect, useRef, useState } from "react";
 
 export default function MainBanner() {
-	const userData = require("@/components/dummy/user-list.json")
+	const userData = require("@/components/dummy/user-list.json");
 	const isAdult = useAdultStore((state) => state.isAdult);
 	const swiperRef = useRef<SwiperType>();
-
-	const slideArray: MainBannerType[] = [
-		{
-			link: "#1",
-			img: "https://dsn-global2.lalatoon.com/assets/web/img/global_f/bn_01_img.png",
-			logo: "https://dsn-global2.lalatoon.com/assets/web/img/global_f/bn_01_logo.png",
-			title: "최대 두줄 / 단 일주일! 전체소장하면 최대 30% 할인! 단 일주일! 전체소장하면 최대 30% 할인!",
-			adult: false,
-			fixedTag1: true,
-			fixedTag2: true,
-			tag: ["new", "up", "end"],
-			bgColor: "#FC5C93",
-			gradient: "#CE2C69",
-			eventImg: "https://dsn-global2.lalatoon.com/assets/web/img/global_f/bn_imgicon.png",
-			copylight: "ⓒ 최대 한줄 / Zuo Zuo | Kuaikan Comics Zuo Zuo | Kuaikan Comics Zuo Zuo | Kuaikan Comics"
-		},
-		{
-			link: "#2",
-			img: "https://dsn-global2.lalatoon.com/assets/web/img/global_f/bn_02_img.png",
-			logo: "https://dsn-global2.lalatoon.com/assets/web/img/global_f/bn_02_logo.png",
-			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
-			adult: true,
-			fixedTag1: true,
-			fixedTag2: true,
-			tag: ["new", "up", "end"],
-			bgColor: "#FFC000",
-			gradient: "#A37A00",
-			eventImg: "https://dsn-global2.lalatoon.com/assets/web/img/global_f/bn_imgicon.png",
-			copylight: "ⓒ 최대 한줄 / Zuo Zuo | Kuaikan Comics Zuo Zuo | Kuaikan Comics Zuo Zuo | Kuaikan Comics"
-		},
-		{
-			link: "#3",
-			img: "https://dsn-global2.lalatoon.com/assets/web/img/global_f/bn_03_img.png",
-			title: "최대 두줄 / 단 일주일! 전체소장하면 최대 30% 할인! 단 일주일! 전체소장하면 최대 30% 할인!",
-			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
-			adult: false,
-			fixedTag1: true,
-			fixedTag2: true,
-			tag: ["new", "up", "end"],
-			bgColor: "#303030",
-			gradient: "#303030",
-			eventImg: "https://dsn-global2.lalatoon.com/assets/web/img/global_f/bn_imgicon.png",
-			copylight: "ⓒ 최대 한줄 / Zuo Zuo | Kuaikan Comics Zuo Zuo | Kuaikan Comics Zuo Zuo | Kuaikan Comics"
-		},
-		{
-			link: "#4",
-			img: "https://dsn-global2.lalatoon.com/assets/web/img/global_f/bn_04_img.png",
-			adult: false,
-			copylight: "ⓒ 최대 한줄 / Zuo Zuo | Kuaikan Comics Zuo Zuo | Kuaikan Comics Zuo Zuo | Kuaikan Comics"
-		},
-		{
-			link: "#5",
-			img: "https://dsn-global2.lalatoon.com/assets/web/img/global_f/bn_05_img.png",
-			logo: "https://dsn-global2.lalatoon.com/assets/web/img/global_f/bn_05_logo.png",
-			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
-			adult: true,
-			bgColor: "#2D488C",
-			gradient: "#1E222F",
-			eventImg: "https://dsn-global2.lalatoon.com/assets/web/img/global_f/bn_imgicon.png"
-		},
-		{
-			link: "#6",
-			img: "https://dsn-global2.lalatoon.com/assets/web/img/global_f/bn_06_img.png",
-			logo: "https://dsn-global2.lalatoon.com/assets/web/img/global_f/bn_06_logo.png",
-			adult: false,
-			bgColor: "#000",
-			gradient: "#292623",
-			eventImg: "https://dsn-global2.lalatoon.com/assets/web/img/global_f/bn_imgicon.png",
-			copylight: "ⓒ 최대 한줄 / Zuo Zuo | Kuaikan Comics Zuo Zuo | Kuaikan Comics Zuo Zuo | Kuaikan Comics"
-		},
-		{
-			link: "#7",
-			img: "https://dsn-global2.lalatoon.com/assets/web/img/global_f/bn_07_img.png",
-			logo: "https://dsn-global2.lalatoon.com/assets/web/img/global_f/bn_07_logo.png",
-			adult: false,
-			fixedTag1: true,
-			fixedTag2: true,
-			tag: ["new", "up", "end"],
-			bgColor: "#500000",
-			gradient: "#340F0F",
-			eventImg: "https://dsn-global2.lalatoon.com/assets/web/img/global_f/bn_imgicon.png"
-		},
-	];
+	const slideArray:MainBannerType[] = require("@/components/dummy/main-banner.json");
 
 	const userIdCookie = getCookie("loginId");
 	const adultCookie = getCookie("adult");
 	const user = userData.find((e: {id: string}) => e.id == userIdCookie);
 
-	const resultList = slideArray.filter((item: MainBannerType) => {
+	const resultList:MainBannerType[] = slideArray.filter((item: MainBannerType) => {
     if (isAdult && adultCookie == "true" && user?.adult == true) {
       return true;
     } else {
@@ -127,6 +45,8 @@ export default function MainBanner() {
 			}, 100);
 		}
 	}, [isAdult, resultList, windowWidth]);
+
+	console.log(resultList);
 
   return (
     <>

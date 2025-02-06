@@ -2,7 +2,7 @@ import { HeaderNavItem } from "@/types/common.type";
 import Link from "next/link";
 
 const headerNavList: HeaderNavItem[] = [
-  { text: "연재중", link: "#" },
+  { text: "연재중", link: "/serializing" },
   { text: "랭킹", link: "#" },
   { text: "신작", link: "#" },
 ];
