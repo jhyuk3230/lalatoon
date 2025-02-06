@@ -124,7 +124,7 @@ export default function GlobalNavUser() {
 				return;
       }
 
-			const newUser = { id: signupId, pw: signupPw, adult: false, webcoin: 0, appcoin: 0, favorite: [], coupon: [], read: [], collection: [] };
+			const newUser = { id: signupId, pw: signupPw, adult: false, admin: false, webcoin: 0, appcoin: 0, favorite: [], coupon: [], read: [], collection: [] };
 
 			const result = await UserFetch(newUser);
 
@@ -154,7 +154,7 @@ export default function GlobalNavUser() {
 				{isLogin ? (
 					<>
 						<div>
-							<h3 className="text-[13px] font-medium text-white leading-[15px]">{email}</h3>
+							<h3 className="text-[13px] font-medium text-white leading-[15px]">{email === "admin" ? "관리자" : email}</h3>
 						</div>
 						<ul className="w-full px-[15px] flex flex-col gap-[5px]">
 							<li className="py-[5px] px-[20px] border border-gray-300 rounded-[50px] flex justify-between items-center">

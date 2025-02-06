@@ -18,6 +18,7 @@ export type UserData = {
 	id: string;
 	pw: string;
 	adult: boolean;
+	admin: boolean;
 	webcoin: number;
 	appcoin: number;
 	favorite?: string[];

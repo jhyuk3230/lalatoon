@@ -1,8 +1,21 @@
 [
+	{
+		"id": "admin",
+		"pw": "admin",
+		"adult": true,
+		"admin": true,
+		"webcoin": 10000,
+		"appcoin": 10000,
+		"favorite": [],
+		"coupon": [],
+		"read": [],
+		"collection": []
+	},
   {
     "id": "test@test.com",
     "pw": "testpw",
     "adult": true,
+    "admin": false,
     "webcoin": 702,
     "appcoin": 100,
     "favorite": [
@@ -63,6 +76,7 @@
     "id": "test2@test.com",
     "pw": "test2pw",
     "adult": false,
+    "admin": false,
     "webcoin": 13,
     "appcoin": 30,
     "favorite": [
@@ -114,6 +128,7 @@
     "id": "test3@test.com",
     "pw": "test2pw",
     "adult": false,
+    "admin": false,
     "webcoin": 80,
     "appcoin": 100,
     "favorite": [],
@@ -144,5 +159,17 @@
         ]
       }
     ]
+  },
+  {
+    "id": "test4@test.com",
+    "pw": "test4pw",
+    "adult": false,
+    "admin": false,
+    "webcoin": 0,
+    "appcoin": 0,
+    "favorite": [],
+    "coupon": [],
+    "read": [],
+    "collection": []
   }
 ]
