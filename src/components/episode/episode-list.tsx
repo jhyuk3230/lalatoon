@@ -10,7 +10,7 @@ export default async function EpisodeList({ id, data, read }: { id: string, data
       <section className="mt-4">
 				<article className="max-w-[768px] mx-auto px-5">
 					<div className="flex justify-between items-center">
-						<EpisodePurchase id={id} />
+						<EpisodePurchase id={id} data={data} />
 						<EpisodePurchaseAll id={id} data={data} />
 					</div>
 				</article>

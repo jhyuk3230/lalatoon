@@ -1,3 +1,4 @@
+import { ListItem } from "@/types/list.type ";
 import SerializingAdultBtn from "./serializing-adult-btn";
 import SerializingAllBtn from "./serializing-all-btn";
 

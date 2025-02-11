@@ -22,16 +22,12 @@ export default function AdultBtn() {
     }else{
 			alert("로그인 후 이용해주세요");
 		}
-		
-		// isLogin ? ( isAdultCheck ? setIsAdult(!isAdult) : alert("성인인증 후 이용해주세요")) : alert("로그인 후 이용해주세요" );
 	}
 	
 	useEffect(() => {
 		const adultCookie = getCookie("adult");
 		const isAdultCookie = adultCookie === "true";
-		if (isAdultCookie) {
-			setIsAdult(isAdultCookie);
-		}
+		if (isAdultCookie) setIsAdult(isAdultCookie);
 	}, [])
 
 	return (
