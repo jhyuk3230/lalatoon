@@ -1,9 +1,418 @@
+"use client";
 import { ListItem } from "@/types/list.type ";
 import Link from "next/link";
 import Image from "next/image";
 import { tagStyleType } from "@/types/common.type";
+import { deleteCookie, getCookie, setCookie } from "cookies-next";
+import { useEffect, useState } from "react";
+import { useAdultStore } from "@/store/common/common.store";
 
-export default function SerializingList({ data, topList }: { data: ListItem[], topList: ListItem[] }) {
+export default function SerializingList() {
+	const userData = require("@/components/dummy/user-list.json");
+	const isAdult = useAdultStore((state) => state.isAdult);
+
+	const workList: ListItem[] = [
+    {
+			link: "/episode/1",
+      img: "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+      tag: ["new", "up"],
+      title: "title",
+			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+			adult: false,
+			event1: true,
+			event2: true,
+			view: 1,
+			week: "TUE"
+    },
+    {
+			link: "/episode/2",
+			img: "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+      tag: ["new", "up", "end"],
+      title: "title title title title title title title title title title title title",
+			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+      adult: true,
+			event1: true,
+			view: 2,
+			week: "MON"
+    },
+    {
+			link: "/episode/3",
+			img: "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+      tag: ["new", "up"],
+      title: "title title title title title",
+			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+      adult: true,
+			event2: true,
+			view: 5,
+			week: "WED"
+    },
+    {
+			link: "/episode/4",
+      img: "https://thumb-g2.lalatoon.com/upload/thumbnail/20180720111425/2020_08_18_15977285189297.jpg",
+      tag: ["new", "up", "end"],
+      title: "title title title title title title title",
+			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+			adult: false,
+			event1: true,
+			event2: true,
+			view: 8,
+			week: "SUN"
+    },
+    {
+			link: "/episode/5",
+      img: "https://thumb-g2.lalatoon.com/upload/thumbnail/20180720111425/2020_08_18_15977285189297.jpg",
+      tag: ["new"],
+      title: "title title title title title",
+			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+			adult: true,
+			event1: true,
+			view: 10,
+			week: "MON"
+    },
+    {
+			link: "/episode/6",
+      img: "https://thumb-g2.lalatoon.com/upload/thumbnail/20180720111425/2020_08_18_15977285189297.jpg",
+      tag: ["new", "up", "end"],
+      title: "title title title title title",
+			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+			adult: false,
+			event2: true,
+			view: 1,
+			week: "MON"
+    },
+		{
+			link: "#7",
+      img: "https://thumb-g2.lalatoon.com/upload/thumbnail/20180720111425/2020_08_18_15977285189297.jpg",
+      tag: ["new", "up", "end"],
+      title: "title title title title title",
+			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+			adult: false,
+			event2: true,
+			view: 2,
+			week: "THU"
+    },
+		{
+			link: "#1",
+      img: "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+      tag: ["new", "up"],
+      title: "title",
+			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+			adult: true,
+			event1: true,
+			event2: true,
+			view: 3,
+			week: "FRI"
+    },
+		{
+			link: "/episode/1",
+      img: "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+      tag: ["new", "up"],
+      title: "title",
+			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+			adult: false,
+			event1: true,
+			event2: true,
+			view: 1,
+			week: "FRI"
+    },
+    {
+			link: "/episode/2",
+			img: "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+      tag: ["new", "up", "end"],
+      title: "title title title title title title title title title title title title",
+			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+      adult: true,
+			event1: true,
+			view: 2,
+			week: "FRI"
+    },
+    {
+			link: "/episode/3",
+			img: "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+      tag: ["new", "up"],
+      title: "title title title title title",
+			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+      adult: true,
+			event2: true,
+			view: 5,
+			week: "SAT"
+    },
+    {
+			link: "/episode/4",
+      img: "https://thumb-g2.lalatoon.com/upload/thumbnail/20180720111425/2020_08_18_15977285189297.jpg",
+      tag: ["new", "up", "end"],
+      title: "title title title title title title title",
+			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+			adult: false,
+			event1: true,
+			event2: true,
+			view: 8,
+			week: "TUE"
+    },
+    {
+			link: "/episode/5",
+      img: "https://thumb-g2.lalatoon.com/upload/thumbnail/20180720111425/2020_08_18_15977285189297.jpg",
+      tag: ["new"],
+      title: "title title title title title",
+			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+			adult: true,
+			event1: true,
+			view: 10,
+			week: "WED"
+    },
+    {
+			link: "/episode/6",
+      img: "https://thumb-g2.lalatoon.com/upload/thumbnail/20180720111425/2020_08_18_15977285189297.jpg",
+      tag: ["new", "up", "end"],
+      title: "title title title title title",
+			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+			adult: false,
+			event2: true,
+			view: 1,
+			week: "WED"
+    },
+		{
+			link: "#7",
+      img: "https://thumb-g2.lalatoon.com/upload/thumbnail/20180720111425/2020_08_18_15977285189297.jpg",
+      tag: ["new", "up", "end"],
+      title: "title title title title title",
+			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+			adult: false,
+			event2: true,
+			view: 2,
+			week: "WED"
+    },
+		{
+			link: "#1",
+      img: "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+      tag: ["new", "up"],
+      title: "title",
+			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+			adult: true,
+			event1: true,
+			event2: true,
+			view: 3,
+			week: "THU"
+    },
+		{
+			link: "/episode/1",
+      img: "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+      tag: ["new", "up"],
+      title: "title",
+			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+			adult: false,
+			event1: true,
+			event2: true,
+			view: 1,
+			week: "THU"
+    },
+    {
+			link: "/episode/2",
+			img: "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+      tag: ["new", "up", "end"],
+      title: "title title title title title title title title title title title title",
+			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+      adult: true,
+			event1: true,
+			view: 2,
+			week: "MON"
+    },
+    {
+			link: "/episode/3",
+			img: "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+      tag: ["new", "up"],
+      title: "title title title title title",
+			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+      adult: true,
+			event2: true,
+			view: 5,
+			week: "SAT"
+    },
+    {
+			link: "/episode/4",
+      img: "https://thumb-g2.lalatoon.com/upload/thumbnail/20180720111425/2020_08_18_15977285189297.jpg",
+      tag: ["new", "up", "end"],
+      title: "title title title title title title title",
+			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+			adult: false,
+			event1: true,
+			event2: true,
+			view: 8,
+			week: "SUN"
+    },
+    {
+			link: "/episode/5",
+      img: "https://thumb-g2.lalatoon.com/upload/thumbnail/20180720111425/2020_08_18_15977285189297.jpg",
+      tag: ["new"],
+      title: "title title title title title",
+			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+			adult: true,
+			event1: true,
+			view: 10,
+			week: "SUN"
+    },
+    {
+			link: "/episode/6",
+      img: "https://thumb-g2.lalatoon.com/upload/thumbnail/20180720111425/2020_08_18_15977285189297.jpg",
+      tag: ["new", "up", "end"],
+      title: "title title title title title",
+			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+			adult: false,
+			event2: true,
+			view: 1,
+			week: "MON"
+    },
+		{
+			link: "#7",
+      img: "https://thumb-g2.lalatoon.com/upload/thumbnail/20180720111425/2020_08_18_15977285189297.jpg",
+      tag: ["new", "up", "end"],
+      title: "title title title title title",
+			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+			adult: false,
+			event2: true,
+			view: 2,
+			week: "SAT"
+    },
+		{
+			link: "#1",
+      img: "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+      tag: ["new", "up"],
+      title: "title",
+			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+			adult: true,
+			event1: true,
+			event2: true,
+			view: 3,
+			week: "MON"
+    },
+		{
+			link: "/episode/1",
+      img: "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+      tag: ["new", "up"],
+      title: "title",
+			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+			adult: false,
+			event1: true,
+			event2: true,
+			view: 1,
+			week: "WED"
+    },
+    {
+			link: "/episode/2",
+			img: "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+      tag: ["new", "up", "end"],
+      title: "title title title title title title title title title title title title",
+			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+      adult: true,
+			event1: true,
+			view: 2,
+			week: "TUE"
+    },
+    {
+			link: "/episode/3",
+			img: "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+      tag: ["new", "up"],
+      title: "title title title title title",
+			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+      adult: true,
+			event2: true,
+			view: 5,
+			week: "TUE"
+    },
+    {
+			link: "/episode/4",
+      img: "https://thumb-g2.lalatoon.com/upload/thumbnail/20180720111425/2020_08_18_15977285189297.jpg",
+      tag: ["new", "up", "end"],
+      title: "title title title title title title title",
+			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+			adult: false,
+			event1: true,
+			event2: true,
+			view: 8,
+			week: "FRI"
+    },
+    {
+			link: "/episode/5",
+      img: "https://thumb-g2.lalatoon.com/upload/thumbnail/20180720111425/2020_08_18_15977285189297.jpg",
+      tag: ["new"],
+      title: "title title title title title",
+			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+			adult: true,
+			event1: true,
+			view: 10,
+			week: "FRI"
+    },
+    {
+			link: "/episode/6",
+      img: "https://thumb-g2.lalatoon.com/upload/thumbnail/20180720111425/2020_08_18_15977285189297.jpg",
+      tag: ["new", "up", "end"],
+      title: "title title title title title",
+			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+			adult: false,
+			event2: true,
+			view: 1,
+			week: "SAT"
+    },
+		{
+			link: "#7",
+      img: "https://thumb-g2.lalatoon.com/upload/thumbnail/20180720111425/2020_08_18_15977285189297.jpg",
+      tag: ["new", "up", "end"],
+      title: "title title title title title",
+			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+			adult: false,
+			event2: true,
+			view: 2,
+			week: "MON"
+    },
+		{
+			link: "#1",
+      img: "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+      tag: ["new", "up"],
+      title: "title",
+			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+			adult: true,
+			event1: true,
+			event2: true,
+			view: 3,
+			week: "FRI"
+    },
+  ];
+
+	const adultCookie = getCookie("adult");
+	const userIdCookie = getCookie("loginId");
+	const user = userData.find((e: {id:string}) => e.id == userIdCookie);
+
+	const [resultList, setResultList] = useState<ListItem[]>();
+	const [topResultList, setTopResultList] = useState<ListItem[]>();
+	const [dateCookie, setDateCookie] = useState("");
+	const [changeWeek, setChangeWeek] = useState("");
+
+	const weekCookie = getCookie("date");
+	useEffect(() => {
+    const weekList = workList.filter((item) => item.week === weekCookie);
+
+    const filteredList = weekList.filter((item) => {
+      if (isAdult && adultCookie == "true" && user.adult == true) {
+        return true;
+      } else {
+        return !item.adult;
+      }
+    });
+
+    const sortList = filteredList?.sort((a, b) => b.view - a.view);
+    const topRankList = sortList?.slice(0, 4);
+
+    setTopResultList(topRankList);
+    setDateCookie(weekCookie || "");
+    setResultList(filteredList);
+  }, [isAdult, changeWeek]);
+
+	const dateOnClick = (e: string) => {
+		deleteCookie("date");
+		setCookie("date", e);
+		setChangeWeek(e);
+	}
+
 	const tagStyle: tagStyleType = {
     new: "px-1 inline-block bg-[#FFC506] text-[8px] font-bold text-black leading-[14px]",
     up: "px-1 inline-block bg-[#FFEBEC] text-[8px] font-bold text-red-500 leading-[14px]",
@@ -16,32 +425,32 @@ export default function SerializingList({ data, topList }: { data: ListItem[], t
         <article className="px-5">
           <ul className="py-2 px-[10px] border-t border-t-black/5 border-b border-b-black/5 flex justify-around items-center gap-[10px] text-center">
             <li className="w-full">
-              <Link href={``} className={`rounded-[50px] block text-[15px] font-medium leading-[36px] tracking-[0.15px] text-black`}>월</Link>
+              <button className={`w-full rounded-[50px] block text-[15px] font-medium leading-[36px] tracking-[0.15px] ${dateCookie == "MON" ? "bg-red-500 text-white" : "text-black"}`} onClick={()=>dateOnClick("MON")}>월</button>
             </li>
             <li className="w-full">
-              <Link href={``} className={`rounded-[50px] block text-[15px] font-medium leading-[36px] tracking-[0.15px] text-black`}>화</Link>
+              <button className={`w-full rounded-[50px] block text-[15px] font-medium leading-[36px] tracking-[0.15px] ${dateCookie == "TUE" ? "bg-red-500 text-white" : "text-black"}`} onClick={()=>dateOnClick("TUE")}>화</button>
             </li>
             <li className="w-full">
-              <Link href={``} className={`rounded-[50px] block text-[15px] font-medium leading-[36px] tracking-[0.15px] text-black`}>수</Link>
+              <button className={`w-full rounded-[50px] block text-[15px] font-medium leading-[36px] tracking-[0.15px] ${dateCookie == "WED" ? "bg-red-500 text-white" : "text-black"}`} onClick={()=>dateOnClick("WED")}>수</button>
             </li>
             <li className="w-full">
-              <Link href={``} className={`rounded-[50px] block text-[15px] font-medium leading-[36px] tracking-[0.15px] bg-red-500 text-white`}>목</Link>
+              <button className={`w-full rounded-[50px] block text-[15px] font-medium leading-[36px] tracking-[0.15px] ${dateCookie == "THU" ? "bg-red-500 text-white" : "text-black"}`} onClick={()=>dateOnClick("THU")}>목</button>
             </li>
             <li className="w-full">
-              <Link href={``} className={`rounded-[50px] block text-[15px] font-medium leading-[36px] tracking-[0.15px] text-black`}>금</Link>
+              <button className={`w-full rounded-[50px] block text-[15px] font-medium leading-[36px] tracking-[0.15px] ${dateCookie == "FRI" ? "bg-red-500 text-white" : "text-black"}`} onClick={()=>dateOnClick("FRI")}>금</button>
             </li>
             <li className="w-full">
-              <Link href={``} className={`rounded-[50px] block text-[15px] font-medium leading-[36px] tracking-[0.15px] text-black`}>토</Link>
+              <button className={`w-full rounded-[50px] block text-[15px] font-medium leading-[36px] tracking-[0.15px] ${dateCookie == "SAT" ? "bg-red-500 text-white" : "text-black"}`} onClick={()=>dateOnClick("SAT")}>토</button>
             </li>
             <li className="w-full">
-              <Link href={``} className={`rounded-[50px] block text-[15px] font-medium leading-[36px] tracking-[0.15px] text-black`}>일</Link>
+              <button className={`w-full rounded-[50px] block text-[15px] font-medium leading-[36px] tracking-[0.15px] ${dateCookie == "SUN" ? "bg-red-500 text-white" : "text-black"}`} onClick={()=>dateOnClick("SUN")}>일</button>
             </li>
           </ul>
         </article>
 
 				<article className="px-5">
-					<ul className="py-7 px-5 flex justify-between items-start gap-3 bg-red-50">
-						{ topList.map((e, i) => (
+					<ul className="py-7 px-5 grid grid-cols-4 justify-between items-start gap-3 bg-red-50">
+						{ topResultList?.map((e, i) => (
 							<li className="w-full rounded-[10px] overflow-hidden shadow-[0_4px_7px_0px_rgba(0,0,0,.16)]" key={i}>
 								<Link href={e.link} className="flex flex-col">
 									<div className="pb-[100%] bg-black relative overflow-hidden">
@@ -90,9 +499,9 @@ export default function SerializingList({ data, topList }: { data: ListItem[], t
 
 				<article className="px-5">
 					<ul className="py-7 px-5 grid grid-cols-5 gap-x-3 gap-y-6">
-						{ data.map((e, i) => (
+						{ resultList?.map((e, i) => (
 							<li className="w-full" key={i}>
-								<Link href={``} className="flex flex-col gap-2">
+								<Link href={e.link} className="flex flex-col gap-2">
 									<div className="h-[180px] rounded-[10px] bg-black relative overflow-hidden">
 										<Image src={e.img} alt={e.title} width={200} height={120} className="absolute left-0 top-0" />
 										<div className="flex justify-start items-center gap-[2px] absolute top-1 left-1">

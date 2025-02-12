@@ -11,4 +11,5 @@ export type ListItem = {
 	event1?: boolean;
 	event2?: boolean;
 	view: number;
+	week: string;
 };
