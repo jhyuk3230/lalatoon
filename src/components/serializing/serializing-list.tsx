@@ -30,7 +30,7 @@ export default function SerializingList({ all }: { all: boolean }) {
 			event1: true,
 			event2: true,
 			view: 1,
-			week: "tue"
+			week: ["tue"]
     },
     {
 			link: "/episode/2",
@@ -41,7 +41,7 @@ export default function SerializingList({ all }: { all: boolean }) {
       adult: true,
 			event1: true,
 			view: 2,
-			week: "mon"
+			week: ["mon", "thu"]
     },
     {
 			link: "/episode/3",
@@ -52,7 +52,7 @@ export default function SerializingList({ all }: { all: boolean }) {
       adult: true,
 			event2: true,
 			view: 5,
-			week: "wed"
+			week: ["wed"]
     },
     {
 			link: "/episode/4",
@@ -64,7 +64,7 @@ export default function SerializingList({ all }: { all: boolean }) {
 			event1: true,
 			event2: true,
 			view: 8,
-			week: "sun"
+			week: ["sun"]
     },
     {
 			link: "/episode/5",
@@ -75,7 +75,7 @@ export default function SerializingList({ all }: { all: boolean }) {
 			adult: true,
 			event1: true,
 			view: 10,
-			week: "mon"
+			week: ["mon"]
     },
     {
 			link: "/episode/6",
@@ -86,7 +86,7 @@ export default function SerializingList({ all }: { all: boolean }) {
 			adult: false,
 			event2: true,
 			view: 1,
-			week: "mon"
+			week: ["mon", "thu"]
     },
 		{
 			link: "#7",
@@ -97,7 +97,7 @@ export default function SerializingList({ all }: { all: boolean }) {
 			adult: false,
 			event2: true,
 			view: 2,
-			week: "thu"
+			week: ["thu"]
     },
 		{
 			link: "#1",
@@ -109,7 +109,7 @@ export default function SerializingList({ all }: { all: boolean }) {
 			event1: true,
 			event2: true,
 			view: 3,
-			week: "fri"
+			week: ["fri", "tue", "sat", "sun"]
     },
 		{
 			link: "/episode/1",
@@ -121,7 +121,7 @@ export default function SerializingList({ all }: { all: boolean }) {
 			event1: true,
 			event2: true,
 			view: 1,
-			week: "fri"
+			week: ["fri", "sun"]
     },
     {
 			link: "/episode/2",
@@ -132,7 +132,7 @@ export default function SerializingList({ all }: { all: boolean }) {
       adult: true,
 			event1: true,
 			view: 2,
-			week: "fri"
+			week: ["fri"]
     },
     {
 			link: "/episode/3",
@@ -143,7 +143,7 @@ export default function SerializingList({ all }: { all: boolean }) {
       adult: true,
 			event2: true,
 			view: 5,
-			week: "sat"
+			week: ["sat"]
     },
     {
 			link: "/episode/4",
@@ -155,7 +155,7 @@ export default function SerializingList({ all }: { all: boolean }) {
 			event1: true,
 			event2: true,
 			view: 8,
-			week: "tue"
+			week: ["tue"]
     },
     {
 			link: "/episode/5",
@@ -166,7 +166,7 @@ export default function SerializingList({ all }: { all: boolean }) {
 			adult: true,
 			event1: true,
 			view: 10,
-			week: "wed"
+			week: ["wed"]
     },
     {
 			link: "/episode/6",
@@ -177,7 +177,7 @@ export default function SerializingList({ all }: { all: boolean }) {
 			adult: false,
 			event2: true,
 			view: 1,
-			week: "wed"
+			week: ["wed"]
     },
 		{
 			link: "#7",
@@ -188,7 +188,7 @@ export default function SerializingList({ all }: { all: boolean }) {
 			adult: false,
 			event2: true,
 			view: 2,
-			week: "wed"
+			week: ["wed"]
     },
 		{
 			link: "#1",
@@ -200,7 +200,7 @@ export default function SerializingList({ all }: { all: boolean }) {
 			event1: true,
 			event2: true,
 			view: 3,
-			week: "thu"
+			week: ["thu"]
     },
 		{
 			link: "/episode/1",
@@ -212,7 +212,7 @@ export default function SerializingList({ all }: { all: boolean }) {
 			event1: true,
 			event2: true,
 			view: 1,
-			week: "thu"
+			week: ["thu"]
     },
     {
 			link: "/episode/2",
@@ -223,7 +223,7 @@ export default function SerializingList({ all }: { all: boolean }) {
       adult: true,
 			event1: true,
 			view: 2,
-			week: "mon"
+			week: ["mon"]
     },
     {
 			link: "/episode/3",
@@ -234,7 +234,7 @@ export default function SerializingList({ all }: { all: boolean }) {
       adult: true,
 			event2: true,
 			view: 5,
-			week: "sat"
+			week: ["sat"]
     },
     {
 			link: "/episode/4",
@@ -246,7 +246,7 @@ export default function SerializingList({ all }: { all: boolean }) {
 			event1: true,
 			event2: true,
 			view: 8,
-			week: "sun"
+			week: ["sun"]
     },
     {
 			link: "/episode/5",
@@ -257,7 +257,7 @@ export default function SerializingList({ all }: { all: boolean }) {
 			adult: true,
 			event1: true,
 			view: 10,
-			week: "sun"
+			week: ["sun"]
     },
     {
 			link: "/episode/6",
@@ -268,7 +268,7 @@ export default function SerializingList({ all }: { all: boolean }) {
 			adult: false,
 			event2: true,
 			view: 1,
-			week: "mon"
+			week: ["mon"]
     },
 		{
 			link: "#7",
@@ -279,7 +279,7 @@ export default function SerializingList({ all }: { all: boolean }) {
 			adult: false,
 			event2: true,
 			view: 2,
-			week: "sat"
+			week: ["sat"]
     },
 		{
 			link: "#1",
@@ -291,7 +291,7 @@ export default function SerializingList({ all }: { all: boolean }) {
 			event1: true,
 			event2: true,
 			view: 3,
-			week: "mon"
+			week: ["mon"]
     },
 		{
 			link: "/episode/1",
@@ -303,7 +303,7 @@ export default function SerializingList({ all }: { all: boolean }) {
 			event1: true,
 			event2: true,
 			view: 1,
-			week: "wed"
+			week: ["wed"]
     },
     {
 			link: "/episode/2",
@@ -314,7 +314,7 @@ export default function SerializingList({ all }: { all: boolean }) {
       adult: true,
 			event1: true,
 			view: 2,
-			week: "tue"
+			week: ["tue"]
     },
     {
 			link: "/episode/3",
@@ -325,7 +325,7 @@ export default function SerializingList({ all }: { all: boolean }) {
       adult: true,
 			event2: true,
 			view: 5,
-			week: "tue"
+			week: ["tue"]
     },
     {
 			link: "/episode/4",
@@ -337,7 +337,7 @@ export default function SerializingList({ all }: { all: boolean }) {
 			event1: true,
 			event2: true,
 			view: 8,
-			week: "fri"
+			week: ["fri"]
     },
     {
 			link: "/episode/5",
@@ -348,7 +348,7 @@ export default function SerializingList({ all }: { all: boolean }) {
 			adult: true,
 			event1: true,
 			view: 10,
-			week: "fri"
+			week: ["fri"]
     },
     {
 			link: "/episode/6",
@@ -359,7 +359,7 @@ export default function SerializingList({ all }: { all: boolean }) {
 			adult: false,
 			event2: true,
 			view: 1,
-			week: "sat"
+			week: ["sat"]
     },
 		{
 			link: "#7",
@@ -370,7 +370,7 @@ export default function SerializingList({ all }: { all: boolean }) {
 			adult: false,
 			event2: true,
 			view: 2,
-			week: "mon"
+			week: ["mon"]
     },
 		{
 			link: "#1",
@@ -382,7 +382,7 @@ export default function SerializingList({ all }: { all: boolean }) {
 			event1: true,
 			event2: true,
 			view: 3,
-			week: "fri"
+			week: ["fri"]
     },
   ];
 
@@ -407,7 +407,12 @@ export default function SerializingList({ all }: { all: boolean }) {
 	useEffect(() => {
 		const weekIdx = Number(dateIdx);
 		const weekArr = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
-    const weekList = workList.filter((item) => item.week === weekArr[weekIdx - 1]);
+    const weekList = workList.filter((item) => {
+			// item.week.find((e) => e === weekArr[weekIdx - 1]);
+			if (item.week.find((e) => e === weekArr[weekIdx - 1]) !== undefined) {
+				return true
+      }
+		});
 		
 		if (idx !== "all") {
 			const adultLength = weekList.filter((item) => item.adult === true);
@@ -434,7 +439,11 @@ export default function SerializingList({ all }: { all: boolean }) {
 		const setList = [setMonList, setTueList, setWedList, setThuList, setFriList, setSatList, setSunList];
 
 		weekArr.forEach((day, index) => {
-			const filteredList = workList.filter((item) => item.week === day);
+			const filteredList = workList.filter((item) => {
+				if (item.week.find((e) => e === day)) {
+					return true
+        };
+			});
 			const resultList = filteredList.filter((item) => {
         if (isAdult && adultCookie == "true" && user.adult == true) {
           return true;

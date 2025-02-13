@@ -30,7 +30,7 @@ export default function RankList() {
 			event1: true,
 			event2: true,
 			view: 1,
-			week: "tue",
+			week: ["tue"],
 			genre: ["romance", "bl"],
 			workNew: true
     },
@@ -43,7 +43,7 @@ export default function RankList() {
       adult: true,
 			event1: true,
 			view: 2,
-			week: "mon",
+			week: ["mon"],
 			genre: ["bl", "action"],
 			workNew: true
     },
@@ -56,7 +56,7 @@ export default function RankList() {
       adult: true,
 			event2: true,
 			view: 5,
-			week: "wed",
+			week: ["wed"],
 			genre: ["gl", "drama"]
     },
     {
@@ -69,7 +69,7 @@ export default function RankList() {
 			event1: true,
 			event2: true,
 			view: 8,
-			week: "sun",
+			week: ["sun"],
 			genre: ["fantasy", "fantasy"],
 			workNew: true
     },
@@ -82,7 +82,7 @@ export default function RankList() {
 			adult: true,
 			event1: true,
 			view: 10,
-			week: "mon",
+			week: ["mon"],
 			genre: ["drama", "sci"]
     },
     {
@@ -94,7 +94,7 @@ export default function RankList() {
 			adult: false,
 			event2: true,
 			view: 1,
-			week: "mon",
+			week: ["mon"],
 			genre: ["comedy", "school"],
 			workNew: true
     },
@@ -107,7 +107,7 @@ export default function RankList() {
 			adult: false,
 			event2: true,
 			view: 2,
-			week: "thu",
+			week: ["thu"],
 			genre: ["action", "gl"]
     },
 		{
@@ -120,7 +120,7 @@ export default function RankList() {
 			event1: true,
 			event2: true,
 			view: 3,
-			week: "fri",
+			week: ["fri"],
 			genre: ["horror", "action"]
     },
 		{
@@ -133,7 +133,7 @@ export default function RankList() {
 			event1: true,
 			event2: true,
 			view: 1,
-			week: "fri",
+			week: ["fri"],
 			genre: ["thriller", "horror"],
 			workNew: true
     },
@@ -146,7 +146,7 @@ export default function RankList() {
       adult: true,
 			event1: true,
 			view: 2,
-			week: "fri",
+			week: ["fri"],
 			genre: ["school", "thriller", "horror"],
 			workNew: true
     },
@@ -159,7 +159,7 @@ export default function RankList() {
       adult: true,
 			event2: true,
 			view: 5,
-			week: "sat",
+			week: ["sat"],
 			genre: ["historical", "action"]
     },
     {
@@ -172,7 +172,7 @@ export default function RankList() {
 			event1: true,
 			event2: true,
 			view: 8,
-			week: "tue",
+			week: ["tue"],
 			genre: ["sci", "historical"]
     },
     {
@@ -184,7 +184,7 @@ export default function RankList() {
 			adult: true,
 			event1: true,
 			view: 10,
-			week: "wed",
+			week: ["wed"],
 			genre: ["sci", "action"],
 			workNew: true
     },
@@ -197,7 +197,7 @@ export default function RankList() {
 			adult: false,
 			event2: true,
 			view: 1,
-			week: "wed",
+			week: ["wed"],
 			genre: ["school", "horror"],
 			workNew: true
     },
@@ -210,7 +210,7 @@ export default function RankList() {
 			adult: false,
 			event2: true,
 			view: 2,
-			week: "wed",
+			week: ["wed"],
 			genre: ["horror"]
     },
 		{
@@ -223,7 +223,7 @@ export default function RankList() {
 			event1: true,
 			event2: true,
 			view: 3,
-			week: "thu",
+			week: ["thu"],
 			genre: ["horror"]
     },
 		{
@@ -236,7 +236,7 @@ export default function RankList() {
 			event1: true,
 			event2: true,
 			view: 1,
-			week: "thu",
+			week: ["thu"],
 			genre: ["thriller", "horror"],
 			workNew: true
     },
@@ -249,7 +249,7 @@ export default function RankList() {
       adult: true,
 			event1: true,
 			view: 2,
-			week: "mon",
+			week: ["mon"],
 			genre: ["action", "thriller"]
     },
     {
@@ -261,7 +261,7 @@ export default function RankList() {
       adult: true,
 			event2: true,
 			view: 5,
-			week: "sat",
+			week: ["sat"],
 			genre: ["comedy"]
     },
     {
@@ -274,7 +274,7 @@ export default function RankList() {
 			event1: true,
 			event2: true,
 			view: 8,
-			week: "sun",
+			week: ["sun"],
 			genre: ["romance", "comedy"],
 			workNew: true
     },
@@ -287,7 +287,7 @@ export default function RankList() {
 			adult: true,
 			event1: true,
 			view: 10,
-			week: "sun",
+			week: ["sun"],
 			genre: ["romance"]
     },
     {
@@ -299,7 +299,7 @@ export default function RankList() {
 			adult: false,
 			event2: true,
 			view: 1,
-			week: "mon",
+			week: ["mon"],
 			genre: ["drama", "romance"],
 			workNew: true
     },
@@ -312,7 +312,7 @@ export default function RankList() {
 			adult: false,
 			event2: true,
 			view: 2,
-			week: "sat",
+			week: ["sat"],
 			genre: ["romance"]
     },
 		{
@@ -325,7 +325,7 @@ export default function RankList() {
 			event1: true,
 			event2: true,
 			view: 3,
-			week: "mon",
+			week: ["mon"],
 			genre: ["romance"],
 			workNew: true
     },
@@ -339,7 +339,7 @@ export default function RankList() {
 			event1: true,
 			event2: true,
 			view: 1,
-			week: "wed",
+			week: ["wed"],
 			genre: ["action"],
 			workNew: true
     },
@@ -352,7 +352,7 @@ export default function RankList() {
       adult: true,
 			event1: true,
 			view: 2,
-			week: "tue",
+			week: ["tue"],
 			genre: ["historical"]
     },
     {
@@ -364,7 +364,7 @@ export default function RankList() {
       adult: true,
 			event2: true,
 			view: 5,
-			week: "tue",
+			week: ["tue"],
 			genre: ["historical"]
     },
     {
@@ -377,7 +377,7 @@ export default function RankList() {
 			event1: true,
 			event2: true,
 			view: 8,
-			week: "fri",
+			week: ["fri"],
 			genre: ["sci"],
 			workNew: true
     },
@@ -390,7 +390,7 @@ export default function RankList() {
 			adult: true,
 			event1: true,
 			view: 10,
-			week: "fri",
+			week: ["fri"],
 			genre: ["fantasy"],
 			workNew: true
     },
@@ -403,7 +403,7 @@ export default function RankList() {
 			adult: false,
 			event2: true,
 			view: 1,
-			week: "sat",
+			week: ["sat"],
 			genre: ["fantasy"]
     },
 		{
@@ -415,7 +415,7 @@ export default function RankList() {
 			adult: false,
 			event2: true,
 			view: 2,
-			week: "mon",
+			week: ["mon"],
 			genre: ["romance"],
 			workNew: true
     },
@@ -429,7 +429,7 @@ export default function RankList() {
 			event1: true,
 			event2: true,
 			view: 3,
-			week: "fri",
+			week: ["fri"],
 			genre: ["drama", "thriller"]
     },
   ];
