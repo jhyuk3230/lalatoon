@@ -12,6 +12,6 @@ export type ListItem = {
   event2?: boolean;
   view: number;
   week: string;
-  genre?: string;
+  genre?: string[];
   workNew?: boolean;
 };
