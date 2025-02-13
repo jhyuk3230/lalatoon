@@ -4,7 +4,7 @@ import { getCookie, setCookie } from "cookies-next";
 import { redirect } from "next/navigation";
 import { useEffect } from "react";
 
-export default function SerializingAdultBtn() {
+export default function RankAdultBtn() {
 	const isAdult = useAdultStore((state) => state.isAdult);
 	const setIsAdult = useAdultStore((state) => state.setIsAdult);
 	const isLogin = useLoginStore((state) => state.isLogin);

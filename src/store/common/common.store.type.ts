@@ -34,3 +34,8 @@ export type EpisodeListState = {
   isEpisodeList: EpisodeList[];
   setIsEpisodeList: (state: EpisodeList[]) => void;
 };
+
+export type AdultWorkLengthState = {
+  isAdultWorkLength: number;
+  setIsAdultWorkLength: (state: number) => void;
+};

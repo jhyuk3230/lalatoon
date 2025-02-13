@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { AdultCheckState, AdultState, CoinState, EpisodeListState, LoginState, NavState, PurchaseState } from "@/store/common/common.store.type";
+import { AdultCheckState, AdultState, AdultWorkLengthState, CoinState, EpisodeListState, LoginState, NavState, PurchaseState } from "@/store/common/common.store.type";
 
 export const useNavStore = create<NavState>((set) => ({
   isNavActive: false,
@@ -34,4 +34,9 @@ export const usePurchaseStore = create<PurchaseState>((set) => ({
 export const useEpisodeListStore = create<EpisodeListState>((set) => ({
   isEpisodeList: [],
   setIsEpisodeList: (state) => set({ isEpisodeList: state }),
+}));
+
+export const useAdultWorkLengthStore = create<AdultWorkLengthState>((set) => ({
+  isAdultWorkLength: 0,
+  setIsAdultWorkLength: (state) => set({ isAdultWorkLength: state }),
 }));

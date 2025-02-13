@@ -7,7 +7,7 @@ export default async function HeaderNav(){
 	
 	const headerNavList: HeaderNavItem[] = [
     { text: "연재중", link: `/serializing/${cookie?.value}` },
-    { text: "랭킹", link: "#" },
+    { text: "랭킹", link: "/rank/1" },
     { text: "신작", link: "#" },
   ];
 
