@@ -1,13 +1,16 @@
 import { HeaderNavItem } from "@/types/common.type";
+import { cookies } from "next/headers";
 import Link from "next/link";
 
-const headerNavList: HeaderNavItem[] = [
-  { text: "연재중", link: "/serializing" },
-  { text: "랭킹", link: "#" },
-  { text: "신작", link: "#" },
-];
+export default async function HeaderNav(){
+	const cookie = (await cookies()).get("date");
+	
+	const headerNavList: HeaderNavItem[] = [
+    { text: "연재중", link: `/serializing/${cookie?.value}` },
+    { text: "랭킹", link: "#" },
+    { text: "신작", link: "#" },
+  ];
 
-export default function HeaderNav(){
 	return(
 		<nav className="hidden md:block">
 			<ul className="flex items-center gap-[30px]">

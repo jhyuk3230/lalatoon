@@ -1,7 +1,7 @@
 import SerializingAdultBtn from "./serializing-adult-btn";
 import SerializingAllBtn from "./serializing-all-btn";
 
-export default async function SerializingTop() {
+export default async function SerializingTop({all} : {all:boolean}) {
 	return (
     <>
       <section className="max-w-[768px] mx-auto mb-5 pt-[50px]">
@@ -12,7 +12,7 @@ export default async function SerializingTop() {
 							<SerializingAdultBtn />
 						</li>
 						<li className="rounded-[50px] flex justify-end items-center bg-red-100">
-							<SerializingAllBtn />
+							<SerializingAllBtn all={all} />
 						</li>
 					</ul>
 				</article>

@@ -86,7 +86,7 @@ export default function GlobalNavUser() {
 			setUserPopup(false);
 			setIsNavActive(false);
 			setIsAdultCheck(user.adult);
-			setCookie("loginId", email);
+			setCookie("loginId", email, { maxAge: 86400 });
 			setWebCoin(user.webcoin);
 			setAppCoin(user.appcoin);
 		}else{
