@@ -408,8 +408,14 @@ export default function SerializingList({ all }: { all: boolean }) {
 		const weekIdx = Number(dateIdx);
 		const weekArr = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
     const weekList = workList.filter((item) => item.week === weekArr[weekIdx - 1]);
-		const adultLength = weekList.filter((item) => item.adult === true);
-		setIsAdultWorkLength(adultLength.length);
+		
+		if (idx !== "all") {
+			const adultLength = weekList.filter((item) => item.adult === true);
+			setIsAdultWorkLength(adultLength.length);
+		} else{
+			const adultLength = workList.filter((item) => item.adult === true);
+      setIsAdultWorkLength(adultLength.length);
+		}
 
     const filteredList = weekList.filter((item) => {
       if (isAdult && adultCookie == "true" && user.adult == true) {
@@ -449,7 +455,7 @@ export default function SerializingList({ all }: { all: boolean }) {
 	return (
     <>
       <section className="max-w-[768px] mx-auto mb-5 rounded-t-[10px]">
-				{!all ? (
+				{idx !== "all" ? (
 					<>
 						<article className="px-5">
         		  <ul className="py-2 px-[10px] border-t border-t-black/5 border-b border-b-black/5 flex justify-around items-center gap-[10px] text-center">

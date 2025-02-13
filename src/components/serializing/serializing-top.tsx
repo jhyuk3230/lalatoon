@@ -12,7 +12,7 @@ export default async function SerializingTop({all} : {all:boolean}) {
 							<SerializingAdultBtn />
 						</li>
 						<li className="rounded-[50px] flex justify-end items-center bg-red-100">
-							<SerializingAllBtn all={all} />
+							<SerializingAllBtn />
 						</li>
 					</ul>
 				</article>

@@ -5,13 +5,13 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
-export default function SerializingAllBtn({ all }: { all: boolean }) {
+export default function SerializingAllBtn() {
 	const { idx } = useParams();
 	const [date, setDate] = useState("");
 	const [allLink, setAllLink] = useState("");
 
 	useEffect(()=>{
-		if (all) {
+		if (idx == "all") {
 			const dateCookie = getCookie("date");
       setAllLink(dateCookie?.toString() || "");
 		}
@@ -29,8 +29,8 @@ export default function SerializingAllBtn({ all }: { all: boolean }) {
 
 	return (
 		<>
-			<Link href={`/serializing/all`} className={`px-3 rounded-[50px] inline-block text-[13px] font-medium leading-[32px] tracking-[0.13px] ${all ? "border border-red-500 bg-white text-red-500 shadow-[0_5px_10px_0px_rgba(255,59,66,0.2)]" : "text-black"}`}>전체</Link>
-			<Link href={all ? `/serializing/${allLink}` : `/serializing/${idx}`} className={`h-[34px] px-3 rounded-[50px] inline-block text-[13px] font-medium leading-[32px] tracking-[0.13px] ${all ? "w-auto text-black" : "w-[63px] border border-red-500 bg-white text-red-500 shadow-[0_5px_10px_0px_rgba(255,59,66,0.2)]"}`}>{all ? "오늘" : date}</Link>
+			<Link href={`/serializing/all`} className={`px-3 rounded-[50px] inline-block text-[13px] font-medium leading-[32px] tracking-[0.13px] ${idx =="all" ? "border border-red-500 bg-white text-red-500 shadow-[0_5px_10px_0px_rgba(255,59,66,0.2)]" : "text-black"}`}>전체</Link>
+			<Link href={idx == "all" ? `/serializing/${allLink}` : `/serializing/${idx}`} className={`h-[34px] px-3 rounded-[50px] inline-block text-[13px] font-medium leading-[32px] tracking-[0.13px] ${idx == "all" ? "w-auto text-black" : "w-[63px] border border-red-500 bg-white text-red-500 shadow-[0_5px_10px_0px_rgba(255,59,66,0.2)]"}`}>{idx == "all" ? "오늘" : date}</Link>
 		</>
 	)
 }
