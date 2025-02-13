@@ -31,7 +31,8 @@ export default function RankList() {
 			event2: true,
 			view: 1,
 			week: "tue",
-			genre: "romance"
+			genre: "romance",
+			workNew: true
     },
     {
 			link: "/episode/2",
@@ -43,7 +44,8 @@ export default function RankList() {
 			event1: true,
 			view: 2,
 			week: "mon",
-			genre: "bl"
+			genre: "bl",
+			workNew: true
     },
     {
 			link: "/episode/3",
@@ -68,7 +70,8 @@ export default function RankList() {
 			event2: true,
 			view: 8,
 			week: "sun",
-			genre: "fantasy"
+			genre: "fantasy",
+			workNew: true
     },
     {
 			link: "/episode/5",
@@ -92,7 +95,8 @@ export default function RankList() {
 			event2: true,
 			view: 1,
 			week: "mon",
-			genre: "comedy"
+			genre: "comedy",
+			workNew: true
     },
 		{
 			link: "#7",
@@ -130,7 +134,8 @@ export default function RankList() {
 			event2: true,
 			view: 1,
 			week: "fri",
-			genre: "thriller"
+			genre: "thriller",
+			workNew: true
     },
     {
 			link: "/episode/2",
@@ -142,7 +147,8 @@ export default function RankList() {
 			event1: true,
 			view: 2,
 			week: "fri",
-			genre: "school"
+			genre: "school",
+			workNew: true
     },
     {
 			link: "/episode/3",
@@ -179,7 +185,8 @@ export default function RankList() {
 			event1: true,
 			view: 10,
 			week: "wed",
-			genre: "sci"
+			genre: "sci",
+			workNew: true
     },
     {
 			link: "/episode/6",
@@ -191,7 +198,8 @@ export default function RankList() {
 			event2: true,
 			view: 1,
 			week: "wed",
-			genre: "school"
+			genre: "school",
+			workNew: true
     },
 		{
 			link: "#7",
@@ -229,7 +237,8 @@ export default function RankList() {
 			event2: true,
 			view: 1,
 			week: "thu",
-			genre: "thriller"
+			genre: "thriller",
+			workNew: true
     },
     {
 			link: "/episode/2",
@@ -266,7 +275,8 @@ export default function RankList() {
 			event2: true,
 			view: 8,
 			week: "sun",
-			genre: "romance"
+			genre: "romance",
+			workNew: true
     },
     {
 			link: "/episode/5",
@@ -290,7 +300,8 @@ export default function RankList() {
 			event2: true,
 			view: 1,
 			week: "mon",
-			genre: "drama"
+			genre: "drama",
+			workNew: true
     },
 		{
 			link: "#7",
@@ -315,7 +326,8 @@ export default function RankList() {
 			event2: true,
 			view: 3,
 			week: "mon",
-			genre: "romance"
+			genre: "romance",
+			workNew: true
     },
 		{
 			link: "/episode/1",
@@ -328,7 +340,8 @@ export default function RankList() {
 			event2: true,
 			view: 1,
 			week: "wed",
-			genre: "action"
+			genre: "action",
+			workNew: true
     },
     {
 			link: "/episode/2",
@@ -365,7 +378,8 @@ export default function RankList() {
 			event2: true,
 			view: 8,
 			week: "fri",
-			genre: "sci"
+			genre: "sci",
+			workNew: true
     },
     {
 			link: "/episode/5",
@@ -377,7 +391,8 @@ export default function RankList() {
 			event1: true,
 			view: 10,
 			week: "fri",
-			genre: "fantasy"
+			genre: "fantasy",
+			workNew: true
     },
     {
 			link: "/episode/6",
@@ -401,7 +416,8 @@ export default function RankList() {
 			event2: true,
 			view: 2,
 			week: "mon",
-			genre: "romance"
+			genre: "romance",
+			workNew: true
     },
 		{
 			link: "#1",
@@ -446,50 +462,84 @@ export default function RankList() {
 
     	setTopResultList(topRankList);
     	setResultList(filteredList);
-    } else if(idx == "end") {
-    	const genreList = workList.filter((item) => {
-				if (item.tag.find((e) => e === "end") == "end") {
-					return true
+    } else if (idx == "end") {
+      const genreList = workList.filter((item) => {
+        if (item.tag.find((e) => e === "end") == "end") {
+          return true;
         }
-			});
+      });
 
-			const adultLength = genreList.filter((item) => item.adult === true);
-			setIsAdultWorkLength(adultLength.length);
+      const adultLength = genreList.filter((item) => item.adult === true);
+      setIsAdultWorkLength(adultLength.length);
 
-    	const filteredList = genreList.filter((item) => {
-    	  if (isAdult && adultCookie == "true" && user.adult == true) {
-    	    return true;
-    	  } else {
-    	    return !item.adult;
-    	  }
-    	});
+      const filteredList = genreList.filter((item) => {
+        if (isAdult && adultCookie == "true" && user.adult == true) {
+          return true;
+        } else {
+          return !item.adult;
+        }
+      });
 
-    	const sortList = filteredList?.sort((a, b) => b.view - a.view);
-    	const topRankList = sortList?.slice(0, 4);
+      const sortList = filteredList?.sort((a, b) => b.view - a.view);
+      const topRankList = sortList?.slice(0, 4);
 
-    	setTopResultList(topRankList);
-    	setResultList(filteredList);
-		} else {
-			const genreIdx = Number(dateIdx);
-			const genreArr = ["romance", "bl", "gl", "fantasy", "drama", "comedy", "action", "horror", "thriller", "school", "historical", "sci"];
-    	const genreList = workList.filter((item) => item.genre === genreArr[genreIdx - 2]);
-			const adultLength = genreList.filter((item) => item.adult === true);
-			setIsAdultWorkLength(adultLength.length);
+      setTopResultList(topRankList);
+      setResultList(filteredList);
+    } else if (idx == "new") {
+      const genreList = workList.filter((item) => item.workNew === true);
 
-    	const filteredList = genreList.filter((item) => {
-    	  if (isAdult && adultCookie == "true" && user.adult == true) {
-    	    return true;
-    	  } else {
-    	    return !item.adult;
-    	  }
-    	});
+      const adultLength = genreList.filter((item) => item.adult === true);
+      setIsAdultWorkLength(adultLength.length);
 
-    	const sortList = filteredList?.sort((a, b) => b.view - a.view);
-    	const topRankList = sortList?.slice(0, 4);
+      const filteredList = genreList.filter((item) => {
+        if (isAdult && adultCookie == "true" && user.adult == true) {
+          return true;
+        } else {
+          return !item.adult;
+        }
+      });
 
-    	setTopResultList(topRankList);
-    	setResultList(filteredList);
-		}
+      const sortList = filteredList?.sort((a, b) => b.view - a.view);
+      const topRankList = sortList?.slice(0, 4);
+
+      setTopResultList(topRankList);
+      setResultList(filteredList);
+    } else {
+      const genreIdx = Number(dateIdx);
+      const genreArr = [
+        "romance",
+        "bl",
+        "gl",
+        "fantasy",
+        "drama",
+        "comedy",
+        "action",
+        "horror",
+        "thriller",
+        "school",
+        "historical",
+        "sci",
+      ];
+      const genreList = workList.filter(
+        (item) => item.genre === genreArr[genreIdx - 2]
+      );
+      const adultLength = genreList.filter((item) => item.adult === true);
+      setIsAdultWorkLength(adultLength.length);
+
+      const filteredList = genreList.filter((item) => {
+        if (isAdult && adultCookie == "true" && user.adult == true) {
+          return true;
+        } else {
+          return !item.adult;
+        }
+      });
+
+      const sortList = filteredList?.sort((a, b) => b.view - a.view);
+      const topRankList = sortList?.slice(0, 4);
+
+      setTopResultList(topRankList);
+      setResultList(filteredList);
+    }
   }, [isAdult, idx]);
 
 	const tagStyle: tagStyleType = {
