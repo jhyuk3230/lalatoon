@@ -32,7 +32,8 @@ export default function RankList() {
 			view: 1,
 			week: ["tue"],
 			genre: ["romance", "bl"],
-			workNew: true
+			workNew: true,
+			firstRegistration: "2024-12-26"
     },
     {
 			link: "/episode/2",
@@ -45,7 +46,8 @@ export default function RankList() {
 			view: 2,
 			week: ["mon"],
 			genre: ["bl", "action"],
-			workNew: true
+			workNew: true,
+			firstRegistration: "2024-12-26"
     },
     {
 			link: "/episode/3",
@@ -57,7 +59,8 @@ export default function RankList() {
 			event2: true,
 			view: 5,
 			week: ["wed"],
-			genre: ["gl", "drama"]
+			genre: ["gl", "drama"],
+			firstRegistration: "2024-12-26"
     },
     {
 			link: "/episode/4",
@@ -71,7 +74,8 @@ export default function RankList() {
 			view: 8,
 			week: ["sun"],
 			genre: ["fantasy", "fantasy"],
-			workNew: true
+			workNew: true,
+			firstRegistration: "2024-12-26"
     },
     {
 			link: "/episode/5",
@@ -83,7 +87,8 @@ export default function RankList() {
 			event1: true,
 			view: 10,
 			week: ["mon"],
-			genre: ["drama", "sci"]
+			genre: ["drama", "sci"],
+			firstRegistration: "2024-12-26"
     },
     {
 			link: "/episode/6",
@@ -96,7 +101,8 @@ export default function RankList() {
 			view: 1,
 			week: ["mon"],
 			genre: ["comedy", "school"],
-			workNew: true
+			workNew: true,
+			firstRegistration: "2024-12-26"
     },
 		{
 			link: "#7",
@@ -108,7 +114,8 @@ export default function RankList() {
 			event2: true,
 			view: 2,
 			week: ["thu"],
-			genre: ["action", "gl"]
+			genre: ["action", "gl"],
+			firstRegistration: "2024-12-26"
     },
 		{
 			link: "#1",
@@ -121,7 +128,8 @@ export default function RankList() {
 			event2: true,
 			view: 3,
 			week: ["fri"],
-			genre: ["horror", "action"]
+			genre: ["horror", "action"],
+			firstRegistration: "2024-12-26"
     },
 		{
 			link: "/episode/1",
@@ -135,7 +143,8 @@ export default function RankList() {
 			view: 1,
 			week: ["fri"],
 			genre: ["thriller", "horror"],
-			workNew: true
+			workNew: true,
+			firstRegistration: "2024-12-26"
     },
     {
 			link: "/episode/2",
@@ -148,7 +157,8 @@ export default function RankList() {
 			view: 2,
 			week: ["fri"],
 			genre: ["school", "thriller", "horror"],
-			workNew: true
+			workNew: true,
+			firstRegistration: "2024-12-26"
     },
     {
 			link: "/episode/3",
@@ -160,7 +170,8 @@ export default function RankList() {
 			event2: true,
 			view: 5,
 			week: ["sat"],
-			genre: ["historical", "action"]
+			genre: ["historical", "action"],
+			firstRegistration: "2024-12-26"
     },
     {
 			link: "/episode/4",
@@ -173,7 +184,8 @@ export default function RankList() {
 			event2: true,
 			view: 8,
 			week: ["tue"],
-			genre: ["sci", "historical"]
+			genre: ["sci", "historical"],
+			firstRegistration: "2024-12-26"
     },
     {
 			link: "/episode/5",
@@ -186,7 +198,8 @@ export default function RankList() {
 			view: 10,
 			week: ["wed"],
 			genre: ["sci", "action"],
-			workNew: true
+			workNew: true,
+			firstRegistration: "2024-12-26"
     },
     {
 			link: "/episode/6",
@@ -199,7 +212,8 @@ export default function RankList() {
 			view: 1,
 			week: ["wed"],
 			genre: ["school", "horror"],
-			workNew: true
+			workNew: true,
+			firstRegistration: "2024-5-5"
     },
 		{
 			link: "#7",
@@ -211,7 +225,8 @@ export default function RankList() {
 			event2: true,
 			view: 2,
 			week: ["wed"],
-			genre: ["horror"]
+			genre: ["horror"],
+			firstRegistration: "2024-1-31"
     },
 		{
 			link: "#1",
@@ -224,7 +239,8 @@ export default function RankList() {
 			event2: true,
 			view: 3,
 			week: ["thu"],
-			genre: ["horror"]
+			genre: ["horror"],
+			firstRegistration: "2024-1-1"
     },
 		{
 			link: "/episode/1",
@@ -238,7 +254,8 @@ export default function RankList() {
 			view: 1,
 			week: ["thu"],
 			genre: ["thriller", "horror"],
-			workNew: true
+			workNew: true,
+			firstRegistration: "2024-10-20"
     },
     {
 			link: "/episode/2",
@@ -250,7 +267,8 @@ export default function RankList() {
 			event1: true,
 			view: 2,
 			week: ["mon"],
-			genre: ["action", "thriller"]
+			genre: ["action", "thriller"],
+			firstRegistration: "2024-11-1"
     },
     {
 			link: "/episode/3",
@@ -262,7 +280,8 @@ export default function RankList() {
 			event2: true,
 			view: 5,
 			week: ["sat"],
-			genre: ["comedy"]
+			genre: ["comedy"],
+			firstRegistration: "2024-11-10"
     },
     {
 			link: "/episode/4",
@@ -276,7 +295,8 @@ export default function RankList() {
 			view: 8,
 			week: ["sun"],
 			genre: ["romance", "comedy"],
-			workNew: true
+			workNew: true,
+			firstRegistration: "2024-12-31"
     },
     {
 			link: "/episode/5",
@@ -288,7 +308,8 @@ export default function RankList() {
 			event1: true,
 			view: 10,
 			week: ["sun"],
-			genre: ["romance"]
+			genre: ["romance"],
+			firstRegistration: "2024-12-1"
     },
     {
 			link: "/episode/6",
@@ -301,7 +322,8 @@ export default function RankList() {
 			view: 1,
 			week: ["mon"],
 			genre: ["drama", "romance"],
-			workNew: true
+			workNew: true,
+			firstRegistration: "2024-11-21"
     },
 		{
 			link: "#7",
@@ -313,7 +335,8 @@ export default function RankList() {
 			event2: true,
 			view: 2,
 			week: ["sat"],
-			genre: ["romance"]
+			genre: ["romance"],
+			firstRegistration: "2024-8-11"
     },
 		{
 			link: "#1",
@@ -327,7 +350,8 @@ export default function RankList() {
 			view: 3,
 			week: ["mon"],
 			genre: ["romance"],
-			workNew: true
+			workNew: true,
+			firstRegistration: "2024-9-10"
     },
 		{
 			link: "/episode/1",
@@ -341,7 +365,8 @@ export default function RankList() {
 			view: 1,
 			week: ["wed"],
 			genre: ["action"],
-			workNew: true
+			workNew: true,
+			firstRegistration: "2025-1-26"
     },
     {
 			link: "/episode/2",
@@ -353,7 +378,8 @@ export default function RankList() {
 			event1: true,
 			view: 2,
 			week: ["tue"],
-			genre: ["historical"]
+			genre: ["historical"],
+			firstRegistration: "2024-5-16"
     },
     {
 			link: "/episode/3",
@@ -365,7 +391,8 @@ export default function RankList() {
 			event2: true,
 			view: 5,
 			week: ["tue"],
-			genre: ["historical"]
+			genre: ["historical"],
+			firstRegistration: "2024-1-15"
     },
     {
 			link: "/episode/4",
@@ -379,7 +406,8 @@ export default function RankList() {
 			view: 8,
 			week: ["fri"],
 			genre: ["sci"],
-			workNew: true
+			workNew: true,
+			firstRegistration: "2024-8-20"
     },
     {
 			link: "/episode/5",
@@ -392,7 +420,8 @@ export default function RankList() {
 			view: 10,
 			week: ["fri"],
 			genre: ["fantasy"],
-			workNew: true
+			workNew: true,
+			firstRegistration: "2024-12-31"
     },
     {
 			link: "/episode/6",
@@ -404,7 +433,8 @@ export default function RankList() {
 			event2: true,
 			view: 1,
 			week: ["sat"],
-			genre: ["fantasy"]
+			genre: ["fantasy"],
+			firstRegistration: "2024-12-26"
     },
 		{
 			link: "#7",
@@ -417,7 +447,8 @@ export default function RankList() {
 			view: 2,
 			week: ["mon"],
 			genre: ["romance"],
-			workNew: true
+			workNew: true,
+			firstRegistration: "2024-10-26"
     },
 		{
 			link: "#1",
@@ -430,7 +461,8 @@ export default function RankList() {
 			event2: true,
 			view: 3,
 			week: ["fri"],
-			genre: ["drama", "thriller"]
+			genre: ["drama", "thriller"],
+			firstRegistration: "2024-11-8"
     },
   ];
 

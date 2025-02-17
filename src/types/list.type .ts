@@ -14,4 +14,5 @@ export type ListItem = {
   week: string[];
   genre?: string[];
   workNew?: boolean;
+  firstRegistration: string;
 };
