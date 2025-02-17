@@ -1,16 +1,30 @@
 [
-	{
-		"id": "admin",
-		"pw": "admin",
-		"adult": true,
-		"admin": true,
-		"webcoin": 10000,
-		"appcoin": 10000,
-		"favorite": [],
-		"coupon": [],
-		"read": [],
-		"collection": []
-	},
+  {
+    "id": "admin",
+    "pw": "admin",
+    "adult": true,
+    "admin": true,
+    "webcoin": 10000,
+    "appcoin": 10000,
+    "favorite": [],
+    "coupon": [],
+    "read": [
+      {
+        "work": "1",
+        "episode": [
+          "1"
+        ]
+      }
+    ],
+    "collection": [
+      {
+        "work": "1",
+        "episode": [
+          "1"
+        ]
+      }
+    ]
+  },
   {
     "id": "test@test.com",
     "pw": "testpw",

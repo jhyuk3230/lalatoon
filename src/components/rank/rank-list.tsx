@@ -472,7 +472,6 @@ export default function RankList() {
 
 	const [resultList, setResultList] = useState<ListItem[]>();
 	const [topResultList, setTopResultList] = useState<ListItem[]>();
-	const [dateIdx, setDateIdx] = useState(idx);
 
 	const setIsAdultWorkLength = useAdultWorkLengthStore((state) => state.setIsAdultWorkLength);
 	
@@ -537,7 +536,7 @@ export default function RankList() {
       setTopResultList(topRankList);
       setResultList(filteredList);
     } else {
-      const genreIdx = Number(dateIdx);
+      const genreIdx = Number(idx);
       const genreArr = ["romance", "bl", "gl", "fantasy", "drama", "comedy", "action", "horror", "thriller", "school", "historical", "sci",];
       const genreList = workList.filter(
         (item) => item.genre?.find((e) => e === genreArr[genreIdx - 2])
@@ -560,6 +559,7 @@ export default function RankList() {
       setResultList(filteredList);
     }
   }, [isAdult, idx]);
+
 
 	const tagStyle: tagStyleType = {
     new: "px-1 inline-block bg-[#FFC506] text-[8px] font-bold text-black leading-[14px]",

@@ -35,7 +35,7 @@ export default async function EpisodeView({params}: {params:Promise<{workId: str
           notice: false,
           epilogue: false,
           special: false,
-          new: true,
+          new: false,
           rating: "9.1",
           date: "Apr 21, 2018",
           waitFree: false,

@@ -472,7 +472,6 @@ export default function SerializingList() {
 
 	const [resultList, setResultList] = useState<ListItem[]>();
 	const [topResultList, setTopResultList] = useState<ListItem[]>();
-	const [dateIdx, setDateIdx] = useState(idx);
 
 	const [monList, setMonList] = useState<ListItem[]>();
 	const [tueList, setTueList] = useState<ListItem[]>();
@@ -485,10 +484,9 @@ export default function SerializingList() {
 	const setIsAdultWorkLength = useAdultWorkLengthStore((state) => state.setIsAdultWorkLength);
 	
 	useEffect(() => {
-		const weekIdx = Number(dateIdx);
+		const weekIdx = Number(idx);
 		const weekArr = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
     const weekList = workList.filter((item) => {
-			// item.week.find((e) => e === weekArr[weekIdx - 1]);
 			if (item.week.find((e) => e === weekArr[weekIdx - 1]) !== undefined) {
 				return true
       }

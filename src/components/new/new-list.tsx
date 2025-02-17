@@ -6,7 +6,6 @@ import { tagStyleType } from "@/types/common.type";
 import { getCookie } from "cookies-next";
 import { useEffect, useState } from "react";
 import { useAdultStore, useAdultWorkLengthStore } from "@/store/common/common.store";
-import { redirect, useParams } from "next/navigation";
 
 export default function RankList() {
 	const userData = require("@/components/dummy/user-list.json");
@@ -465,7 +464,6 @@ export default function RankList() {
 
 	const [resultList, setResultList] = useState<ListItem[]>();
 	const [topResultList, setTopResultList] = useState<ListItem[]>();
-	// const [dateIdx, setDateIdx] = useState(idx);
 
 	const setIsAdultWorkLength = useAdultWorkLengthStore((state) => state.setIsAdultWorkLength);
 
