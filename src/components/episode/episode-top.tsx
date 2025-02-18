@@ -13,6 +13,7 @@ export default function EpisodeTop({ id, data, read, episode, user }: { id: stri
 		Drama: "px-[5px] border border-[#FF7B89] rounded-[50px] bg-[#FF7B89] text-[10px] font-normal flex-shrink-0 m-sm:bg-white m-sm:text-[#FF7B89]",
 		Romance: "px-[5px] border border-[#B261A7] rounded-[50px] bg-[#B261A7] text-[10px] font-normal flex-shrink-0 m-sm:bg-white m-sm:text-[#B261A7]",
 		BL: "px-[5px] border border-[#916FD5] rounded-[50px] bg-[#916FD5] text-[10px] font-normal flex-shrink-0 m-sm:bg-white m-sm:text-[#916FD5]",
+		GL: "px-[5px] border border-[#AE6378] rounded-[50px] bg-[#AE6378] text-[10px] font-normal flex-shrink-0 m-sm:bg-white m-sm:text-[#AE6378]",
 		"School life": "px-[5px] border border-[#608BD2] rounded-[50px] bg-[#608BD2] text-[10px] font-normal flex-shrink-0 m-sm:bg-white m-sm:text-[#608BD2]",
 		Fantasy: "px-[5px] border border-[#51CCB1] rounded-[50px] bg-[#51CCB1] text-[10px] font-normal flex-shrink-0 m-sm:bg-white m-sm:text-[#51CCB1]",
 		Horror: "px-[5px] border border-[#A7BE7B] rounded-[50px] bg-[#A7BE7B] text-[10px] font-normal flex-shrink-0 m-sm:bg-white m-sm:text-[#A7BE7B]",

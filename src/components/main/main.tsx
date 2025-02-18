@@ -12,10 +12,7 @@ import { cookies } from "next/headers";
 import BottomSlide from "./bottom-slide";
 
 export default async function Main(){
-  // const exists = hasCookie("appRefusal");
 	const cookieStore = cookies();
-	// console.log(cookieStore.has("appRefusal"));
-	// console.log('getCookie', getCookie("appRefusal"));
 
   return (
     <>

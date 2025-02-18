@@ -1,7 +1,7 @@
 import SerializingAdultBtn from "./serializing-adult-btn";
 import SerializingAllBtn from "./serializing-all-btn";
 
-export default async function SerializingTop({all} : {all:boolean}) {
+export default async function SerializingTop() {
 	return (
     <>
       <section className="max-w-[768px] mx-auto mb-5 pt-[50px]">

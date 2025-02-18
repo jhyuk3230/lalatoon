@@ -38,6 +38,7 @@ export type EpisodeTagStyle = {
   Drama: string;
   Romance: string;
   BL: string;
+  GL: string;
   "School life": string;
   Fantasy: string;
   Horror: string;

@@ -57,7 +57,6 @@ export async function PUT(request: NextRequest) {
 		}
 
 		// collection
-		// console.log(user.collection);
 		if (!user.collection) {
       user.collection = [];
       user.collection.push({ work: workId, episode: episodeId });

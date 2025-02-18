@@ -5,7 +5,8 @@ import { EpisodeItem } from "@/types/episode.type ";
 import { getCookie } from "cookies-next";
 import { ReadFetch } from "@/apis/episode/read.fetch";
 import { useEffect, useState } from "react";
-import { useCoinStore, useEpisodeListStore } from "@/store/common/common.store";
+import { useCoinStore } from "@/store/common/common.store";
+import { useEpisodeListStore } from "@/store/common/episode.store";
 import { useRouter } from "next/navigation";
 
 export default function EpisodeLink({ id, data, read }: { id: string, data: EpisodeItem, read: string[] }) {

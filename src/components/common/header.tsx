@@ -2,13 +2,14 @@ import HeaderNav from "@/components/navigation/header-nav";
 import NavBtn from "../navigation/nav-button";
 import AdultBtn from "./adult-btn";
 import Link from "next/link";
+import Search from "./search";
 
 
 export default function Header() {
 	return (
 		<>
 			<header className="w-full bg-white fixed left-0 top-0 z-[5]">
-				<section className="max-w-[768px] h-[70px] mx-auto px-[20px] flex justify-between items-center">
+				<section className="max-w-[768px] h-[70px] mx-auto px-[20px] flex justify-between items-center relative">
 					<article className="flex gap-10 items-center">
 						<Link href="/" className="logo">
 							<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
@@ -29,6 +30,7 @@ export default function Header() {
 
 					<article className="flex items-center gap-5">
   					<AdultBtn />
+						<Search />
 						<NavBtn />
 					</article>
 				</section>

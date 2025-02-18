@@ -1,5 +1,3 @@
-import { EpisodeList } from "@/types/episode.type ";
-
 export type NavState = {
 	isNavActive: boolean;
 	setIsNavActive: (state: boolean) => void;
@@ -25,17 +23,12 @@ export type CoinState = {
   setIsCoin: (state: number) => void;
 };
 
-export type PurchaseState = {
-  isPurchase: boolean;
-  setIsPurchase: (state: boolean) => void;
-};
-
-export type EpisodeListState = {
-  isEpisodeList: EpisodeList[];
-  setIsEpisodeList: (state: EpisodeList[]) => void;
-};
-
 export type AdultWorkLengthState = {
   isAdultWorkLength: number;
   setIsAdultWorkLength: (state: number) => void;
+};
+
+export type SearchState = {
+  isSearch: boolean;
+  setIsSearch: (state: boolean) => void;
 };

@@ -21,448 +21,480 @@ export default function RankList() {
 
 	const workList: ListItem[] = [
     {
-			link: "/episode/1",
+      link: "/episode/1",
       img: "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
       tag: ["new", "up"],
-      title: "title",
-			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
-			adult: false,
-			event1: true,
-			event2: true,
-			view: 1,
-			week: ["tue"],
-			genre: ["romance", "bl"],
-			workNew: true,
-			firstRegistration: "2024-12-26"
+      title: "오빠를 꼬시려 했는데 남주가 넘어왔다",
+      discription:
+        "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+      adult: false,
+      event1: true,
+      event2: true,
+      view: 1,
+      week: ["tue"],
+      genre: ["Romance", "BL"],
+      workNew: true,
+      firstRegistration: "2024-12-26",
     },
     {
-			link: "/episode/2",
-			img: "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+      link: "/episode/2",
+      img: "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
       tag: ["new", "up", "end"],
-      title: "title title title title title title title title title title title title",
-			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+      title: "회장님의 백만가지 대본",
+      discription:
+        "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
       adult: true,
-			event1: true,
-			view: 2,
-			week: ["mon"],
-			genre: ["bl", "action"],
-			workNew: true,
-			firstRegistration: "2024-12-26"
+      event1: true,
+      view: 2,
+      week: ["mon"],
+      genre: ["BL", "Action"],
+      workNew: true,
+      firstRegistration: "2024-12-26",
     },
     {
-			link: "/episode/3",
-			img: "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+      link: "/episode/3",
+      img: "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+      tag: ["new", "up"],
+      title: "계약연애, 오늘부터 1일",
+      discription:
+        "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+      adult: true,
+      event2: true,
+      view: 5,
+      week: ["wed"],
+      genre: ["GL", "Drama"],
+      firstRegistration: "2024-12-26",
+    },
+    {
+      link: "/episode/4",
+      img: "https://thumb-g2.lalatoon.com/upload/thumbnail/20180720111425/2020_08_18_15977285189297.jpg",
+      tag: ["new", "up", "end"],
+      title: "프린스 챠밍의 약혼자",
+      discription:
+        "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+      adult: false,
+      event1: true,
+      event2: true,
+      view: 8,
+      week: ["sun"],
+      genre: ["Fantasy"],
+      workNew: true,
+      firstRegistration: "2024-12-26",
+    },
+    {
+      link: "/episode/5",
+      img: "https://thumb-g2.lalatoon.com/upload/thumbnail/20180720111425/2020_08_18_15977285189297.jpg",
+      tag: ["new"],
+      title: "사랑이야",
+      discription:
+        "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+      adult: true,
+      event1: true,
+      view: 10,
+      week: ["mon"],
+      genre: ["Drama", "Sci-fi"],
+      firstRegistration: "2024-12-26",
+    },
+    {
+      link: "/episode/6",
+      img: "https://thumb-g2.lalatoon.com/upload/thumbnail/20180720111425/2020_08_18_15977285189297.jpg",
+      tag: ["new", "up", "end"],
+      title: "카페 앵커리지 (Café Anchorage)",
+      discription:
+        "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+      adult: false,
+      event2: true,
+      view: 1,
+      week: ["mon"],
+      genre: ["Comedy", "School life"],
+      workNew: true,
+      firstRegistration: "2024-12-26",
+    },
+    {
+      link: "#7",
+      img: "https://thumb-g2.lalatoon.com/upload/thumbnail/20180720111425/2020_08_18_15977285189297.jpg",
+      tag: ["new", "up", "end"],
+      title: "딜리셔스 블러드",
+      discription:
+        "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+      adult: false,
+      event2: true,
+      view: 2,
+      week: ["thu"],
+      genre: ["Action", "GL"],
+      firstRegistration: "2024-12-26",
+    },
+    {
+      link: "#1",
+      img: "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+      tag: ["new", "up"],
+      title: "상관없어, 사랑 따위",
+      discription:
+        "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+      adult: true,
+      event1: true,
+      event2: true,
+      view: 3,
+      week: ["fri"],
+      genre: ["Horror", "Action"],
+      firstRegistration: "2024-12-26",
+    },
+    {
+      link: "/episode/1",
+      img: "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+      tag: ["new", "up"],
+      title: "너의 비밀을 알고 있다",
+      discription:
+        "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+      adult: false,
+      event1: true,
+      event2: true,
+      view: 1,
+      week: ["fri"],
+      genre: ["Thriller", "Horror"],
+      workNew: true,
+      firstRegistration: "2024-12-26",
+    },
+    {
+      link: "/episode/2",
+      img: "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+      tag: ["new", "up", "end"],
+      title: "그래 나다. 서브광공",
+      discription:
+        "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+      adult: true,
+      event1: true,
+      view: 2,
+      week: ["fri"],
+      genre: ["School life", "Thriller", "Horror"],
+      workNew: true,
+      firstRegistration: "2024-12-26",
+    },
+    {
+      link: "/episode/3",
+      img: "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+      tag: ["new", "up"],
+      title: "여주인공의 대본을 잘못 가져간 것 같아요",
+      discription:
+        "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+      adult: true,
+      event2: true,
+      view: 5,
+      week: ["sat"],
+      genre: ["Historical", "Action"],
+      firstRegistration: "2024-12-26",
+    },
+    {
+      link: "/episode/4",
+      img: "https://thumb-g2.lalatoon.com/upload/thumbnail/20180720111425/2020_08_18_15977285189297.jpg",
+      tag: ["new", "up", "end"],
+      title: "21세기 의사의 황궁 생존기",
+      discription:
+        "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+      adult: false,
+      event1: true,
+      event2: true,
+      view: 8,
+      week: ["tue"],
+      genre: ["Sci-fi", "Historical"],
+      firstRegistration: "2024-12-26",
+    },
+    {
+      link: "/episode/5",
+      img: "https://thumb-g2.lalatoon.com/upload/thumbnail/20180720111425/2020_08_18_15977285189297.jpg",
+      tag: ["new"],
+      title: "고양이 카페로 초대합니다",
+      discription:
+        "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+      adult: true,
+      event1: true,
+      view: 10,
+      week: ["wed"],
+      genre: ["Sci-fi", "Action"],
+      workNew: true,
+      firstRegistration: "2024-12-26",
+    },
+    {
+      link: "/episode/6",
+      img: "https://thumb-g2.lalatoon.com/upload/thumbnail/20180720111425/2020_08_18_15977285189297.jpg",
+      tag: ["new", "up", "end"],
+      title: "비밀X가족 - 백발 마존, 성황과 결혼하다!",
+      discription:
+        "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+      adult: false,
+      event2: true,
+      view: 1,
+      week: ["wed"],
+      genre: ["School life", "Horror"],
+      workNew: true,
+      firstRegistration: "2024-5-5",
+    },
+    {
+      link: "#7",
+      img: "https://thumb-g2.lalatoon.com/upload/thumbnail/20180720111425/2020_08_18_15977285189297.jpg",
+      tag: ["new", "up", "end"],
+      title: "어거스의 법칙",
+      discription:
+        "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+      adult: false,
+      event2: true,
+      view: 2,
+      week: ["wed"],
+      genre: ["Horror"],
+      firstRegistration: "2024-1-31",
+    },
+    {
+      link: "#1",
+      img: "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+      tag: ["new", "up"],
+      title: "폐하, 옥체 보존하세요!",
+      discription:
+        "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+      adult: true,
+      event1: true,
+      event2: true,
+      view: 3,
+      week: ["thu"],
+      genre: ["Horror"],
+      firstRegistration: "2024-1-1",
+    },
+    {
+      link: "/episode/1",
+      img: "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+      tag: ["new", "up"],
+      title: "결혼전쟁",
+      discription:
+        "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+      adult: false,
+      event1: true,
+      event2: true,
+      view: 1,
+      week: ["thu"],
+      genre: ["Thriller", "Horror"],
+      workNew: true,
+      firstRegistration: "2024-10-20",
+    },
+    {
+      link: "/episode/2",
+      img: "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+      tag: ["new", "up", "end"],
+      title: "이렇게 귀여운 간첩",
+      discription:
+        "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+      adult: true,
+      event1: true,
+      view: 2,
+      week: ["mon"],
+      genre: ["Action", "Thriller"],
+      firstRegistration: "2024-11-1",
+    },
+    {
+      link: "/episode/3",
+      img: "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+      tag: ["new", "up"],
+      title: "조선남녀상열지사 조작단",
+      discription:
+        "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+      adult: true,
+      event2: true,
+      view: 5,
+      week: ["sat"],
+      genre: ["Comedy"],
+      firstRegistration: "2024-11-10",
+    },
+    {
+      link: "/episode/4",
+      img: "https://thumb-g2.lalatoon.com/upload/thumbnail/20180720111425/2020_08_18_15977285189297.jpg",
+      tag: ["new", "up", "end"],
+      title: "남자 귀신 주웠더니 솔로 탈출!",
+      discription:
+        "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+      adult: false,
+      event1: true,
+      event2: true,
+      view: 8,
+      week: ["sun"],
+      genre: ["Romance", "Comedy"],
+      workNew: true,
+      firstRegistration: "2024-12-31",
+    },
+    {
+      link: "/episode/5",
+      img: "https://thumb-g2.lalatoon.com/upload/thumbnail/20180720111425/2020_08_18_15977285189297.jpg",
+      tag: ["new"],
+      title: "비정한 도시에서 사랑을",
+      discription:
+        "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+      adult: true,
+      event1: true,
+      view: 10,
+      week: ["sun"],
+      genre: ["Romance"],
+      firstRegistration: "2024-12-1",
+    },
+    {
+      link: "/episode/6",
+      img: "https://thumb-g2.lalatoon.com/upload/thumbnail/20180720111425/2020_08_18_15977285189297.jpg",
+      tag: ["new", "up", "end"],
+      title: "어쩌다 그와 결혼했다",
+      discription:
+        "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+      adult: false,
+      event2: true,
+      view: 1,
+      week: ["mon"],
+      genre: ["Drama", "Romance"],
+      workNew: true,
+      firstRegistration: "2024-11-21",
+    },
+    {
+      link: "#7",
+      img: "https://thumb-g2.lalatoon.com/upload/thumbnail/20180720111425/2020_08_18_15977285189297.jpg",
+      tag: ["new", "up", "end"],
+      title: "대표님과 연애를 시작했습니다",
+      discription:
+        "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+      adult: false,
+      event2: true,
+      view: 2,
+      week: ["sat"],
+      genre: ["Romance"],
+      firstRegistration: "2024-8-11",
+    },
+    {
+      link: "#1",
+      img: "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+      tag: ["new", "up"],
+      title: "어디까지나 노예?!",
+      discription:
+        "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+      adult: true,
+      event1: true,
+      event2: true,
+      view: 3,
+      week: ["mon"],
+      genre: ["Romance"],
+      workNew: true,
+      firstRegistration: "2024-9-10",
+    },
+    {
+      link: "/episode/1",
+      img: "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+      tag: ["new", "up"],
+      title: "도깨비의 제물이 된 신부",
+      discription:
+        "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+      adult: false,
+      event1: true,
+      event2: true,
+      view: 1,
+      week: ["wed"],
+      genre: ["Action"],
+      workNew: true,
+      firstRegistration: "2025-1-26",
+    },
+    {
+      link: "/episode/2",
+      img: "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
+      tag: ["new", "up", "end"],
+      title: "미친개 도련님 만들기",
+      discription:
+        "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+      adult: true,
+      event1: true,
+      view: 2,
+      week: ["tue"],
+      genre: ["Historical"],
+      firstRegistration: "2024-5-16",
+    },
+    {
+      link: "/episode/3",
+      img: "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
       tag: ["new", "up"],
       title: "title title title title title",
-			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+      discription:
+        "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
       adult: true,
-			event2: true,
-			view: 5,
-			week: ["wed"],
-			genre: ["gl", "drama"],
-			firstRegistration: "2024-12-26"
+      event2: true,
+      view: 5,
+      week: ["tue"],
+      genre: ["Historical"],
+      firstRegistration: "2024-1-15",
     },
     {
-			link: "/episode/4",
+      link: "/episode/4",
       img: "https://thumb-g2.lalatoon.com/upload/thumbnail/20180720111425/2020_08_18_15977285189297.jpg",
       tag: ["new", "up", "end"],
       title: "title title title title title title title",
-			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
-			adult: false,
-			event1: true,
-			event2: true,
-			view: 8,
-			week: ["sun"],
-			genre: ["fantasy", "fantasy"],
-			workNew: true,
-			firstRegistration: "2024-12-26"
+      discription:
+        "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+      adult: false,
+      event1: true,
+      event2: true,
+      view: 8,
+      week: ["fri"],
+      genre: ["Sci-fi"],
+      workNew: true,
+      firstRegistration: "2024-8-20",
     },
     {
-			link: "/episode/5",
+      link: "/episode/5",
       img: "https://thumb-g2.lalatoon.com/upload/thumbnail/20180720111425/2020_08_18_15977285189297.jpg",
       tag: ["new"],
       title: "title title title title title",
-			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
-			adult: true,
-			event1: true,
-			view: 10,
-			week: ["mon"],
-			genre: ["drama", "sci"],
-			firstRegistration: "2024-12-26"
-    },
-    {
-			link: "/episode/6",
-      img: "https://thumb-g2.lalatoon.com/upload/thumbnail/20180720111425/2020_08_18_15977285189297.jpg",
-      tag: ["new", "up", "end"],
-      title: "title title title title title",
-			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
-			adult: false,
-			event2: true,
-			view: 1,
-			week: ["mon"],
-			genre: ["comedy", "school"],
-			workNew: true,
-			firstRegistration: "2024-12-26"
-    },
-		{
-			link: "#7",
-      img: "https://thumb-g2.lalatoon.com/upload/thumbnail/20180720111425/2020_08_18_15977285189297.jpg",
-      tag: ["new", "up", "end"],
-      title: "title title title title title",
-			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
-			adult: false,
-			event2: true,
-			view: 2,
-			week: ["thu"],
-			genre: ["action", "gl"],
-			firstRegistration: "2024-12-26"
-    },
-		{
-			link: "#1",
-      img: "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
-      tag: ["new", "up"],
-      title: "title",
-			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
-			adult: true,
-			event1: true,
-			event2: true,
-			view: 3,
-			week: ["fri"],
-			genre: ["horror", "action"],
-			firstRegistration: "2024-12-26"
-    },
-		{
-			link: "/episode/1",
-      img: "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
-      tag: ["new", "up"],
-      title: "title",
-			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
-			adult: false,
-			event1: true,
-			event2: true,
-			view: 1,
-			week: ["fri"],
-			genre: ["thriller", "horror"],
-			workNew: true,
-			firstRegistration: "2024-12-26"
-    },
-    {
-			link: "/episode/2",
-			img: "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
-      tag: ["new", "up", "end"],
-      title: "title title title title title title title title title title title title",
-			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+      discription:
+        "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
       adult: true,
-			event1: true,
-			view: 2,
-			week: ["fri"],
-			genre: ["school", "thriller", "horror"],
-			workNew: true,
-			firstRegistration: "2024-12-26"
+      event1: true,
+      view: 10,
+      week: ["fri"],
+      genre: ["Fantasy"],
+      workNew: true,
+      firstRegistration: "2024-12-31",
     },
     {
-			link: "/episode/3",
-			img: "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
-      tag: ["new", "up"],
-      title: "title title title title title",
-			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
-      adult: true,
-			event2: true,
-			view: 5,
-			week: ["sat"],
-			genre: ["historical", "action"],
-			firstRegistration: "2024-12-26"
-    },
-    {
-			link: "/episode/4",
-      img: "https://thumb-g2.lalatoon.com/upload/thumbnail/20180720111425/2020_08_18_15977285189297.jpg",
-      tag: ["new", "up", "end"],
-      title: "title title title title title title title",
-			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
-			adult: false,
-			event1: true,
-			event2: true,
-			view: 8,
-			week: ["tue"],
-			genre: ["sci", "historical"],
-			firstRegistration: "2024-12-26"
-    },
-    {
-			link: "/episode/5",
-      img: "https://thumb-g2.lalatoon.com/upload/thumbnail/20180720111425/2020_08_18_15977285189297.jpg",
-      tag: ["new"],
-      title: "title title title title title",
-			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
-			adult: true,
-			event1: true,
-			view: 10,
-			week: ["wed"],
-			genre: ["sci", "action"],
-			workNew: true,
-			firstRegistration: "2024-12-26"
-    },
-    {
-			link: "/episode/6",
+      link: "/episode/6",
       img: "https://thumb-g2.lalatoon.com/upload/thumbnail/20180720111425/2020_08_18_15977285189297.jpg",
       tag: ["new", "up", "end"],
       title: "title title title title title",
-			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
-			adult: false,
-			event2: true,
-			view: 1,
-			week: ["wed"],
-			genre: ["school", "horror"],
-			workNew: true,
-			firstRegistration: "2024-5-5"
+      discription:
+        "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+      adult: false,
+      event2: true,
+      view: 1,
+      week: ["sat"],
+      genre: ["Fantasy"],
+      firstRegistration: "2024-12-26",
     },
-		{
-			link: "#7",
+    {
+      link: "#7",
       img: "https://thumb-g2.lalatoon.com/upload/thumbnail/20180720111425/2020_08_18_15977285189297.jpg",
       tag: ["new", "up", "end"],
       title: "title title title title title",
-			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
-			adult: false,
-			event2: true,
-			view: 2,
-			week: ["wed"],
-			genre: ["horror"],
-			firstRegistration: "2024-1-31"
+      discription:
+        "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+      adult: false,
+      event2: true,
+      view: 2,
+      week: ["mon"],
+      genre: ["Romance"],
+      workNew: true,
+      firstRegistration: "2024-10-26",
     },
-		{
-			link: "#1",
+    {
+      link: "#1",
       img: "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
       tag: ["new", "up"],
       title: "title",
-			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
-			adult: true,
-			event1: true,
-			event2: true,
-			view: 3,
-			week: ["thu"],
-			genre: ["horror"],
-			firstRegistration: "2024-1-1"
-    },
-		{
-			link: "/episode/1",
-      img: "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
-      tag: ["new", "up"],
-      title: "title",
-			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
-			adult: false,
-			event1: true,
-			event2: true,
-			view: 1,
-			week: ["thu"],
-			genre: ["thriller", "horror"],
-			workNew: true,
-			firstRegistration: "2024-10-20"
-    },
-    {
-			link: "/episode/2",
-			img: "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
-      tag: ["new", "up", "end"],
-      title: "title title title title title title title title title title title title",
-			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
+      discription:
+        "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
       adult: true,
-			event1: true,
-			view: 2,
-			week: ["mon"],
-			genre: ["action", "thriller"],
-			firstRegistration: "2024-11-1"
-    },
-    {
-			link: "/episode/3",
-			img: "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
-      tag: ["new", "up"],
-      title: "title title title title title",
-			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
-      adult: true,
-			event2: true,
-			view: 5,
-			week: ["sat"],
-			genre: ["comedy"],
-			firstRegistration: "2024-11-10"
-    },
-    {
-			link: "/episode/4",
-      img: "https://thumb-g2.lalatoon.com/upload/thumbnail/20180720111425/2020_08_18_15977285189297.jpg",
-      tag: ["new", "up", "end"],
-      title: "title title title title title title title",
-			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
-			adult: false,
-			event1: true,
-			event2: true,
-			view: 8,
-			week: ["sun"],
-			genre: ["romance", "comedy"],
-			workNew: true,
-			firstRegistration: "2024-12-31"
-    },
-    {
-			link: "/episode/5",
-      img: "https://thumb-g2.lalatoon.com/upload/thumbnail/20180720111425/2020_08_18_15977285189297.jpg",
-      tag: ["new"],
-      title: "title title title title title",
-			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
-			adult: true,
-			event1: true,
-			view: 10,
-			week: ["sun"],
-			genre: ["romance"],
-			firstRegistration: "2024-12-1"
-    },
-    {
-			link: "/episode/6",
-      img: "https://thumb-g2.lalatoon.com/upload/thumbnail/20180720111425/2020_08_18_15977285189297.jpg",
-      tag: ["new", "up", "end"],
-      title: "title title title title title",
-			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
-			adult: false,
-			event2: true,
-			view: 1,
-			week: ["mon"],
-			genre: ["drama", "romance"],
-			workNew: true,
-			firstRegistration: "2024-11-21"
-    },
-		{
-			link: "#7",
-      img: "https://thumb-g2.lalatoon.com/upload/thumbnail/20180720111425/2020_08_18_15977285189297.jpg",
-      tag: ["new", "up", "end"],
-      title: "title title title title title",
-			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
-			adult: false,
-			event2: true,
-			view: 2,
-			week: ["sat"],
-			genre: ["romance"],
-			firstRegistration: "2024-8-11"
-    },
-		{
-			link: "#1",
-      img: "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
-      tag: ["new", "up"],
-      title: "title",
-			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
-			adult: true,
-			event1: true,
-			event2: true,
-			view: 3,
-			week: ["mon"],
-			genre: ["romance"],
-			workNew: true,
-			firstRegistration: "2024-9-10"
-    },
-		{
-			link: "/episode/1",
-      img: "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
-      tag: ["new", "up"],
-      title: "title",
-			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
-			adult: false,
-			event1: true,
-			event2: true,
-			view: 1,
-			week: ["wed"],
-			genre: ["action"],
-			workNew: true,
-			firstRegistration: "2025-1-26"
-    },
-    {
-			link: "/episode/2",
-			img: "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
-      tag: ["new", "up", "end"],
-      title: "title title title title title title title title title title title title",
-			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
-      adult: true,
-			event1: true,
-			view: 2,
-			week: ["tue"],
-			genre: ["historical"],
-			firstRegistration: "2024-5-16"
-    },
-    {
-			link: "/episode/3",
-			img: "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
-      tag: ["new", "up"],
-      title: "title title title title title",
-			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
-      adult: true,
-			event2: true,
-			view: 5,
-			week: ["tue"],
-			genre: ["historical"],
-			firstRegistration: "2024-1-15"
-    },
-    {
-			link: "/episode/4",
-      img: "https://thumb-g2.lalatoon.com/upload/thumbnail/20180720111425/2020_08_18_15977285189297.jpg",
-      tag: ["new", "up", "end"],
-      title: "title title title title title title title",
-			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
-			adult: false,
-			event1: true,
-			event2: true,
-			view: 8,
-			week: ["fri"],
-			genre: ["sci"],
-			workNew: true,
-			firstRegistration: "2024-8-20"
-    },
-    {
-			link: "/episode/5",
-      img: "https://thumb-g2.lalatoon.com/upload/thumbnail/20180720111425/2020_08_18_15977285189297.jpg",
-      tag: ["new"],
-      title: "title title title title title",
-			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
-			adult: true,
-			event1: true,
-			view: 10,
-			week: ["fri"],
-			genre: ["fantasy"],
-			workNew: true,
-			firstRegistration: "2024-12-31"
-    },
-    {
-			link: "/episode/6",
-      img: "https://thumb-g2.lalatoon.com/upload/thumbnail/20180720111425/2020_08_18_15977285189297.jpg",
-      tag: ["new", "up", "end"],
-      title: "title title title title title",
-			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
-			adult: false,
-			event2: true,
-			view: 1,
-			week: ["sat"],
-			genre: ["fantasy"],
-			firstRegistration: "2024-12-26"
-    },
-		{
-			link: "#7",
-      img: "https://thumb-g2.lalatoon.com/upload/thumbnail/20180720111425/2020_08_18_15977285189297.jpg",
-      tag: ["new", "up", "end"],
-      title: "title title title title title",
-			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
-			adult: false,
-			event2: true,
-			view: 2,
-			week: ["mon"],
-			genre: ["romance"],
-			workNew: true,
-			firstRegistration: "2024-10-26"
-    },
-		{
-			link: "#1",
-      img: "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
-      tag: ["new", "up"],
-      title: "title",
-			discription: "최대 3줄 / My jealousy for you has now turned into love. Will you forgive me for ruining your life? My jealousy for you has",
-			adult: true,
-			event1: true,
-			event2: true,
-			view: 3,
-			week: ["fri"],
-			genre: ["drama", "thriller"],
-			firstRegistration: "2024-11-8"
+      event1: true,
+      event2: true,
+      view: 3,
+      week: ["fri"],
+      genre: ["Drama", "Thriller"],
+      firstRegistration: "2024-11-8",
     },
   ];
 
@@ -537,7 +569,7 @@ export default function RankList() {
       setResultList(filteredList);
     } else {
       const genreIdx = Number(idx);
-      const genreArr = ["romance", "bl", "gl", "fantasy", "drama", "comedy", "action", "horror", "thriller", "school", "historical", "sci",];
+      const genreArr = ["Romance", "BL", "GL", "Fantasy", "Drama", "Comedy", "Action", "Horror", "Thriller", "School life", "Historical", "Sci-fi",];
       const genreList = workList.filter(
         (item) => item.genre?.find((e) => e === genreArr[genreIdx - 2])
       );
@@ -577,46 +609,46 @@ export default function RankList() {
 						className="py-2 px-[10px] border-t border-t-black/5 border-b border-b-black/5 flex justify-around items-center gap-[10px] text-center"
 					>
 						<SwiperSlide className="w-auto">
-							<Link href={`/rank/1`} className={`w-full px-2 rounded-[50px] block text-[15px] font-medium leading-[36px] tracking-[0.15px] ${idx == "1" ? "bg-red-500 text-white" : "text-black"}`}>전체</Link>
+							<Link href={`/rank/1`} className={`w-full min-w-[36px] px-2 rounded-[50px] block text-[15px] font-medium leading-[36px] tracking-[0.15px] ${idx == "1" ? "bg-red-500 text-white" : "text-black"}`}>전체</Link>
 						</SwiperSlide>
 						<SwiperSlide className="w-auto">
-							<Link href={`/rank/end`} className={`w-full px-2 rounded-[50px] block text-[15px] font-medium leading-[36px] tracking-[0.15px] ${idx == "end" ? "bg-red-500 text-white" : "text-black"}`}>완결</Link>
+							<Link href={`/rank/end`} className={`w-full min-w-[36px] px-2 rounded-[50px] block text-[15px] font-medium leading-[36px] tracking-[0.15px] ${idx == "end" ? "bg-red-500 text-white" : "text-black"}`}>완결</Link>
 						</SwiperSlide>
 						<SwiperSlide className="w-auto">
-							<Link href={`/rank/new`} className={`w-full px-2 rounded-[50px] block text-[15px] font-medium leading-[36px] tracking-[0.15px] ${idx == "new" ? "bg-red-500 text-white" : "text-black"}`}>신작</Link>
+							<Link href={`/rank/new`} className={`w-full min-w-[36px] px-2 rounded-[50px] block text-[15px] font-medium leading-[36px] tracking-[0.15px] ${idx == "new" ? "bg-red-500 text-white" : "text-black"}`}>신작</Link>
 						</SwiperSlide>
 						<SwiperSlide className="w-auto">
-							<Link href={`/rank/2`} className={`w-full px-2 rounded-[50px] block text-[15px] font-medium leading-[36px] tracking-[0.15px] ${idx == "2" ? "bg-red-500 text-white" : "text-black"}`}>로맨스</Link>
+							<Link href={`/rank/2`} className={`w-full min-w-[36px] px-2 rounded-[50px] block text-[15px] font-medium leading-[36px] tracking-[0.15px] ${idx == "2" ? "bg-red-500 text-white" : "text-black"}`}>로맨스</Link>
 						</SwiperSlide>
 						<SwiperSlide className="w-auto">
-							<Link href={`/rank/3`} className={`w-full px-2 rounded-[50px] block text-[15px] font-medium leading-[36px] tracking-[0.15px] ${idx == "3" ? "bg-red-500 text-white" : "text-black"}`}>BL</Link>
+							<Link href={`/rank/3`} className={`w-full min-w-[36px] px-2 rounded-[50px] block text-[15px] font-medium leading-[36px] tracking-[0.15px] ${idx == "3" ? "bg-red-500 text-white" : "text-black"}`}>BL</Link>
 						</SwiperSlide>
 						<SwiperSlide className="w-auto">
-							<Link href={`/rank/4`} className={`w-full px-2 rounded-[50px] block text-[15px] font-medium leading-[36px] tracking-[0.15px] ${idx == "4" ? "bg-red-500 text-white" : "text-black"}`}>GL</Link>
+							<Link href={`/rank/4`} className={`w-full min-w-[36px] px-2 rounded-[50px] block text-[15px] font-medium leading-[36px] tracking-[0.15px] ${idx == "4" ? "bg-red-500 text-white" : "text-black"}`}>GL</Link>
 						</SwiperSlide>
 						<SwiperSlide className="w-auto">
-							<Link href={`/rank/5`} className={`w-full px-2 rounded-[50px] block text-[15px] font-medium leading-[36px] tracking-[0.15px] ${idx == "5" ? "bg-red-500 text-white" : "text-black"}`}>판타지</Link>
+							<Link href={`/rank/5`} className={`w-full min-w-[36px] px-2 rounded-[50px] block text-[15px] font-medium leading-[36px] tracking-[0.15px] ${idx == "5" ? "bg-red-500 text-white" : "text-black"}`}>판타지</Link>
 						</SwiperSlide>
 						<SwiperSlide className="w-auto">
-							<Link href={`/rank/6`} className={`w-full px-2 rounded-[50px] block text-[15px] font-medium leading-[36px] tracking-[0.15px] ${idx == "6" ? "bg-red-500 text-white" : "text-black"}`}>드라마</Link>
+							<Link href={`/rank/6`} className={`w-full min-w-[36px] px-2 rounded-[50px] block text-[15px] font-medium leading-[36px] tracking-[0.15px] ${idx == "6" ? "bg-red-500 text-white" : "text-black"}`}>드라마</Link>
 						</SwiperSlide>
 						<SwiperSlide className="w-auto">
-							<Link href={`/rank/7`} className={`w-full px-2 rounded-[50px] block text-[15px] font-medium leading-[36px] tracking-[0.15px] ${idx == "7" ? "bg-red-500 text-white" : "text-black"}`}>코미디</Link>
+							<Link href={`/rank/7`} className={`w-full min-w-[36px] px-2 rounded-[50px] block text-[15px] font-medium leading-[36px] tracking-[0.15px] ${idx == "7" ? "bg-red-500 text-white" : "text-black"}`}>코미디</Link>
 						</SwiperSlide>
 						<SwiperSlide className="w-auto">
-							<Link href={`/rank/8`} className={`w-full px-2 rounded-[50px] block text-[15px] font-medium leading-[36px] tracking-[0.15px] ${idx == "8" ? "bg-red-500 text-white" : "text-black"}`}>액션</Link>
+							<Link href={`/rank/8`} className={`w-full min-w-[36px] px-2 rounded-[50px] block text-[15px] font-medium leading-[36px] tracking-[0.15px] ${idx == "8" ? "bg-red-500 text-white" : "text-black"}`}>액션</Link>
 						</SwiperSlide>
 						<SwiperSlide className="w-auto">
-							<Link href={`/rank/9`} className={`w-full px-2 rounded-[50px] block text-[15px] font-medium leading-[36px] tracking-[0.15px] ${idx == "9" ? "bg-red-500 text-white" : "text-black"}`}>호러</Link>
+							<Link href={`/rank/9`} className={`w-full min-w-[36px] px-2 rounded-[50px] block text-[15px] font-medium leading-[36px] tracking-[0.15px] ${idx == "9" ? "bg-red-500 text-white" : "text-black"}`}>호러</Link>
 						</SwiperSlide>
 						<SwiperSlide className="w-auto">
-							<Link href={`/rank/10`} className={`w-full px-2 rounded-[50px] block text-[15px] font-medium leading-[36px] tracking-[0.15px] ${idx == "10" ? "bg-red-500 text-white" : "text-black"}`}>스릴러</Link>
+							<Link href={`/rank/10`} className={`w-full min-w-[36px] px-2 rounded-[50px] block text-[15px] font-medium leading-[36px] tracking-[0.15px] ${idx == "10" ? "bg-red-500 text-white" : "text-black"}`}>스릴러</Link>
 						</SwiperSlide>
 						<SwiperSlide className="w-auto">
-							<Link href={`/rank/11`} className={`w-full px-2 rounded-[50px] block text-[15px] font-medium leading-[36px] tracking-[0.15px] ${idx == "11" ? "bg-red-500 text-white" : "text-black"}`}>학원</Link>
+							<Link href={`/rank/11`} className={`w-full min-w-[36px] px-2 rounded-[50px] block text-[15px] font-medium leading-[36px] tracking-[0.15px] ${idx == "11" ? "bg-red-500 text-white" : "text-black"}`}>학원</Link>
 						</SwiperSlide>
 						<SwiperSlide className="w-auto">
-							<Link href={`/rank/12`} className={`w-full px-2 rounded-[50px] block text-[15px] font-medium leading-[36px] tracking-[0.15px] ${idx == "12" ? "bg-red-500 text-white" : "text-black"}`}>시대극/무협</Link>
+							<Link href={`/rank/12`} className={`w-full min-w-[36px] px-2 rounded-[50px] block text-[15px] font-medium leading-[36px] tracking-[0.15px] ${idx == "12" ? "bg-red-500 text-white" : "text-black"}`}>시대극/무협</Link>
 						</SwiperSlide>
 					</Swiper>
         </article>

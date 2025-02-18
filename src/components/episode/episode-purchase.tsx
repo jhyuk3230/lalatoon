@@ -4,8 +4,7 @@ import { PurchaseFetch } from "@/apis/episode/purchase.fetch";
 import { EpisodeItem } from "@/types/episode.type ";
 import { useState } from "react";
 
-export default function EpisodePurchase({ id, data }: { id: string, data: EpisodeItem}) {
-	const freeList = data.episodeList.filter((e) => e.free === true);
+export default function EpisodePurchase() {
 	const [purchase, setPurchase] = useState(false);
 	const purchaseOnClick = () => {
 		setPurchase(!purchase);

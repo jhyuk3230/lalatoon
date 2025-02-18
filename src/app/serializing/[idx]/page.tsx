@@ -8,9 +8,9 @@ export default async function Serializing() {
 	return (
     <>
       <DefaultLayout>
-        <SerializingTop all={false} />
+        <SerializingTop />
         <Suspense fallback={<SerializingListSkeleton />}>
-          <SerializingList all={false} />
+          <SerializingList />
         </Suspense>
       </DefaultLayout>
     </>

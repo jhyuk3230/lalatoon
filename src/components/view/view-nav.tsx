@@ -8,7 +8,6 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 export default function ViewNav({workid, episodeid, episodelength, data, user}: {workid:string, episodeid: string, episodelength: number, data:EpisodeItem, user:UserData}) {
-	console.log(episodeid);
 	const router = useRouter();
 	const toNumber = Number(episodeid);
 	const prev = toNumber - 1;

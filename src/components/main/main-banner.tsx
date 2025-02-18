@@ -46,8 +46,6 @@ export default function MainBanner() {
 		}
 	}, [isAdult, resultList, windowWidth]);
 
-	console.log(resultList);
-
   return (
     <>
       <section className="max-w-[768px] mx-auto xxs:pt-[10px]">
