@@ -20,7 +20,7 @@ export type EpisodeItem = {
 	id: string;
 	thumb: string;
 	adult: boolean;
-	tag: Array<string>;
+	genre: Array<string>;
 	title: string;
 	copyRight: string;
 	description: string;

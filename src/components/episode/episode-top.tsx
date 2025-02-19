@@ -5,7 +5,7 @@ import { EpisodeTagStyle, UserData } from "@/types/common.type";
 import EpisodeTopBtn from "./episode-top-btn";
 
 export default function EpisodeTop({ id, data, read, episode, user }: { id: string, data: EpisodeItem, read: string[], episode: EpisodeList[], user: UserData}) {
-	const { thumb, adult, tag, title, copyRight, description } = data;
+	const { thumb, adult, genre, title, copyRight, description } = data;
 	// console.log(collection);
 	
 	const tagStyle: EpisodeTagStyle = {
@@ -40,8 +40,8 @@ export default function EpisodeTop({ id, data, read, episode, user }: { id: stri
           <div className="flex flex-col gap-5">
             <div className="flex flex-col gap-2">
 							<ul className="flex flex-wrap gap-1">
-								{tag.map((tag)=>(
-									<li key={tag} className={tagStyle[tag as keyof EpisodeTagStyle]}>#{tag}</li>
+								{genre.map((genre)=>(
+									<li key={genre} className={tagStyle[genre as keyof EpisodeTagStyle]}>#{genre}</li>
 								))}
 							</ul>
 							<h3 className="text-[24px] font-bold text-white leading-[30px] m-sm:text-black">{title}</h3>

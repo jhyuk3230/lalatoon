@@ -13,13 +13,15 @@
         "work": "1",
         "episode": [
           "1"
-        ]
+        ],
+        "lastReadDate": "2025-02-19"
       },
       {
         "work": "6",
         "episode": [
           "1"
-        ]
+        ],
+        "lastReadDate": "2025-01-01"
       }
     ],
     "collection": [
@@ -53,34 +55,25 @@
     ],
     "read": [
       {
+        "work": "6",
+        "episode": [
+          "1"
+        ],
+        "lastReadDate": "2025-02-16"
+      },
+      {
         "work": "1",
-        "episode": []
+        "episode": [
+          "1"
+        ],
+        "lastReadDate": "2025-02-17"
       },
       {
         "work": "2",
         "episode": [
-          "4",
-          "2",
-          "3"
-        ]
-      },
-      {
-        "work": "3",
-        "episode": [
           "1"
-        ]
-      },
-      {
-        "work": "6",
-        "episode": [
-          "1"
-        ]
-      },
-      {
-        "work": "4",
-        "episode": [
-          "1"
-        ]
+        ],
+        "lastReadDate": "2025-02-19"
       }
     ],
     "collection": [
@@ -94,6 +87,18 @@
           "5",
           "6",
           "7"
+        ]
+      },
+      {
+        "work": "6",
+        "episode": [
+          "1"
+        ]
+      },
+      {
+        "work": "2",
+        "episode": [
+          "1"
         ]
       }
     ]

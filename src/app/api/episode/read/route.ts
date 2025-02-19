@@ -25,11 +25,14 @@ export async function PUT(request: NextRequest) {
 			userData[userIndex].webcoin = user.webcoin - price;
     }
 
+		const date = new Date();
+		const today = date.toISOString().split('T')[0];
+
 		// read
 		if (notread !== true) {
 			if (!user.read) {
 				user.read = [];
-				user.read.push({ work: workId, episode: episodeId });
+				user.read.push({ work: workId, episode: episodeId, lastReadDate: today });
 			}
 			
 			// read work가 없는 경우 -1  *해당 작품에대한 정보가 있는지 확인 가능
@@ -51,8 +54,10 @@ export async function PUT(request: NextRequest) {
 				// 	episodeList.splice(delIndex, 1);
 				// 	episodeList.push(episodeId);
 				// }
+
+				user.read[readIndex].lastReadDate = today;
 			} else {
-				user.read.push({ work: workId, episode: episodeId });
+				user.read.push({ work: workId, episode: episodeId, lastReadDate: today });
 			}
 		}
 

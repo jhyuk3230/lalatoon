@@ -19,7 +19,7 @@ export default async function Episode({ params }: { params: Promise<{workId: str
       thumb:
         "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
       adult: false,
-      tag: ["Drama", "Romance", "School life"],
+      genre: ["Drama", "Romance", "School life"],
       title:
         "글자 제한 없음 / Welcome! To the BL esearch Club Welcome! To the BL Research Club To the BL Research Club",
       copyRight: "Wang Yi",
@@ -201,7 +201,7 @@ export default async function Episode({ params }: { params: Promise<{workId: str
       thumb:
         "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
       adult: true,
-      tag: ["Drama", "Romance", "School life"],
+      genre: ["Drama", "Romance", "School life"],
       title: "TEST NAME",
       copyRight: "Wang Yi",
       description:
@@ -306,7 +306,7 @@ export default async function Episode({ params }: { params: Promise<{workId: str
       thumb:
         "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
       adult: true,
-      tag: ["Drama", "Romance", "School life"],
+      genre: ["Drama", "Romance", "School life"],
       title: "TEST NAME",
       copyRight: "Wang Yi",
       description:
@@ -351,7 +351,7 @@ export default async function Episode({ params }: { params: Promise<{workId: str
       thumb:
         "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
       adult: false,
-      tag: ["Drama", "Romance", "School life"],
+      genre: ["Drama", "Romance", "School life"],
       title: "TEST NAME",
       copyRight: "Wang Yi",
       description:
@@ -396,7 +396,7 @@ export default async function Episode({ params }: { params: Promise<{workId: str
       thumb:
         "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
       adult: true,
-      tag: ["Drama", "Romance", "School life"],
+      genre: ["Drama", "Romance", "School life"],
       title: "TEST NAME",
       copyRight: "Wang Yi",
       description:
@@ -441,7 +441,7 @@ export default async function Episode({ params }: { params: Promise<{workId: str
       thumb:
         "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
       adult: false,
-      tag: ["Drama", "Romance", "School life"],
+      genre: ["Drama", "Romance", "School life"],
       title: "TEST NAME",
       copyRight: "Wang Yi",
       description:
@@ -486,7 +486,7 @@ export default async function Episode({ params }: { params: Promise<{workId: str
       thumb:
         "https://thumb-g1.lalatoon.com/upload/thumbnail/20240627135437/2024_07_04_17200546332316.jpg",
       adult: true,
-      tag: ["Drama", "Romance", "School life"],
+      genre: ["Drama", "Romance", "School life"],
       title:
         "글자 제한 없음 / Welcome! To the BL esearch Club Welcome! To the BL Research Club To the BL Research Club",
       copyRight: "Wang Yi",

@@ -26,6 +26,7 @@ export type UserData = {
 	read?: {
 		work: string;
 		episode: string[];
+		lastReadDate: string;
 	}[]
 	collection?: {
 		work: string;

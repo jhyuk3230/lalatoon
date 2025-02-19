@@ -556,8 +556,8 @@ export default function Search() {
 												</h3>
 												<p className="text-[13px] text-gray-200 leading-[1] line-clamp-1">writer</p>
 												<ul className="mt-1 inline-flex justify-start items-center gap-1">
-													{e.genre?.map((tag) => (
-														<li className={tagStyle[tag as keyof EpisodeTagStyle]} key={tag}>#{tag}</li>
+													{e.genre?.map((genre) => (
+														<li className={tagStyle[genre as keyof EpisodeTagStyle]} key={genre}>#{genre}</li>
 													))}
 												</ul>
 											</div>
