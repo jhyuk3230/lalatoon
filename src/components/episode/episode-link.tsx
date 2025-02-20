@@ -32,11 +32,14 @@ export default function EpisodeLink({ id, data, read }: { id: string, data: Epis
 
 	const router = useRouter();
 
+	// console.log(user?.collection[id].work)
+	
 	const episodeOnClick = (episodeId: string) => {
 		const clickEpisode = isEpisodeList.find((e) => e.id === episodeId);
+		const isCollection = user?.collection.find((e: {work: string}) => e.work === id)
 		
 		if (!clickEpisode?.free) {
-			if (user.collection[0].episode.find((e:string) => e === clickEpisode?.id)) {
+			if (isCollection?.episode.find((e:string) => e === clickEpisode?.id)) {
 				ReadFetch(id, [episodeId], userIdCookie || "", 0);
 				router.push(`/episode/${id}/${episodeId}`);
 			} else {

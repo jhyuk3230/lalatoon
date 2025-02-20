@@ -44,7 +44,7 @@
     "pw": "testpw",
     "adult": true,
     "admin": false,
-    "webcoin": 702,
+    "webcoin": 699,
     "appcoin": 100,
     "favorite": [
       "1"
@@ -71,9 +71,10 @@
       {
         "work": "2",
         "episode": [
+          "2",
           "1"
         ],
-        "lastReadDate": "2025-02-19"
+        "lastReadDate": "2025-02-20"
       }
     ],
     "collection": [
@@ -98,6 +99,7 @@
       {
         "work": "2",
         "episode": [
+          "2",
           "1"
         ]
       }

@@ -700,7 +700,7 @@ export default function LibraryList({ user }: { user: UserData }) {
 	const editUnitOnClick = (i: number, isChecked: boolean) => {
 		const checkedArr_ = [...checkedArr]
 		checkedArr_[i] = isChecked;
-		setCheckedArr(checkedArr_)
+		setCheckedArr(checkedArr_);
 		const trueArr = checkedArr_.filter((item: boolean) => item == true);
 		if (trueArr.length > 0) {
 			setDelBtn(false);
@@ -708,6 +708,7 @@ export default function LibraryList({ user }: { user: UserData }) {
 			setDelBtn(true);
 		}
 	}
+
 
   return (
     <section className="max-w-[768px] mx-auto">
@@ -767,7 +768,7 @@ export default function LibraryList({ user }: { user: UserData }) {
 											</>
 										) : null}
 
-            	      <div className={`chk-thumb w-[74px] h-[108px] rounded-[10px] flex-shrink-0 bg-black overflow-hidden ${editMode ? "opacity-50" : ""}`}>
+            	      <div className={`chk-thumb w-[74px] h-[108px] rounded-[10px] flex-shrink-0 bg-black overflow-hidden ${editMode ? checkedArr[i] ? "outline outline-1 outline-red-500" : "opacity-50" : ""}`}>
             	        <Image src={e?.thumb || ""} alt={``} width={74} height={100} />
             	      </div>
 
