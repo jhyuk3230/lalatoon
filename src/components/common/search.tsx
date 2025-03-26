@@ -474,6 +474,14 @@ export default function Search() {
 		return searchWord && item.title.includes(searchWord);
 	})
 
+	const textHighlight = (text: string, searchWord: string) => {
+		if (!searchWord) return text;
+
+		const parts = text.split(new RegExp(`(${searchWord})`, 'gi'));
+
+		return parts.map((part, i) => part.toLowerCase() === searchWord.toLowerCase() ? <span key={i} className="text-red-500">{part}</span> : part)
+	}
+
 	const searchWrapRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
@@ -547,7 +555,7 @@ export default function Search() {
 											</div>
 											<div className="flex flex-col items-start justify-center">
 												<h3 className="inline-flex justify-start items-center gap-[2px]">
-													<span className="text-[16px] leading-[1] line-clamp-1">{e.title}</span>
+													<span className="text-[16px] leading-[1] line-clamp-1">{textHighlight(e.title, searchWord)}</span>
 													{e.adult ? (
 														<p className="adult-m w-4 h-4 ml-1 border border-[#FF3B42] rounded-[16px] flex-shrink-0 bg-white relative top-[1px]">
                               <span className="w-full inline-block text-[8px] font-black text-black text-center absolute top-[50%] translate-y-[-50%]">19</span>
